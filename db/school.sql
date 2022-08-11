@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 11, 2022 at 04:55 PM
+-- Generation Time: Aug 11, 2022 at 06:08 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -159,6 +159,20 @@ CREATE TABLE `timetable6` (
   `sat` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `timetable6`
+--
+
+INSERT INTO `timetable6` (`id`, `time`, `mon`, `tues`, `wed`, `thurs`, `fri`, `sat`) VALUES
+(1, '8:30-9:20', 'English', 'Urdu', 'English', 'Science', 'Math', ''),
+(2, '8:30-9:00', 'English', 'Urdu', 'Science', 'English', 'English', ''),
+(3, '9:00-9:30', 'Urdu', 'Sindhi', 'Sindhi', 'Islamiat/Religion', 'Science', ''),
+(4, '9:30-10:30', 'Math', 'Islamiat/Religion', 'Urdu', 'Urdu', 'Sindhi', ''),
+(5, '10:30-11:00', 'B', 'R', 'E', 'A', 'K', ''),
+(6, '11:00-11:30', 'Science', 'Math', 'Math', 'Math', 'Urdu', ''),
+(7, '11:30-12:00', 'P-studies', 'English', 'English', 'Sindhi', 'Science', ''),
+(8, '12:00-12:30', 'Sindhi', 'Science', 'Islamiat/Religion', 'English', 'Math', '');
+
 -- --------------------------------------------------------
 
 --
@@ -283,7 +297,7 @@ ALTER TABLE `teachers`
 -- AUTO_INCREMENT for table `timetable6`
 --
 ALTER TABLE `timetable6`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`

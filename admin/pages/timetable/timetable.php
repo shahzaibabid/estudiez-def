@@ -4,21 +4,23 @@ include_once '../../../auth/connection.php';
 session_start();
 
 if(isset($_POST["submit"])) {
-  $cid = $_POST["myclass"];
-  $at_sel = "SELECT u.id,u.Profile,u.F_name,u.L_name FROM `users` u WHERE `Class_id` = $cid";
-  $atresult = mysqli_query($conn, $at_sel);
+  $sel = "SELECT * FROM `timetable6`";
+  $res = mysqli_query($conn, $sel);
   $i = 0;
-  $date = date('m/d/Y h:i:s a', time());
-  while($atrow = mysqli_fetch_array($atresult)) { 
-      $i++;
-      $ud = $atrow["id"];
-      $at = $_POST["optionsRadios" . $i];
-      $inp = "INSERT INTO `attendance`(`Date`, `Class_id`, `User_id`, `attendance`) VALUES ('$date','$cid','$ud','$at')";
-      $inpres = mysqli_query($conn,$inp);
-      header("Location: ../../dashboard.php");
+  while($row = mysqli_fetch_array($res)) {
+    $i++;
+    $tb = $row[0];
+    $mon = $_POST["mon" . $i];
+    $tues = $_POST["tues" . $i];
+    $wed = $_POST["wed" . $i];
+    $thurs = $_POST["thurs" . $i];
+    $fri = $_POST["fri" . $i];
+    $sat = $_POST["sat" . $i];
+    $up = "UPDATE `timetable6` SET `mon`='$mon',`tues`='$tues',`wed`='$wed',`thurs`='$thurs',`fri`='$fri',`sat`='$sat' WHERE `id` = $tb";
+    $upres = mysqli_query($conn, $up);
+    header("Location: timetable.php");
   }
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -386,8 +388,8 @@ if(isset($_POST["submit"])) {
             <div class="page-header">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#">Tables</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Basic tables</li>
+                  <li class="breadcrumb-item"><a href="#">TimeTable</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Class VI</li>
                 </ol>
               </nav>
             </div>
@@ -395,10 +397,10 @@ if(isset($_POST["submit"])) {
              
               <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
-                  <div class="card-body">
-                    <form action="#" method="post">
-                      <h4 class="card-title">Attendence</h4>
-                      <p class="card-description">
+                  <form action="#" method="post">
+                    <div class="card-body">
+                      <h4 class="card-title">TimeTable</h4>
+                      <!-- <p class="card-description">
                           <select id="mycl" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="myclass">
                             <option selected value="0">SELECT CLASS</option>
                             <?php
@@ -412,31 +414,49 @@ if(isset($_POST["submit"])) {
                             ?>
 
                           </select>
-                      </p>
+                      </p> -->
                       <div class="table-responsive">
                         <table class="table table-striped">
                           <thead>
                             <tr>
-                              <th> profile </th>
-                              <th> Student </th>
-                              <th style="visibility: hidden;"> Absent </th>
-                              <th style="visibility: hidden;"> Present </th>
-                              <th style="visibility: hidden;"> Leave </th>
+                              <th> Time </th>
+                              <th> Monday </th>
+                              <th> Tuesday </th>
+                              <th> Wednesday </th>
+                              <th> Thursday </th>
+                              <th> Friday </th>
+                              <th> (Extra class) <br> Saturday</th>
                             </tr>
                           </thead>
                           <tbody id="mystu">      
-
-                          <!-- data coming from get_class_data.php -->
-
+                                <?php
+                                  $sel_r = "SELECT * FROM `timetable6`";
+                                  $res_r = mysqli_query($conn, $sel_r);
+                                  $i = 0;
+                                  while($row_r = mysqli_fetch_array($res_r)) {
+                                    $i++;
+                                ?>
+                                <!-- <input type="hidden" name="tb<?php echo $i; ?>"> -->
+                                <tr>
+                                  <td><input type="text" style="background-color: transparent; color: white; border:none;" value="8:30-9:00" readonly></td>
+                                  <td><input type="text" name="mon<?php echo $i; ?>" style="background-color: transparent; color: white; border:none;" value="<?php echo $row_r[2]; ?>"></td>
+                                  <td><input type="text" name="tues<?php echo $i; ?>" style="background-color: transparent; color: white; border:none;" value="<?php echo $row_r[3]; ?>"></td>
+                                  <td><input type="text" name="wed<?php echo $i; ?>" style="background-color: transparent; color: white; border:none;" value="<?php echo $row_r[4]; ?>"></td>
+                                  <td><input type="text" name="thurs<?php echo $i; ?>" style="background-color: transparent; color: white; border:none;" value="<?php echo $row_r[5]; ?>"></td>
+                                  <td><input type="text" name="fri<?php echo $i; ?>" style="background-color: transparent; color: white; border:none;" value="<?php echo $row_r[6]; ?>"></td>
+                                  <td><input type="text" name="sat<?php echo $i; ?>" style="background-color: transparent; color: white; border:none;" value="<?php echo $row_r[7]; ?>"></td>
+                                </tr>
+                                <?php
+                                  }
+                                ?>
                           </tbody>
-                        </table>
-                        
-                        <div class="container">
-                          <input type="submit" value="Submit" class="btn btn-outline-primary" style="float:right;" name="submit">
-                        </div>
+                        </table>                        
                       </div>
-                    </form>
-                  </div>
+                    </div>
+                    <div class="container d-flex justify-content-center mb-4">
+                      <input type="submit" value="Submit" class="btn btn-outline-primary" name="submit">
+                    </div>
+                  </form>
                 </div>
               </div>
           <!-- content-wrapper ends -->
