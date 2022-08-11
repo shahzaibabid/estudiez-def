@@ -12,12 +12,12 @@
 </head>
 <body>
 <div class="main">    
-     <!-- Sing in  Form -->
-     <section class="sign-in">
+    <!-- Sign in  Form starts -->
+        <section class="sign-in">
             <div class="container">
                 <div class="signin-content">
                     <div class="signin-image">
-                        <figure><img src="images/signup-image.jpg" alt="sing up image"></figure>
+                        <figure><img src="images/signup-image.jpg" alt="sign up image"></figure>
                         <a href="register.php" class="signup-image-link">No account? Create an account</a>
                     </div>
 
@@ -39,14 +39,12 @@
                             <div class="form-group form-button">
                                 <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
                             </div>
-                        </form>
-                        
+                        </form>    
                     </div>
                 </div>
             </div>
         </section>
-
-    </div>
+    <!-- Sign in Form ends  -->
 </div>
 </body>
 </html>
