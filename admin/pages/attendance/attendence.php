@@ -3,6 +3,22 @@ include_once '../../../auth/connection.php';
 
 session_start();
 
+if(isset($_POST["submit"])) {
+  $cid = $_POST["myclass"];
+  $at_sel = "SELECT u.id,u.Profile,u.F_name,u.L_name FROM `users` u WHERE `Class_id` = $cid";
+  $atresult = mysqli_query($conn, $at_sel);
+  $i = 0;
+  $date = date('m/d/Y h:i:s a', time());
+  while($atrow = mysqli_fetch_array($atresult)) { 
+      $i++;
+      $ud = $atrow["id"];
+      $at = $_POST["optionsRadios" . $i];
+      $inp = "INSERT INTO `attendance`(`Date`, `Class_id`, `User_id`, `attendance`) VALUES ('$date','$cid','$ud','$at')";
+      $inpres = mysqli_query($conn,$inp);
+      header("Location: ../../dashboard.php");
+  }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,21 +45,20 @@ session_start();
       <!-- partial:../../partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <a  class="sidebar-brand brand-logo" href="index.html"><img  src="../../img/asad.png" alt="logo" /></a>
-          <a class="sidebar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
+          <a class="sidebar-brand brand-logo" href="../../index.html"><img src="../../assets/images/logo.svg" alt="logo" /></a>
+          <a class="sidebar-brand brand-logo-mini" href="../../index.html"><img src="../../assets/images/logo-mini.svg" alt="logo" /></a>
         </div>
         <ul class="nav">
           <li class="nav-item profile">
             <div class="profile-desc">
               <div class="profile-pic">
                 <div class="count-indicator">
-                  <img class="img-xs rounded-circle " src="../../../img/<?php echo $_SESSION["path"];?>" alt="">
+                  <img class="img-xs rounded-circle " src="../../assets/images/faces/face15.jpg" alt="">
                   <span class="count bg-success"></span>
                 </div>
-                
-              <div class="profile-name">
-                  <h5 class="mb-0 font-weight-normal"><?php echo $_SESSION["name"];?></h5>
-                  <span>Admin</span>
+                <div class="profile-name">
+                  <h5 class="mb-0 font-weight-normal">Henry Klein</h5>
+                  <span>Gold Member</span>
                 </div>
               </div>
               <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
@@ -87,24 +102,39 @@ session_start();
             <span class="nav-link">Navigation</span>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="../../admin.php">
+            <a class="nav-link" href="../../index.html">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-          
           <li class="nav-item menu-items">
-            <a class="nav-link" href="../company/company.php">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <span class="menu-icon">
+                <i class="mdi mdi-laptop"></i>
+              </span>
+              <span class="menu-title">Basic UI Elements</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Buttons</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/dropdowns.html">Dropdowns</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Typography</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="../../pages/forms/basic_elements.html">
               <span class="menu-icon">
                 <i class="mdi mdi-playlist-play"></i>
               </span>
-              <span class="menu-title">Client Entry</span>
+              <span class="menu-title">Form Elements</span>
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="../tables/basic-table.php">
+            <a class="nav-link" href="../../pages/tables/basic-table.html">
               <span class="menu-icon">
                 <i class="mdi mdi-table-large"></i>
               </span>
@@ -112,51 +142,19 @@ session_start();
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <span class="menu-icon">
-              <i class="mdi mdi-headset"></i>
-              </span>
-              <span class="menu-title">Products</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../products/addproduct.php">Add Products</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../products/productlist.php">Product List</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../products/testproduct.php">Tested Products</a></li>
-            </ul>
-            </div>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <span class="menu-icon">
-              <i class="mdi mdi-basket-fill"></i>
-              </span>
-              <span class="menu-title">Category</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../category/insertcategory.php">Add Category</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../category/category.php">Categories</a></li>
-              </ul>
-            </div>
-          </li>
-        
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="../contact/contactlist.php">
+            <a class="nav-link" href="../../pages/charts/chartjs.html">
               <span class="menu-icon">
                 <i class="mdi mdi-chart-bar"></i>
               </span>
-              <span class="menu-title">Contact Us</span>
+              <span class="menu-title">Charts</span>
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="../employ/employ.php">
+            <a class="nav-link" href="../../pages/icons/mdi.html">
               <span class="menu-icon">
                 <i class="mdi mdi-contacts"></i>
               </span>
-              <span class="menu-title">Employ</span>
+              <span class="menu-title">Icons</span>
             </a>
           </li>
           <li class="nav-item menu-items">
@@ -169,13 +167,21 @@ session_start();
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="web.php"> Home </a></li>
-                <li class="nav-item"> <a class="nav-link" href="product.php"> Products </a></li>
-                <li class="nav-item"> <a class="nav-link" href="about.php"> About </a></li>
-                <li class="nav-item"> <a class="nav-link" href="team.php"> Our Team </a></li>
-                <li class="nav-item"> <a class="nav-link" href="contact.php"> Contact Us </a></li>  
+                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/blank-page.html"> Blank Page </a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/error-404.html"> 404 </a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/error-500.html"> 500 </a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login.html"> Login </a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/register.html"> Register </a></li>
               </ul>
             </div>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="http://www.bootstrapdash.com/demo/corona-free/jquery/documentation/documentation.html">
+              <span class="menu-icon">
+                <i class="mdi mdi-file-document-box"></i>
+              </span>
+              <span class="menu-title">Documentation</span>
+            </a>
           </li>
         </ul>
       </nav>
@@ -184,7 +190,7 @@ session_start();
         <!-- partial:partials/_navbar.html -->
         <nav class="navbar p-0 fixed-top d-flex flex-row">
           <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-            <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
+            <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../assets/images/logo-mini.svg" alt="logo" /></a>
           </div>
           <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
             <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -199,7 +205,7 @@ session_start();
             </ul>
             <ul class="navbar-nav navbar-nav-right">
               <li class="nav-item dropdown d-none d-lg-block">
-            
+                <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" data-toggle="dropdown" aria-expanded="false" href="#">+ Create New Project</a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="createbuttonDropdown">
                   <h6 class="p-3 mb-0">Projects</h6>
                   <div class="dropdown-divider"></div>
@@ -254,7 +260,7 @@ session_start();
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
-                      <img src="assets/images/faces/face4.jpg" alt="image" class="rounded-circle profile-pic">
+                      <img src="../../assets/images/faces/face4.jpg" alt="image" class="rounded-circle profile-pic">
                     </div>
                     <div class="preview-item-content">
                       <p class="preview-subject ellipsis mb-1">Mark send you a message</p>
@@ -264,7 +270,7 @@ session_start();
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
-                      <img src="assets/images/faces/face2.jpg" alt="image" class="rounded-circle profile-pic">
+                      <img src="../../assets/images/faces/face2.jpg" alt="image" class="rounded-circle profile-pic">
                     </div>
                     <div class="preview-item-content">
                       <p class="preview-subject ellipsis mb-1">Cregh send you a message</p>
@@ -274,7 +280,7 @@ session_start();
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
-                      <img src="assets/images/faces/face3.jpg" alt="image" class="rounded-circle profile-pic">
+                      <img src="../../assets/images/faces/face3.jpg" alt="image" class="rounded-circle profile-pic">
                     </div>
                     <div class="preview-item-content">
                       <p class="preview-subject ellipsis mb-1">Profile picture updated</p>
@@ -335,17 +341,26 @@ session_start();
               <li class="nav-item dropdown">
                 <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
                   <div class="navbar-profile">
-                    <img class="img-xs rounded-circle" src="../img/<?php echo $_SESSION["path"];?>" alt="">
-                    <p class="mb-0 d-none d-sm-block navbar-profile-name"><?php echo $_SESSION["name"];?></p>
+                    <img class="img-xs rounded-circle" src="../../assets/images/faces/face15.jpg" alt="">
+                    <p class="mb-0 d-none d-sm-block navbar-profile-name">Henry Klein</p>
                     <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                   </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
                   <h6 class="p-3 mb-0">Profile</h6>
                   <div class="dropdown-divider"></div>
-                 
+                  <a class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                      <div class="preview-icon bg-dark rounded-circle">
+                        <i class="mdi mdi-settings text-success"></i>
+                      </div>
+                    </div>
+                    <div class="preview-item-content">
+                      <p class="preview-subject mb-1">Settings</p>
+                    </div>
+                  </a>
                   <div class="dropdown-divider"></div>
-                  <a href="logout.php" class="dropdown-item preview-item">
+                  <a class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
                       <div class="preview-icon bg-dark rounded-circle">
                         <i class="mdi mdi-logout text-danger"></i>
@@ -381,40 +396,46 @@ session_start();
               <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Attendence</h4>
-                    <p class="card-description">
-                        <select id="mycl" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                          <option selected value="0">SELECT CLASS</option>
-                          <?php
-                            $c_sel = "SELECT * FROM `class`";
-                            $c_res = mysqli_query($conn, $c_sel);
-                            while($c_row = mysqli_fetch_array($c_res)) {
-                              ?>
-                                <option value="<?php echo $c_row[0]; ?>"><?php echo $c_row[2]; ?></option>
-                              <?php
-                            } 
-                          ?>
+                    <form action="#" method="post">
+                      <h4 class="card-title">Attendence</h4>
+                      <p class="card-description">
+                          <select id="mycl" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="myclass">
+                            <option selected value="0">SELECT CLASS</option>
+                            <?php
+                              $c_sel = "SELECT * FROM `class`";
+                              $c_res = mysqli_query($conn, $c_sel);
+                              while($c_row = mysqli_fetch_array($c_res)) {
+                                ?>
+                                  <option value="<?php echo $c_row[0]; ?>"><?php echo $c_row[2]; ?></option>
+                                <?php
+                              } 
+                            ?>
 
-                        </select>
-                    </p>
-                    <div class="table-responsive">
-                      <table class="table table-striped">
-                        <thead>
-                          <tr>
-                            <th> profile </th>
-                            <th> Student </th>
-                            <th > Absent </th>
-                            <th> Present </th>
-                            <th> Leave </th>
-                          </tr>
-                        </thead>
-                        <tbody id="mystu">      
+                          </select>
+                      </p>
+                      <div class="table-responsive">
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th> profile </th>
+                              <th> Student </th>
+                              <th style="visibility: hidden;"> Absent </th>
+                              <th style="visibility: hidden;"> Present </th>
+                              <th style="visibility: hidden;"> Leave </th>
+                            </tr>
+                          </thead>
+                          <tbody id="mystu">      
 
-                         <!-- data coming from get_class_data.php -->
+                          <!-- data coming from get_class_data.php -->
 
-                        </tbody>
-                      </table>
-                    </div>
+                          </tbody>
+                        </table>
+                        
+                        <div class="container">
+                          <input type="submit" value="Submit" class="btn btn-outline-primary" style="float:right;" name="submit">
+                        </div>
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>
