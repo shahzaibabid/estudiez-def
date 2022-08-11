@@ -40,6 +40,12 @@
 </head>
 <body>
 
+<!-- header -->
+ <?php
+  include_once('header.php');
+  ?>
+<!-- header -->
+
 <!-- main content -->
 <!-- banner image -->
      <section class="page-title divider layer-overlay overlay-dark-5 section-typo-light bg-img-center" data-tm-bg-img="images/bg/bg3.jpg">

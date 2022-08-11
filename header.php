@@ -1,47 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estudiez-Header</title>
-<!-- Stylesheet -->
-<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="css/animate.min.css" rel="stylesheet" type="text/css">
-<link href="css/javascript-plugins-bundle.css" rel="stylesheet"/>
-<!-- CSS | menuzord megamenu skins -->
-<link href="js/menuzord/css/menuzord.css" rel="stylesheet"/>
-<!-- CSS | Main style file -->
-<link href="css/style-main.css" rel="stylesheet" type="text/css">
-<link id="menuzord-menu-skins" href="css/menuzord-skins/menuzord-rounded-boxed.css" rel="stylesheet"/>
+<div class="side-panel-body-overlay"></div>
+<div id="side-panel-container" class="dark" data-tm-bg-img="images/side-push-bg.jpg">
+  <div class="side-panel-wrap">
+    <div id="side-panel-trigger-close" class="side-panel-trigger"><a href="#"><i class="fa fa-times side-panel-trigger-icon"></i></a></div>
+    <img class="logo mb-50" src="images/logo-wide.png" alt="Logo">
+    <p>Lorem ipsum is simply free text dolor sit am adipi we help you ensure everyone is in the right jobs sicing elit, sed do consulting firms Et leggings across the nation tempor.</p>
+    <div class="widget">
+      <h4 class="widget-title widget-title-line-bottom line-bottom-theme-colored1">Latest News</h4>
+      <div class="latest-posts">
+        <article class="post clearfix pb-0 mb-10">
+          <a class="post-thumb" href="news-details.html"><img src="images/blog/s1.jpg" alt="images"></a>
+          <div class="post-right">
+            <h5 class="post-title mt--0"><a href="news-details.html">Sustainable Construction</a></h5>
+            <p>Lorem ipsum dolor...</p>
+          </div>
+        </article>
+        <article class="post clearfix pb-0 mb-10">
+          <a class="post-thumb" href="news-details.html"><img src="images/blog/s2.jpg" alt="images"></a>
+          <div class="post-right">
+            <h5 class="post-title mt--0"><a href="news-details.html">Industrial Coatings</a></h5>
+            <p>Lorem ipsum dolor...</p>
+          </div>
+        </article>
+        <article class="post clearfix pb-0 mb-10">
+          <a class="post-thumb" href="news-details.html"><img src="images/blog/s3.jpg" alt="images"></a>
+          <div class="post-right">
+            <h5 class="post-title mt--0"><a href="news-details.html">Storefront Installations</a></h5>
+            <p>Lorem ipsum dolor...</p>
+          </div>
+        </article>
+      </div>
+    </div>
 
-<!-- CSS | Responsive media queries -->
-<link href="css/responsive.css" rel="stylesheet" type="text/css">
-<!-- CSS | Style css. This is the file where you can place your own custom css code. Just uncomment it and use it. -->
-
-<!-- CSS | Theme Color -->
-<link href="css/colors/theme-skin-color-set1.css" rel="stylesheet" type="text/css">
-
-<!-- external javascripts -->
-<script src="js/jquery.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/javascript-plugins-bundle.js"></script>
-<script src="js/menuzord/js/menuzord.js"></script>
-
-<!-- REVOLUTION STYLE SHEETS -->
-<link rel="stylesheet" type="text/css" href="js/revolution-slider/css/rs6.css">
-<link rel="stylesheet" type="text/css" href="js/revolution-slider/extra-rev-slider1.css">
-<!-- REVOLUTION LAYERS STYLES -->
-<!-- REVOLUTION JS FILES -->
-<script src="js/revolution-slider/js/revolution.tools.min.js"></script>
-<script src="js/revolution-slider/js/rs6.min.js"></script>
-<script src="js/revolution-slider/extra-rev-slider1.js"></script>
-
-</head>
-<body>
-    <!-- header start -->
-<header id="header" class="header header-layout-type-header-2rows">
+    <div class="widget">
+      <h5 class="widget-title widget-title-line-bottom line-bottom-theme-colored1">Contact Info</h5>
+      <div class="tm-widget-contact-info contact-info-style1 contact-icon-theme-colored1">
+        <ul>
+          <li class="contact-name">
+            <div class="icon"><i class="flaticon-contact-037-address"></i></div>
+            <div class="text">John Doe</div>
+          </li>
+          <li class="contact-phone">
+            <div class="icon"><i class="flaticon-contact-042-phone-1"></i></div>
+            <div class="text"><a href="tel:+510-455-6735">+510-455-6735</a></div>
+          </li>
+          <li class="contact-email">
+            <div class="icon"><i class="flaticon-contact-043-email-1"></i></div>
+            <div class="text"><a href="mailto:info@yourdomain.com">info@yourdomain.com</a></div>
+          </li>
+          <li class="contact-address">
+            <div class="icon"><i class="flaticon-contact-047-location"></i></div>
+            <div class="text">3982 Browning Lane Carolyns Circle, California</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div> 
+<div id="wrapper" class="clearfix">
+  <!-- Header -->
+    <header id="header" class="header header-layout-type-header-2rows">
     <div class="header-top">
       <div class="container">
         <div class="row">
@@ -81,12 +98,12 @@
               <div class="col-sm-auto ms-auto pr-0 align-self-center">
                 <nav id="top-primary-nav" class="menuzord theme-color1" data-effect="fade" data-animation="none" data-align="right">
                   <ul id="main-nav" class="menuzord-menu onepage-nav">
-                    <li class="active"><a href="#home">Home</a> </li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#courses">Courses</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#team">Teachers</a></li>
-                    <li><a href="#news">Blog</a></li>
+                    <li class="active"><a href="index.php">Home</a> </li>
+                    <li><a href="aboutus.php">About-Us</a></li>
+                    <li><a href="contactus.php">Contact-Us</a></li>
+                    <li><a href="feedback.php">Feedback</a></li>
+                    <li><a href="register.php">Register</a></li>
+                    <li><a href="login.php">Login</a></li>
                   </ul>
                 </nav>
               </div>
@@ -149,7 +166,6 @@
         </div>
       </div>
     </div>
-  </header> 
-  <!-- header end -->
-</body>
-</html>
+  </header>  
+  <!-- Start main-content -->
+  <div class="main-content-area">

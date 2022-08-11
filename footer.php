@@ -143,5 +143,4 @@
     <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
 <!-- footer  -->
 
-<!-- custom script for all pages -->
-<script src="js/custom.js"></script>
+            </div>

@@ -39,6 +39,13 @@
 <script src="js/revolution-slider/extra-rev-slider1.js"></script>
 </head>
 <body>
+
+
+<!-- header -->
+ <?php
+ include_once('header.php');
+ ?>
+<!-- header -->
 <!--main content  -->
  <div class="main-content-area">
     <!-- slider  -->
