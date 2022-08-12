@@ -62,7 +62,7 @@ switch ($x) {
       case 'X':
           $up = "UPDATE `timetable10` SET `mon`='$mon',`tues`='$tues',`wed`='$wed',`thurs`='$thurs',`fri`='$fri',`sat`='$sat' WHERE `id` = $tb";
           break;                                            
-  }        
+    }        
     $upres = mysqli_query($conn, $up);
     header("Location: timetable.php");
   }
@@ -504,6 +504,8 @@ switch ($x) {
                   </form>
                 </div>
               </div>
+            </div>
+          </div>
           <!-- content-wrapper ends -->
           <!-- partial:../../partials/_footer.html -->
           <footer class="footer">

@@ -33,18 +33,18 @@ $res_r = mysqli_query($conn, $sel_r);
 $i = 0;
 while($row_r = mysqli_fetch_array($res_r)) {
   $i++;
+
 ?>
 <!-- <input type="hidden" name="tb<?php echo $i; ?>"> -->
 <tr>
-<td><input type="text" style="background-color: transparent; color: white; border:none;" value="8:30-9:00" readonly></td>
-<td><input type="text" name="mon<?php echo $i; ?>" style="background-color: transparent; color: white; border:none;" value="<?php echo $row_r[2]; ?>"></td>
-<td><input type="text" name="tues<?php echo $i; ?>" style="background-color: transparent; color: white; border:none;" value="<?php echo $row_r[3]; ?>"></td>
-<td><input type="text" name="wed<?php echo $i; ?>" style="background-color: transparent; color: white; border:none;" value="<?php echo $row_r[4]; ?>"></td>
-<td><input type="text" name="thurs<?php echo $i; ?>" style="background-color: transparent; color: white; border:none;" value="<?php echo $row_r[5]; ?>"></td>
-<td><input type="text" name="fri<?php echo $i; ?>" style="background-color: transparent; color: white; border:none;" value="<?php echo $row_r[6]; ?>"></td>
-<td><input type="text" name="sat<?php echo $i; ?>" style="background-color: transparent; color: white; border:none;" value="<?php echo $row_r[7]; ?>"></td>
+    <td ><input type="text" style="background-color: transparent; color: white; border:none;" value="<?php echo $row_r[1]; ?>" readonly></td>
+    <td><input type="text" name="mon<?php echo $i; ?>" style="background-color: transparent; color: white; border:none;" value="<?php echo $row_r[2]; ?>"></td>
+    <td><input type="text" name="tues<?php echo $i; ?>" style="background-color: transparent; color: white; border:none;" value="<?php echo $row_r[3]; ?>"></td>
+    <td><input type="text" name="wed<?php echo $i; ?>" style="background-color: transparent; color: white; border:none;" value="<?php echo $row_r[4]; ?>"></td>
+    <td><input type="text" name="thurs<?php echo $i; ?>" style="background-color: transparent; color: white; border:none;" value="<?php echo $row_r[5]; ?>"></td>
+    <td><input type="text" name="fri<?php echo $i; ?>" style="background-color: transparent; color: white; border:none;" value="<?php echo $row_r[6]; ?>"></td>
+    <td><input type="text" name="sat<?php echo $i; ?>" style="background-color: transparent; color: white; border:none;" value="<?php echo $row_r[7]; ?>"></td>
 </tr>
 <?php
 }
 ?>
-
