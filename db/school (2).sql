@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 12, 2022 at 11:00 AM
+-- Generation Time: Aug 12, 2022 at 12:05 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -207,6 +207,14 @@ CREATE TABLE `p_studies` (
   `obt` int(11) NOT NULL,
   `status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `p_studies`
+--
+
+INSERT INTO `p_studies` (`id`, `date`, `class_id`, `user id`, `total`, `obt`, `status`) VALUES
+(1, '2022-08-12', 1, 1, 20, 8, 'Pass'),
+(2, '2022-08-12', 1, 3, 20, 7, 'Fail');
 
 -- --------------------------------------------------------
 
@@ -639,7 +647,7 @@ ALTER TABLE `parent`
 -- AUTO_INCREMENT for table `p_studies`
 --
 ALTER TABLE `p_studies`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `science`
