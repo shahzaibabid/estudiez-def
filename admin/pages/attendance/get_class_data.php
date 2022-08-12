@@ -13,10 +13,9 @@ while($row = mysqli_fetch_array($result)) {
     <tr>
         <td><?php echo $row["Profile"]; ?></td>
         <td><?php echo $row["F_name"] . " " . $row["L_name"]; ?></td>
-        <td align="center"><label><input type="radio" class="form-check-input" name="optionsRadios<?php echo $i; ?>" id="optionsRadios1<?php echo $i; ?>" value="A">Absent</label></td>
-        <td><input type="radio" class="form-check-input" name="optionsRadios<?php echo $i; ?>" id="optionsRadios2<?php echo $i; ?>" value="P">Present</label></td>
-        <td><input type="radio" class="form-check-input" name="optionsRadios<?php echo $i; ?>" id="optionsRadios3<?php echo $i; ?>" value="L">Leave</label></td>
-
+        <td class="align-middle"><label><input type="radio" class="form-check-input" name="optionsRadios<?php echo $i; ?>" id="optionsRadios1<?php echo $i; ?>" value="A">Absent</label></td>
+        <td class="align-middle"><label><input type="radio" class="form-check-input" name="optionsRadios<?php echo $i; ?>" id="optionsRadios2<?php echo $i; ?>" value="P">Present</label></td>
+        <td class="align-middle"><label><input type="radio" class="form-check-input" name="optionsRadios<?php echo $i; ?>" id="optionsRadios3<?php echo $i; ?>" value="L">Leave</label></td>
     </tr>
 <?php 
 }
