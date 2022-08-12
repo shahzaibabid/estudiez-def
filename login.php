@@ -46,7 +46,7 @@ $password = md5($password);
      ?>
 
 <script>
-  window.location.assign("admin/dashboard.php");
+  window.location.assign("admin/index.php");
 </script>
      <?php
    }
@@ -55,7 +55,7 @@ $password = md5($password);
     ?>
 
     <script>
-      window.location.assign("admin.php");
+      window.location.assign("admin/pages/dashboard/dashboard.php");
     </script>
          <?php
 

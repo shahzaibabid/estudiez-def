@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 12, 2022 at 03:29 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
+-- Generation Time: Aug 12, 2022 at 05:59 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -118,8 +118,18 @@ CREATE TABLE `exam` (
   `obt` int(11) NOT NULL,
   `percentage` float NOT NULL,
   `grade` varchar(225) NOT NULL,
-  `status` varchar(225) NOT NULL
+  `status` varchar(225) NOT NULL,
+  `remarks` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `exam`
+--
+
+INSERT INTO `exam` (`id`, `class_id`, `user_id`, `eng`, `urdu`, `sindhi`, `p_studies`, `sci`, `islamiat_rel`, `math`, `total`, `obt`, `percentage`, `grade`, `status`, `remarks`) VALUES
+(1, 1, 1, 82, 80, 79, 54, 82, 95, 76, 700, 548, 78.2857, 'A', 'Pass', 'Good work keep it up !'),
+(2, 1, 3, 95, 85, 84, 75, 76, 73, 82, 700, 570, 81.43, 'A+', 'Pass', 'Good Work'),
+(3, 2, 2, 35, 22, 10, 28, 32, 46, 51, 700, 224, 32, 'F', 'Fail', 'Try a little harder ');
 
 -- --------------------------------------------------------
 
@@ -471,7 +481,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `F_name`, `L_name`, `Email`, `Contact`, `Password`, `Profile`, `Roll`, `Age`, `Class_id`, `father_name`, `time`) VALUES
-(1, 'john', 'john', 'john@gmail.com', '030036547', '123', '444', 0, 17, 1, '', '2022-08-12 16:10:54'),
+(1, 'john', 'john', 'john@gmail.com', '030036547', '202cb962ac59075b964b07152d234b70', '444', 0, 17, 1, '', '2022-08-12 16:10:54'),
 (2, 'Rayan', 'Rayan', 'Rayan@gmail.com', '033214568', '123', '333', 0, 18, 2, '', '2022-08-12 16:10:54'),
 (3, 'simon', 'simon', 'simon@gmail.com', '01234587', '123', '222', 0, 18, 1, '', '2022-08-12 16:10:54');
 
@@ -619,7 +629,7 @@ ALTER TABLE `english`
 -- AUTO_INCREMENT for table `exam`
 --
 ALTER TABLE `exam`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `feedback`
