@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 11, 2022 at 06:08 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Aug 12, 2022 at 01:06 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.3.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -67,7 +67,24 @@ CREATE TABLE `class` (
 
 INSERT INTO `class` (`id`, `Year`, `Class_name`, `Teacher_id`) VALUES
 (1, 2022, 'VI', 1),
-(2, 2022, 'VII', 1);
+(2, 2022, 'VII', 1),
+(3, 2022, 'VIII', 2),
+(4, 2022, 'IX', 3),
+(5, 2022, 'X', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `english`
+--
+
+CREATE TABLE `english` (
+  `id` int(11) NOT NULL,
+  `class_id` int(11) NOT NULL,
+  `user id` int(11) NOT NULL,
+  `total` int(11) NOT NULL,
+  `obt` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -110,6 +127,34 @@ CREATE TABLE `feedback` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `islamiat_rel`
+--
+
+CREATE TABLE `islamiat_rel` (
+  `id` int(11) NOT NULL,
+  `class_id` int(11) NOT NULL,
+  `user id` int(11) NOT NULL,
+  `total` int(11) NOT NULL,
+  `obt` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `math`
+--
+
+CREATE TABLE `math` (
+  `id` int(11) NOT NULL,
+  `class_id` int(11) NOT NULL,
+  `user id` int(11) NOT NULL,
+  `total` int(11) NOT NULL,
+  `obt` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `parent`
 --
 
@@ -122,6 +167,48 @@ CREATE TABLE `parent` (
   `Password` varchar(255) NOT NULL,
   `Profile` varchar(255) NOT NULL,
   `Roll` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `p_studies`
+--
+
+CREATE TABLE `p_studies` (
+  `id` int(11) NOT NULL,
+  `class_id` int(11) NOT NULL,
+  `user id` int(11) NOT NULL,
+  `total` int(11) NOT NULL,
+  `obt` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `science`
+--
+
+CREATE TABLE `science` (
+  `id` int(11) NOT NULL,
+  `class_id` int(11) NOT NULL,
+  `user id` int(11) NOT NULL,
+  `total` int(11) NOT NULL,
+  `obt` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sindhi`
+--
+
+CREATE TABLE `sindhi` (
+  `id` int(11) NOT NULL,
+  `class_id` int(11) NOT NULL,
+  `user id` int(11) NOT NULL,
+  `total` int(11) NOT NULL,
+  `obt` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -176,6 +263,144 @@ INSERT INTO `timetable6` (`id`, `time`, `mon`, `tues`, `wed`, `thurs`, `fri`, `s
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `timetable7`
+--
+
+CREATE TABLE `timetable7` (
+  `id` int(11) NOT NULL,
+  `time` varchar(255) NOT NULL,
+  `mon` varchar(255) NOT NULL,
+  `tues` varchar(255) NOT NULL,
+  `wed` varchar(255) NOT NULL,
+  `thurs` varchar(255) NOT NULL,
+  `fri` varchar(255) NOT NULL,
+  `sat` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `timetable7`
+--
+
+INSERT INTO `timetable7` (`id`, `time`, `mon`, `tues`, `wed`, `thurs`, `fri`, `sat`) VALUES
+(1, '8:30-9:20', 'Urdu', 'Urdu', 'English', 'Science', 'Math', ''),
+(2, '8:30-9:00', 'English', 'Urdu', 'Science', 'English', 'English', ''),
+(3, '9:00-9:30', 'Urdu', 'Sindhi', 'Sindhi', 'Islamiat/Religion', 'Science', ''),
+(4, '9:30-10:30', 'Math', 'Islamiat/Religion', 'Urdu', 'Urdu', 'Sindhi', ''),
+(5, '10:30-11:00', 'B', 'R', 'E', 'A', 'K', ''),
+(6, '11:00-11:30', 'Science', 'Math', 'Math', 'Math', 'Urdu', ''),
+(7, '11:30-12:00', 'P-studies', 'English', 'English', 'Sindhi', 'Science', ''),
+(8, '12:00-12:30', 'Sindhi', 'Science', 'Islamiat/Religion', 'English', 'Math', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `timetable8`
+--
+
+CREATE TABLE `timetable8` (
+  `id` int(11) NOT NULL,
+  `time` varchar(255) NOT NULL,
+  `mon` varchar(255) NOT NULL,
+  `tues` varchar(255) NOT NULL,
+  `wed` varchar(255) NOT NULL,
+  `thurs` varchar(255) NOT NULL,
+  `fri` varchar(255) NOT NULL,
+  `sat` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `timetable8`
+--
+
+INSERT INTO `timetable8` (`id`, `time`, `mon`, `tues`, `wed`, `thurs`, `fri`, `sat`) VALUES
+(1, '8:30-9:20', 'Sindhi', 'Urdu', 'English', 'Science', 'Math', ''),
+(2, '8:30-9:00', 'English', 'Urdu', 'Science', 'English', 'English', ''),
+(3, '9:00-9:30', 'Urdu', 'Sindhi', 'Sindhi', 'Islamiat/Religion', 'Science', ''),
+(4, '9:30-10:30', 'Math', 'Islamiat/Religion', 'Urdu', 'Urdu', 'Sindhi', ''),
+(5, '10:30-11:00', 'B', 'R', 'E', 'A', 'K', ''),
+(6, '11:00-11:30', 'Science', 'Math', 'Math', 'Math', 'Urdu', ''),
+(7, '11:30-12:00', 'P-studies', 'English', 'English', 'Sindhi', 'Science', ''),
+(8, '12:00-12:30', 'Sindhi', 'Science', 'Islamiat/Religion', 'English', 'Math', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `timetable9`
+--
+
+CREATE TABLE `timetable9` (
+  `id` int(11) NOT NULL,
+  `time` varchar(255) NOT NULL,
+  `mon` varchar(255) NOT NULL,
+  `tues` varchar(255) NOT NULL,
+  `wed` varchar(255) NOT NULL,
+  `thurs` varchar(255) NOT NULL,
+  `fri` varchar(255) NOT NULL,
+  `sat` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `timetable9`
+--
+
+INSERT INTO `timetable9` (`id`, `time`, `mon`, `tues`, `wed`, `thurs`, `fri`, `sat`) VALUES
+(1, '8:30-9:20', 'P-studies', 'Urdu', 'English', 'Science', 'Math', ''),
+(2, '8:30-9:00', 'English', 'Urdu', 'Science', 'English', 'English', ''),
+(3, '9:00-9:30', 'Urdu', 'Sindhi', 'Sindhi', 'Islamiat/Religion', 'Science', ''),
+(4, '9:30-10:30', 'Math', 'Islamiat/Religion', 'Urdu', 'Urdu', 'Sindhi', ''),
+(5, '10:30-11:00', 'B', 'R', 'E', 'A', 'K', ''),
+(6, '11:00-11:30', 'Science', 'Math', 'Math', 'Math', 'Urdu', ''),
+(7, '11:30-12:00', 'P-studies', 'English', 'English', 'Sindhi', 'Science', ''),
+(8, '12:00-12:30', 'Sindhi', 'Science', 'Islamiat/Religion', 'English', 'Math', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `timetable10`
+--
+
+CREATE TABLE `timetable10` (
+  `id` int(11) NOT NULL,
+  `time` varchar(255) NOT NULL,
+  `mon` varchar(255) NOT NULL,
+  `tues` varchar(255) NOT NULL,
+  `wed` varchar(255) NOT NULL,
+  `thurs` varchar(255) NOT NULL,
+  `fri` varchar(255) NOT NULL,
+  `sat` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `timetable10`
+--
+
+INSERT INTO `timetable10` (`id`, `time`, `mon`, `tues`, `wed`, `thurs`, `fri`, `sat`) VALUES
+(1, '8:30-9:20', 'Science', 'P-studies', 'English', 'Science', 'Math', ''),
+(2, '8:30-9:00', 'English', 'Urdu', 'Science', 'English', 'English', ''),
+(3, '9:00-9:30', 'Urdu', 'Sindhi', 'Sindhi', 'Islamiat/Religion', 'Science', ''),
+(4, '9:30-10:30', 'Math', 'Islamiat/Religion', 'Urdu', 'Urdu', 'Sindhi', ''),
+(5, '10:30-11:00', 'B', 'R', 'E', 'A', 'K', ''),
+(6, '11:00-11:30', 'Science', 'Math', 'Math', 'Math', 'Urdu', ''),
+(7, '11:30-12:00', 'P-studies', 'English', 'English', 'Sindhi', 'Science', ''),
+(8, '12:00-12:30', 'Sindhi', 'Science', 'Islamiat/Religion', 'English', 'Math', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `urdu`
+--
+
+CREATE TABLE `urdu` (
+  `id` int(11) NOT NULL,
+  `class_id` int(11) NOT NULL,
+  `user id` int(11) NOT NULL,
+  `total` int(11) NOT NULL,
+  `obt` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -218,6 +443,12 @@ ALTER TABLE `class`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `english`
+--
+ALTER TABLE `english`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `exam`
 --
 ALTER TABLE `exam`
@@ -230,9 +461,39 @@ ALTER TABLE `feedback`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `islamiat_rel`
+--
+ALTER TABLE `islamiat_rel`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `math`
+--
+ALTER TABLE `math`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `parent`
 --
 ALTER TABLE `parent`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `p_studies`
+--
+ALTER TABLE `p_studies`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `science`
+--
+ALTER TABLE `science`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `sindhi`
+--
+ALTER TABLE `sindhi`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -245,6 +506,36 @@ ALTER TABLE `teachers`
 -- Indexes for table `timetable6`
 --
 ALTER TABLE `timetable6`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `timetable7`
+--
+ALTER TABLE `timetable7`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `timetable8`
+--
+ALTER TABLE `timetable8`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `timetable9`
+--
+ALTER TABLE `timetable9`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `timetable10`
+--
+ALTER TABLE `timetable10`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `urdu`
+--
+ALTER TABLE `urdu`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -267,7 +558,13 @@ ALTER TABLE `attendance`
 -- AUTO_INCREMENT for table `class`
 --
 ALTER TABLE `class`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `english`
+--
+ALTER TABLE `english`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `exam`
@@ -282,9 +579,39 @@ ALTER TABLE `feedback`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `islamiat_rel`
+--
+ALTER TABLE `islamiat_rel`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `math`
+--
+ALTER TABLE `math`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `parent`
 --
 ALTER TABLE `parent`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `p_studies`
+--
+ALTER TABLE `p_studies`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `science`
+--
+ALTER TABLE `science`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `sindhi`
+--
+ALTER TABLE `sindhi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -298,6 +625,36 @@ ALTER TABLE `teachers`
 --
 ALTER TABLE `timetable6`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `timetable7`
+--
+ALTER TABLE `timetable7`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `timetable8`
+--
+ALTER TABLE `timetable8`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `timetable9`
+--
+ALTER TABLE `timetable9`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `timetable10`
+--
+ALTER TABLE `timetable10`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `urdu`
+--
+ALTER TABLE `urdu`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`

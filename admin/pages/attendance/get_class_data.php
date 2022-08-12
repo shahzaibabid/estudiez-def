@@ -2,10 +2,10 @@
 session_start();
 $cid = $_POST['id'];
 
-$db = mysqli_connect("localhost", "root", "", "school");
+$conn = mysqli_connect("localhost", "root", "", "school");
 $at_sel = "SELECT u.Profile,u.F_name,u.L_name FROM `users` u WHERE `Class_id` = $cid";
 // echo $sel;
-$result = mysqli_query($db, $at_sel);
+$result = mysqli_query($conn, $at_sel);
 $i = 0;
 while($row = mysqli_fetch_array($result)) { 
     $i++;
