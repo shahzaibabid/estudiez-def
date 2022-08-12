@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 12, 2022 at 01:06 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 7.3.31
+-- Generation Time: Aug 12, 2022 at 08:52 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -80,6 +80,7 @@ INSERT INTO `class` (`id`, `Year`, `Class_name`, `Teacher_id`) VALUES
 
 CREATE TABLE `english` (
   `id` int(11) NOT NULL,
+  `date` varchar(255) NOT NULL,
   `class_id` int(11) NOT NULL,
   `user id` int(11) NOT NULL,
   `total` int(11) NOT NULL,
@@ -132,6 +133,7 @@ CREATE TABLE `feedback` (
 
 CREATE TABLE `islamiat_rel` (
   `id` int(11) NOT NULL,
+  `date` varchar(255) NOT NULL,
   `class_id` int(11) NOT NULL,
   `user id` int(11) NOT NULL,
   `total` int(11) NOT NULL,
@@ -146,6 +148,7 @@ CREATE TABLE `islamiat_rel` (
 
 CREATE TABLE `math` (
   `id` int(11) NOT NULL,
+  `date` varchar(255) NOT NULL,
   `class_id` int(11) NOT NULL,
   `user id` int(11) NOT NULL,
   `total` int(11) NOT NULL,
@@ -177,6 +180,7 @@ CREATE TABLE `parent` (
 
 CREATE TABLE `p_studies` (
   `id` int(11) NOT NULL,
+  `date` varchar(255) NOT NULL,
   `class_id` int(11) NOT NULL,
   `user id` int(11) NOT NULL,
   `total` int(11) NOT NULL,
@@ -191,6 +195,7 @@ CREATE TABLE `p_studies` (
 
 CREATE TABLE `science` (
   `id` int(11) NOT NULL,
+  `date` varchar(255) NOT NULL,
   `class_id` int(11) NOT NULL,
   `user id` int(11) NOT NULL,
   `total` int(11) NOT NULL,
@@ -205,6 +210,7 @@ CREATE TABLE `science` (
 
 CREATE TABLE `sindhi` (
   `id` int(11) NOT NULL,
+  `date` varchar(255) NOT NULL,
   `class_id` int(11) NOT NULL,
   `user id` int(11) NOT NULL,
   `total` int(11) NOT NULL,
@@ -251,11 +257,11 @@ CREATE TABLE `timetable6` (
 --
 
 INSERT INTO `timetable6` (`id`, `time`, `mon`, `tues`, `wed`, `thurs`, `fri`, `sat`) VALUES
-(1, '8:30-9:20', 'English', 'Urdu', 'English', 'Science', 'Math', ''),
+(1, '8:00-8:30', 'English', 'P-studies', 'English', 'Science', 'Math', 'Math'),
 (2, '8:30-9:00', 'English', 'Urdu', 'Science', 'English', 'English', ''),
 (3, '9:00-9:30', 'Urdu', 'Sindhi', 'Sindhi', 'Islamiat/Religion', 'Science', ''),
 (4, '9:30-10:30', 'Math', 'Islamiat/Religion', 'Urdu', 'Urdu', 'Sindhi', ''),
-(5, '10:30-11:00', 'B', 'R', 'E', 'A', 'K', ''),
+(5, '10:30-11:00', 'B', 'R', 'E', 'A', 'K', 'Science'),
 (6, '11:00-11:30', 'Science', 'Math', 'Math', 'Math', 'Urdu', ''),
 (7, '11:30-12:00', 'P-studies', 'English', 'English', 'Sindhi', 'Science', ''),
 (8, '12:00-12:30', 'Sindhi', 'Science', 'Islamiat/Religion', 'English', 'Math', '');
@@ -282,9 +288,9 @@ CREATE TABLE `timetable7` (
 --
 
 INSERT INTO `timetable7` (`id`, `time`, `mon`, `tues`, `wed`, `thurs`, `fri`, `sat`) VALUES
-(1, '8:30-9:20', 'Urdu', 'Urdu', 'English', 'Science', 'Math', ''),
+(1, '8:00-3:30', 'Urdu', 'Urdu', 'English', 'Science', 'Math', ''),
 (2, '8:30-9:00', 'English', 'Urdu', 'Science', 'English', 'English', ''),
-(3, '9:00-9:30', 'Urdu', 'Sindhi', 'Sindhi', 'Islamiat/Religion', 'Science', ''),
+(3, '9:00-9:30', 'Urdu', 'Sindhi', 'Sindhi', 'Islamiat/Religion', 'Science', 'English'),
 (4, '9:30-10:30', 'Math', 'Islamiat/Religion', 'Urdu', 'Urdu', 'Sindhi', ''),
 (5, '10:30-11:00', 'B', 'R', 'E', 'A', 'K', ''),
 (6, '11:00-11:30', 'Science', 'Math', 'Math', 'Math', 'Urdu', ''),
@@ -313,8 +319,8 @@ CREATE TABLE `timetable8` (
 --
 
 INSERT INTO `timetable8` (`id`, `time`, `mon`, `tues`, `wed`, `thurs`, `fri`, `sat`) VALUES
-(1, '8:30-9:20', 'Sindhi', 'Urdu', 'English', 'Science', 'Math', ''),
-(2, '8:30-9:00', 'English', 'Urdu', 'Science', 'English', 'English', ''),
+(1, '8:00-8:30', 'Sindhi', 'Urdu', 'English', 'Science', 'Math', ''),
+(2, '8:30-9:00', 'English', 'Urdu', 'Science', 'English', 'English', 'P-studies'),
 (3, '9:00-9:30', 'Urdu', 'Sindhi', 'Sindhi', 'Islamiat/Religion', 'Science', ''),
 (4, '9:30-10:30', 'Math', 'Islamiat/Religion', 'Urdu', 'Urdu', 'Sindhi', ''),
 (5, '10:30-11:00', 'B', 'R', 'E', 'A', 'K', ''),
@@ -344,12 +350,12 @@ CREATE TABLE `timetable9` (
 --
 
 INSERT INTO `timetable9` (`id`, `time`, `mon`, `tues`, `wed`, `thurs`, `fri`, `sat`) VALUES
-(1, '8:30-9:20', 'P-studies', 'Urdu', 'English', 'Science', 'Math', ''),
+(1, '8:00-8:30', 'P-studies', 'Urdu', 'English', 'Science', 'Math', ''),
 (2, '8:30-9:00', 'English', 'Urdu', 'Science', 'English', 'English', ''),
 (3, '9:00-9:30', 'Urdu', 'Sindhi', 'Sindhi', 'Islamiat/Religion', 'Science', ''),
 (4, '9:30-10:30', 'Math', 'Islamiat/Religion', 'Urdu', 'Urdu', 'Sindhi', ''),
 (5, '10:30-11:00', 'B', 'R', 'E', 'A', 'K', ''),
-(6, '11:00-11:30', 'Science', 'Math', 'Math', 'Math', 'Urdu', ''),
+(6, '11:00-11:30', 'Science', 'Math', 'Math', 'Math', 'Urdu', 'English'),
 (7, '11:30-12:00', 'P-studies', 'English', 'English', 'Sindhi', 'Science', ''),
 (8, '12:00-12:30', 'Sindhi', 'Science', 'Islamiat/Religion', 'English', 'Math', '');
 
@@ -375,7 +381,7 @@ CREATE TABLE `timetable10` (
 --
 
 INSERT INTO `timetable10` (`id`, `time`, `mon`, `tues`, `wed`, `thurs`, `fri`, `sat`) VALUES
-(1, '8:30-9:20', 'Science', 'P-studies', 'English', 'Science', 'Math', ''),
+(1, '8:00-8:30', 'Science', 'P-studies', 'English', 'Science', 'Math', 'English'),
 (2, '8:30-9:00', 'English', 'Urdu', 'Science', 'English', 'English', ''),
 (3, '9:00-9:30', 'Urdu', 'Sindhi', 'Sindhi', 'Islamiat/Religion', 'Science', ''),
 (4, '9:30-10:30', 'Math', 'Islamiat/Religion', 'Urdu', 'Urdu', 'Sindhi', ''),
@@ -392,6 +398,7 @@ INSERT INTO `timetable10` (`id`, `time`, `mon`, `tues`, `wed`, `thurs`, `fri`, `
 
 CREATE TABLE `urdu` (
   `id` int(11) NOT NULL,
+  `date` varchar(255) NOT NULL,
   `class_id` int(11) NOT NULL,
   `user id` int(11) NOT NULL,
   `total` int(11) NOT NULL,
