@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 12, 2022 at 08:52 AM
+-- Generation Time: Aug 12, 2022 at 11:00 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -84,8 +84,18 @@ CREATE TABLE `english` (
   `class_id` int(11) NOT NULL,
   `user id` int(11) NOT NULL,
   `total` int(11) NOT NULL,
-  `obt` int(11) NOT NULL
+  `obt` int(11) NOT NULL,
+  `status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `english`
+--
+
+INSERT INTO `english` (`id`, `date`, `class_id`, `user id`, `total`, `obt`, `status`) VALUES
+(1, '2022-08-12', 1, 1, 20, 10, 'Pass'),
+(2, '2022-08-12', 1, 3, 20, 7, 'Fail'),
+(3, '2022-08-12', 2, 2, 20, 8, 'Pass');
 
 -- --------------------------------------------------------
 
@@ -137,8 +147,17 @@ CREATE TABLE `islamiat_rel` (
   `class_id` int(11) NOT NULL,
   `user id` int(11) NOT NULL,
   `total` int(11) NOT NULL,
-  `obt` int(11) NOT NULL
+  `obt` int(11) NOT NULL,
+  `status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `islamiat_rel`
+--
+
+INSERT INTO `islamiat_rel` (`id`, `date`, `class_id`, `user id`, `total`, `obt`, `status`) VALUES
+(1, '2022-08-12', 1, 1, 20, 15, 'Pass'),
+(2, '2022-08-12', 1, 3, 20, 11, 'Pass');
 
 -- --------------------------------------------------------
 
@@ -152,7 +171,8 @@ CREATE TABLE `math` (
   `class_id` int(11) NOT NULL,
   `user id` int(11) NOT NULL,
   `total` int(11) NOT NULL,
-  `obt` int(11) NOT NULL
+  `obt` int(11) NOT NULL,
+  `status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -184,7 +204,8 @@ CREATE TABLE `p_studies` (
   `class_id` int(11) NOT NULL,
   `user id` int(11) NOT NULL,
   `total` int(11) NOT NULL,
-  `obt` int(11) NOT NULL
+  `obt` int(11) NOT NULL,
+  `status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -199,7 +220,8 @@ CREATE TABLE `science` (
   `class_id` int(11) NOT NULL,
   `user id` int(11) NOT NULL,
   `total` int(11) NOT NULL,
-  `obt` int(11) NOT NULL
+  `obt` int(11) NOT NULL,
+  `status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -214,7 +236,8 @@ CREATE TABLE `sindhi` (
   `class_id` int(11) NOT NULL,
   `user id` int(11) NOT NULL,
   `total` int(11) NOT NULL,
-  `obt` int(11) NOT NULL
+  `obt` int(11) NOT NULL,
+  `status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -402,8 +425,17 @@ CREATE TABLE `urdu` (
   `class_id` int(11) NOT NULL,
   `user id` int(11) NOT NULL,
   `total` int(11) NOT NULL,
-  `obt` int(11) NOT NULL
+  `obt` int(11) NOT NULL,
+  `status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `urdu`
+--
+
+INSERT INTO `urdu` (`id`, `date`, `class_id`, `user id`, `total`, `obt`, `status`) VALUES
+(1, '2022-08-12', 1, 1, 20, 9, 'Pass'),
+(2, '2022-08-12', 1, 3, 20, 8, 'Pass');
 
 -- --------------------------------------------------------
 
@@ -571,7 +603,7 @@ ALTER TABLE `class`
 -- AUTO_INCREMENT for table `english`
 --
 ALTER TABLE `english`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `exam`
@@ -589,7 +621,7 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT for table `islamiat_rel`
 --
 ALTER TABLE `islamiat_rel`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `math`
@@ -661,7 +693,7 @@ ALTER TABLE `timetable10`
 -- AUTO_INCREMENT for table `urdu`
 --
 ALTER TABLE `urdu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`

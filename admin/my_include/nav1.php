@@ -1,3 +1,9 @@
+
+<style>
+    #c_test ul li :hover {
+        color:white;
+    }
+</style>
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
         <a class="sidebar-brand brand-logo" href="../../dashboard.php"><img src="../../bg_img.png" alt="logo" /></a>
@@ -87,6 +93,26 @@
                 </span>
                 <span class="menu-title">Attendance</span>
             </a>
+        </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link" data-toggle="collapse" href="#c_test" aria-expanded="false" aria-controls="c_test">
+                <span class="menu-icon">
+                <i class="mdi mdi-security"></i>
+                </span>
+                <span class="menu-title">Class Tests</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="c_test">
+                <ul style="height: auto;">
+                <li class="nav-item"> <a class="nav-link" href="../class-test/eng.php"> English </a></li>
+                <li class="nav-item"> <a class="nav-link" href="../class-test/islamiat_rel.php"> Islamiat/Religion </a></li>
+                <li class="nav-item"> <a class="nav-link" href="../class-test/math.php"> Math </a></li>
+                <li class="nav-item"> <a class="nav-link" href="../class-test/p_studies.php"> P-Studies </a></li>
+                <li class="nav-item"> <a class="nav-link" href="../class-test/science.php"> Science </a></li>
+                <li class="nav-item"> <a class="nav-link" href="../class-test/sindhi.php"> Sindhi </a></li>
+                <li class="nav-item"> <a class="nav-link" href="../class-test/urdu.php"> Urdu </a></li>
+                </ul>
+            </div>
         </li>
         <li class="nav-item menu-items">
         <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">

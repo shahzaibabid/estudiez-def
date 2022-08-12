@@ -8,12 +8,19 @@ if(isset($_POST["submit"])) {
   $at_sel = "SELECT u.id,u.Profile,u.F_name,u.L_name FROM `users` u WHERE `Class_id` = $cid";
   $atresult = mysqli_query($conn, $at_sel);
   $i = 0;
-  $date = date('m/d/Y h:i:s a', time());
+  $date = $_POST["t_date"];
   while($atrow = mysqli_fetch_array($atresult)) { 
       $i++;
       $ud = $atrow["id"];
-      $at = $_POST["optionsRadios" . $i];
-      $inp = "INSERT INTO `attendance`(`Date`, `Class_id`, `User_id`, `attendance`) VALUES ('$date','$cid','$ud','$at')";
+      $total = $_POST["ttl" . $i];
+      $obt = $_POST["obt" . $i];
+      if($obt <= 7) {
+        $status = "Fail";
+      }
+      else {
+        $status = "Pass";
+      }
+      $inp = "INSERT INTO `urdu`(`date`, `class_id`, `user id`, `total`, `obt`, `status`) VALUES ('$date','$cid','$ud','$total','$obt','$status')";
       $inpres = mysqli_query($conn,$inp);
       header("Location: ../../dashboard.php");
   }
@@ -393,8 +400,8 @@ if(isset($_POST["submit"])) {
             <div class="page-header">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#">Attendance</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Student Attendance</li>
+                  <li class="breadcrumb-item"><a href="#">Tests</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Urdu Test</li>
                 </ol>
               </nav>
             </div>
@@ -404,7 +411,7 @@ if(isset($_POST["submit"])) {
                 <div class="card">
                   <div class="card-body">
                     <form action="#" method="post">
-                      <h4 class="card-title">Attendence</h4>
+                      <h4 class="card-title">Update Urdu Test Marks</h4>
                       <p class="card-description">
                           <select id="mycl" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="myclass">
                             <option selected value="0">SELECT CLASS</option>
@@ -417,18 +424,18 @@ if(isset($_POST["submit"])) {
                                 <?php
                               } 
                             ?>
-
                           </select>
+                          
+                          <input type="date" name="t_date" style="border:none; margin-left: 3vw;;">
                       </p>
-                      <div class="table-responsive">
+                      <div>
                         <table class="table table-striped">
                           <thead>
                             <tr>
                               <th> profile </th>
                               <th> Student </th>
-                              <th style="visibility: hidden;"> Absent </th>
-                              <th style="visibility: hidden;"> Present </th>
-                              <th style="visibility: hidden;"> Leave </th>
+                              <th> Total </th>
+                              <th> Obtained </th>
                             </tr>
                           </thead>
                           <tbody id="mystu">      
@@ -480,12 +487,12 @@ if(isset($_POST["submit"])) {
     <!-- endinject -->
     <!-- Custom js for this page -->
     <!-- End custom js for this page -->
-
+    
     <script>
         $('#mycl').on('change', function() {
           const id =$(this).find(":selected").val();
           $.ajax({
-            url: "get_class_data.php",
+            url: "get_test_marks.php",
             cache: false,
             type: "POST",
             data: {id : id},
