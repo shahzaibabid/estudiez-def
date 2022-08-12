@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estudiez-Header</title>
+    <title>Estudiez-Feedback</title>
+<!--Fav icon -->
+<link rel="icon" type="icon" href="images/logo.png">
 <!-- Stylesheet -->
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="css/animate.min.css" rel="stylesheet" type="text/css">
@@ -38,6 +40,20 @@
 <script src="js/revolution-slider/js/rs6.min.js"></script>
 <script src="js/revolution-slider/extra-rev-slider1.js"></script>
 </head>
+<style>
+    .active-nav-4{
+        background-color: #FF9800;
+        border-radius: 3px;
+        
+      
+    }
+    a{
+  color: #FF9800;}
+  a:hover, a:focus{
+    color: #FF9800;}
+
+
+</style>
 <body>
 <!-- header -->
  <?php

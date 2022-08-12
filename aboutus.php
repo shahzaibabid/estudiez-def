@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estudiez-Header</title>
+    <title>Estudiez-About-Us</title>
+<!--Fav icon -->
+<link rel="icon" type="icon" href="images/logo.png">
 <!-- Stylesheet -->
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="css/animate.min.css" rel="stylesheet" type="text/css">
@@ -38,6 +40,20 @@
 <script src="js/revolution-slider/js/rs6.min.js"></script>
 <script src="js/revolution-slider/extra-rev-slider1.js"></script>
 </head>
+<style>
+    .active-nav-2{
+        background-color: #FF9800;
+        border-radius: 3px;
+        
+      
+    }
+    a{
+  color: #FF9800;}
+  a:hover, a:focus{
+    color: #FF9800;}
+
+
+</style>
 <body>
 
 <!-- header -->
@@ -49,8 +65,7 @@
 <!-- main content -->
 <!-- banner image -->
      <section class="page-title divider layer-overlay overlay-dark-5 section-typo-light bg-img-center" data-tm-bg-img="images/bg/bg3.jpg">
-      <div class="container pt-90 pb-90">
-        <!- Section Content -->
+      <div class="container pt-90 pb-90">      
         <div class="section-content">
           <div class="row">
             <div class="col-md-12 text-center">
@@ -75,47 +90,20 @@
 <!-- why choose us -->
     <section> 
         <div class="container" data-tm-padding-bottom="250px">
-            <div class="row">
+         <div class="row">
             <div class="col-lg-6 col-xl-5 m-lg-auto">
                 <div class="whychose-thumb">
-                <img class="img-fullwidth" src="images/photos/3.png" alt="WhyChoseImage">
+                <img class="img-fullwidth" src="https://thumbs.dreamstime.com/b/conceptual-hand-writing-showing-why-choose-us-question-business-photo-text-reasons-choosing-our-brand-over-others-arguments-m-123941406.jpg" alt="WhyChoseImage">
                 </div>
             </div>
             <div class="col-xl-7 pl-50">
                 <h2 class="title line-bottom mb-20 mt-0">Why <span class="text-theme-color-red">Choose Us</span> ?</h2>
-                <p class="mb-50">The Cweren Law Firm is a recognized leader in landlord tenant representation throughout Texas.The largests professional property management companies the region.The largest professional property management companies is a recognized leader in landlord tenant representation throughout Texas</p>
-                <div class="row">
-                <div class="col-sm-4 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
-                    <div class="icon-box text-center">
-                    <a href="#" class="icon bg-theme-colored3 icon-circled icon-border-effect effect-circle icon-md">
-                        <i class="fas fa-bell text-white"></i>
-                    </a>
-                    <h5 class="icon-box-title mt-15 mb-0 letter-space-1 text-uppercase">Responsive</h5>
-                    </div>
-                </div>
-                <div class="col-sm-4 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
-                    <div class="icon-box text-center">
-                    <a href="#" class="icon bg-theme-colored2 icon-circled icon-border-effect effect-circle icon-md">
-                        <i class="fas fa-pencil-alt text-white"></i>
-                    </a>
-                    <h5 class="icon-box-title mt-15 mb-0 letter-space-1 text-uppercase">Validation</h5>
-                    </div>
-                </div>
-                <div class="col-sm-4 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-                    <div class="icon-box text-center">
-                    <a href="#" class="icon bg-theme-colored4 icon-circled icon-border-effect effect-circle icon-md">
-                        <i class="fas fa-certificate text-white"></i>
-                    </a>
-                    <h5 class="icon-box-title mt-15 mb-0 letter-space-1 text-uppercase">Certification</h5>
-                    </div>
-                </div>
-                </div>
+                <p class="mb-50">We provide you quality education and enhance your knowledge and built confidence level to communicate confidently and speak with next person. We also provide all your record which you can check in portal. We have high qualified and professional teachers.</p>
+              
             </div>
-            </div>
+         </div>
         </div>
-        <div class="tm-floating-objects">
-            <span class="z-index-1 bg-img-cover" data-tm-bg-img="images/bg/f2.png" data-tm-width="100%" data-tm-height="143" data-tm-top="auto" data-tm-bottom="0" data-tm-left="0" data-tm-right="0" data-tm-opacity="-100px"></span>
-        </div>
+      
     </section> 
 <!-- why choose us -->
 
@@ -127,16 +115,16 @@
                 <div class="tm-sc-section-title section-title text-center">
                     <div class="title-wrapper">
                     <h2 class="title">About <span class="text-theme-colored3">Us</span></h2>
-                    <p>There are many variations of passages. But the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
+                    <p>You’re in good hands now, keeps going… and going… and going.</p>
                     </div>
                 </div>
                     <div class="col-lg-7 col-xl-5 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.1s">
                     <div class="about-text-content mb-md-30">
-                        <h3 class="text-theme-colored2 line-bottom">Welcome To <span class="text-theme-colored3">KidsPro</span> <br> Best Education in Our Kindergarden</h3>
-                        <h5 class="text-theme-colored4">Lorem ipsum dolor sit amet soluta saepe odit error, maxime praesentium sunt udiandae!</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore atque officiis maxime suscipit expedita obcaecati nulla in ducimus iure quos quam recusandae dolor quas et perspiciatis voluptatum accusantium delectus nisi reprehenderit, eveniet fuga modi pariatur, eius vero. Ea vitae maiores.</p>
-                        <a href="#" class="btn btn-sm btn-flat btn-theme-colored2 btn-outline-light mt-15 mr-15">Read More</a>
-                        <a href="#" class="btn btn-sm btn-flat btn-theme-colored1 btn-outline-light mt-15">Get a Quote</a>
+                        <h3 class="text-theme-colored2 line-bottom">Welcome To <span class="text-theme-colored3">Estudiez</span> </h3>
+                        <p>Estudiez is a  educational institute established in 1985. Estudiez has graduated more than 10k  students from their institute. All the courses are taught by experienced and certified faculty. Estudiez creates skilled IT professionals through a variety of courses delivered using the latest teaching methodology.</p>
+                        <h5 class="text-theme-colored4">What is the main moto of Estudiez!</h5>
+                        <p>The main purpose of Estudiez is to get the students updated about their academic progress through this portal. Students can view their test result, exam result, class timetable, attendance by logging in to their account. Teachers will maintain all student records and will update time to time. Parent/guardian can view his/her child all academic progress by logging in on Estudiez portal. </p>
+                        
                     </div>
                     </div>
                     <div class="col-lg-5 col-xl-5 offset-xl-1 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.1s">
@@ -164,7 +152,7 @@
                     <div class="tm-sc-section-title section-title text-center">
                         <div class="title-wrapper">
                         <h2 class="title">Our <span class="text-theme-colored3">Features</span></h2>
-                        <p>There are many variations of passages. But the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
+                        <p>What you do today will determine your future..</p>
                         </div>
                     </div>
                     </div>
@@ -179,7 +167,7 @@
                         <div class="icon-text">
                             <h5 class="icon-box-title mb-0 text-theme-colored4">Active Learning</h5>
                             <div class="content">
-                            <p>Kidspro is a creative skill and a joy beyond anything found dolor.</p>
+                            <p>EStudiez provides you active learning strategies to acheive your goals.</p>
                             </div>
                         </div>
                         <div class="clearfix"></div>
@@ -189,9 +177,9 @@
                         <div class="icon-box-wrapper">
                         <div class="icon-wrapper"> <a class="icon icon-lg icon-dark icon-circled"> <i class="fas fa-book"></i> </a></div>
                         <div class="icon-text">
-                            <h5 class="icon-box-title mb-0 text-theme-colored2">Multimedia Class</h5>
+                            <h5 class="icon-box-title mb-0 text-theme-colored2">Increase of knowledge</h5>
                             <div class="content">
-                            <p>Kidspro is a creative skill and a joy beyond anything found dolor.</p>
+                            <p>The great aim of education is not knowledge but "ACTION".</p>
                             </div>
                         </div>
                         <div class="clearfix"></div>
@@ -201,9 +189,9 @@
                         <div class="icon-box-wrapper">
                         <div class="icon-wrapper"> <a class="icon icon-lg icon-dark icon-circled"> <i class="fas fa-graduation-cap"></i> </a></div>
                         <div class="icon-text">
-                            <h5 class="icon-box-title mb-0 text-theme-colored3">Full Day Programs</h5>
+                            <h5 class="icon-box-title mb-0 text-theme-colored3">Quality Education</h5>
                             <div class="content">
-                            <p>Kidspro is a creative skill and a joy beyond anything found dolor.</p>
+                            <p>Quality education is a foundation for dynamic and equitable societies.</p>
                             </div>
                         </div>
                         <div class="clearfix"></div>
@@ -222,7 +210,7 @@
                         <div class="icon-text">
                             <h5 class="icon-box-title mb-0 text-theme-colored4">Expert Teachers</h5>
                             <div class="content">
-                            <p>Kidspro is a creative skill and a joy beyond anything found dolor.</p>
+                            <p>EStudiez students are taught by experienced and certified faculty.</p>
                             </div>
                         </div>
                         <div class="clearfix"></div>
@@ -232,9 +220,9 @@
                         <div class="icon-box-wrapper">
                         <div class="icon-wrapper"> <a class="icon icon-lg icon-dark icon-circled"> <i class="far fa-smile"></i> </a></div>
                         <div class="icon-text">
-                            <h5 class="icon-box-title mb-0 text-theme-colored2">Funny and Happy</h5>
+                            <h5 class="icon-box-title mb-0 text-theme-colored2">Satisfied Result</h5>
                             <div class="content">
-                            <p>Kidspro is a creative skill and a joy beyond anything found dolor.</p>
+                            <p>Estudiez provides you the result satisfaction.</p>
                             </div>
                         </div>
                         <div class="clearfix"></div>
@@ -246,7 +234,7 @@
                         <div class="icon-text">
                             <h5 class="icon-box-title mb-0 text-theme-colored3">Fulfill With Love</h5>
                             <div class="content">
-                            <p>Kidspro is a creative skill and a joy beyond anything found dolor.</p>
+                            <p> EStudiez serve you with love and in a very polite manner.</p>
                             </div>
                         </div>
                         <div class="clearfix"></div>
@@ -281,7 +269,7 @@
                         <h2 class="counter">
                         <span data-animation-duration="2000" data-value="486" class="animate-number">0</span>
                         </h2>
-                        <h5 class="title">Successful Kids</h5>
+                        <h5 class="title">Number of Students</h5>
                     </div>
                     </div>
                 </div>
@@ -292,7 +280,7 @@
                         <h2 class="counter">
                         <span data-animation-duration="2000" data-value="1468" class="animate-number">0</span>
                         </h2>
-                        <h5 class="title">Happy Parents</h5>
+                        <h5 class="title">Satisfied Feedback</h5>
                     </div>
                     </div>
                 </div>
@@ -303,7 +291,7 @@
                         <h2 class="counter">
                         <span data-animation-duration="2000" data-value="32" class="animate-number">0</span>
                         </h2>
-                        <h5 class="title">Award Won</h5>
+                        <h5 class="title">Student Acheivements</h5>
                     </div>
                     </div>
                 </div>
@@ -321,7 +309,7 @@
                     <div class="tm-sc-section-title section-title text-center">
                         <div class="title-wrapper">
                         <h2 class="title">Our <span class="text-theme-colored3">Teachers</span></h2>
-                        <p>There are many variations of passages. But the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
+                        <p>Best teachers teaches from heart not from book.</p>
                         </div>
                     </div>
                     </div>
