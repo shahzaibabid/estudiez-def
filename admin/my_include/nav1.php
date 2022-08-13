@@ -71,6 +71,22 @@
             </a>
         </li>
         <li class="nav-item menu-items">
+        <a class="nav-link" data-toggle="collapse" href="#teach" aria-expanded="false" aria-controls="teach">
+            <span class="menu-icon">
+            <i class="mdi mdi-security"></i>
+            </span>
+            <span class="menu-title">Teachers</span>
+            <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="teach">
+            <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="../../pages/teachers/add_teacher.php"> Add Teacher </a></li>
+            <li class="nav-item"> <a class="nav-link" href="../../pages/teacher_attendence/teacher_attendence.php"> Teacher's Attendence </a></li>
+            <li class="nav-item"> <a class="nav-link" href="../../pages/teachers/teacher.php"> All Teachers </a></li>
+            </ul>
+        </div>
+        </li>
+        <li class="nav-item menu-items">
             <a class="nav-link" href="../tables/basic-table.php">
                 <span class="menu-icon">
                 <i class="mdi mdi-table-large"></i>
