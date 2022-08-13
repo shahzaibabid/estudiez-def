@@ -50,7 +50,7 @@
                             
                             <div class="buttons cart-action-buttons">
                               <div class="row">
-                                <div class="col-6 pe-0"><a href="" class="btn btn-theme-colored2 btn-block btn-sm wc-forward">Profile</a></div>
+                                <div class="col-6 pe-0"><a href="profile.php" class="btn btn-theme-colored2 btn-block btn-sm wc-forward">Profile</a></div>
                                 <div class="col-6 ps-1"><a href="" class="btn btn-theme-colored1 btn-block btn-sm checkout wc-forward">Logout</a></div>
                               </div>
                             </div>
