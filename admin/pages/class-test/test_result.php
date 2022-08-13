@@ -51,6 +51,36 @@ session_start();
             </div>
             <div class="row">
                 <h3 class="mb-4">20 Marks Class Tests</h3>
+<!-- demo -->
+
+                <div class="col-lg-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Class VI</h4>
+                            <div class="table-responsive" style="overflow-x:auto; overflow-y:auto; max-height: 400px;">
+                            <table class="table table-striped">
+                                <thead>                                        
+                                <tr>
+                                    <th> Students </th>
+                                    <th> English </th>
+                                    <th> Sindhi </th>
+                                    <th> Urdu </th>
+                                    <th> P_Studies </th>
+                                    <th> Science </th>
+                                    <th> Islamiat / Religion </th>
+                                    <th> Math </th>
+                                </tr>
+                                </thead>
+                                <tbody>      
+                                    
+                                </tbody>
+                            </table>                        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!-- demo -->
+
                 <div class="col-lg-12 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
@@ -60,6 +90,7 @@ session_start();
                                 <thead>    
                                 <tr>
                                     <th> Student </th>
+                                    <th> Date </th>
                                     <th> English </th>
                                     <th> Sindhi </th>
                                     <th> Urdu </th>
@@ -125,17 +156,49 @@ session_start();
                                                 </td>
                                                 
                                                 <td>
+                                                    <?php                                                                                                    
+                                                        if($row2 = mysqli_fetch_array($VIresult_2)) {
+                                                            if($row2[6] == "Fail") {
+                                                                ?>
+                                                                <span class = "text-danger"><?php echo $row2[4] . " / " . $row2[5]; ?></span>
+                                                                <?php
+                                                            }else {
+                                                                ?>
+                                                                <span><?php echo $row2[4] . " / " . $row2[5]; ?></span>
+                                                                <?php
+                                                            }
+                                                        }
+                                                    ?>
+                                                </td>
+                                                
+                                                <td>
                                                     <?php
-                                                    
-                                                    $row2 = mysqli_fetch_array($VIresult_2);
-                                                        if($row2[6] == "Fail") {
-                                                            ?>
-                                                            <span class = "text-danger"><?php echo $row2[4] . " / " . $row2[5]; ?></span>
-                                                            <?php
-                                                        }else {
-                                                            ?>
-                                                            <span><?php echo $row2[4] . " / " . $row2[5]; ?></span>
-                                                            <?php
+                                                        if($row3 = mysqli_fetch_array($VIresult_3)){
+                                                            if($row3[6] == "Fail") {
+                                                                ?>
+                                                                <span class = "text-danger"><?php echo $row3[4] . " / " . $row3[5]; ?></span>
+                                                                <?php
+                                                            }else {
+                                                                ?>
+                                                                <span><?php echo $row3[4] . " / " . $row3[5]; ?></span>
+                                                                <?php
+                                                            }
+                                                        }
+                                                    ?>
+                                                </td>
+                                                
+                                                <td>
+                                                    <?php
+                                                        if($row4 = mysqli_fetch_array($VIresult_4)){
+                                                            if($row4[6] == "Fail") {
+                                                                ?>
+                                                                <span class = "text-danger"><?php echo $row4[4] . " / " . $row4[5]; ?></span>
+                                                                <?php
+                                                            }else {
+                                                                ?>
+                                                                <span><?php echo $row4[4] . " / " . $row4[5]; ?></span>
+                                                                <?php
+                                                            }
                                                         }                                            
                                                     ?>
                                                 </td>
@@ -143,80 +206,50 @@ session_start();
                                                 <td>
                                                     <?php
                                                     
-                                                    $row3 = mysqli_fetch_array($VIresult_3);
-                                                        if($row3[6] == "Fail") {
-                                                            ?>
-                                                            <span class = "text-danger"><?php echo $row3[4] . " / " . $row3[5]; ?></span>
-                                                            <?php
-                                                        }else {
-                                                            ?>
-                                                            <span><?php echo $row3[4] . " / " . $row3[5]; ?></span>
-                                                            <?php
-                                                        }                                            
+                                                        if($row5 = mysqli_fetch_array($VIresult_5)){
+                                                            if($row5[6] == "Fail") {
+                                                                ?>
+                                                                <span class = "text-danger"><?php echo $row5[4] . " / " . $row5[5]; ?></span>
+                                                                <?php
+                                                            }else {
+                                                                ?>
+                                                                <span><?php echo $row5[4] . " / " . $row5[5]; ?></span>
+                                                                <?php
+                                                            }
+                                                        }          
                                                     ?>
                                                 </td>
                                                 
                                                 <td>
                                                     <?php
                                                     
-                                                    $row4 = mysqli_fetch_array($VIresult_4);
-                                                        if($row4[6] == "Fail") {
-                                                            ?>
-                                                            <span class = "text-danger"><?php echo $row4[4] . " / " . $row4[5]; ?></span>
-                                                            <?php
-                                                        }else {
-                                                            ?>
-                                                            <span><?php echo $row4[4] . " / " . $row4[5]; ?></span>
-                                                            <?php
-                                                        }                                            
+                                                        if($row6 = mysqli_fetch_array($VIresult_6)){
+                                                            if($row6[6] == "Fail") {
+                                                                ?>
+                                                                <span class = "text-danger"><?php echo $row6[4] . " / " . $row6[5]; ?></span>
+                                                                <?php
+                                                            }else {
+                                                                ?>
+                                                                <span><?php echo $row6[4] . " / " . $row6[5]; ?></span>
+                                                                <?php
+                                                            }                                            
+                                                        }
                                                     ?>
                                                 </td>
                                                 
                                                 <td>
                                                     <?php
-                                                    
-                                                    $row5 = mysqli_fetch_array($VIresult_5);
-                                                        if($row5[6] == "Fail") {
-                                                            ?>
-                                                            <span class = "text-danger"><?php echo $row5[4] . " / " . $row5[5]; ?></span>
-                                                            <?php
-                                                        }else {
-                                                            ?>
-                                                            <span><?php echo $row5[4] . " / " . $row5[5]; ?></span>
-                                                            <?php
-                                                        }                                            
-                                                    ?>
-                                                </td>
-                                                
-                                                <td>
-                                                    <?php
-                                                    
-                                                    $row6 = mysqli_fetch_array($VIresult_6);
-                                                        if($row6[6] == "Fail") {
-                                                            ?>
-                                                            <span class = "text-danger"><?php echo $row6[4] . " / " . $row6[5]; ?></span>
-                                                            <?php
-                                                        }else {
-                                                            ?>
-                                                            <span><?php echo $row6[4] . " / " . $row6[5]; ?></span>
-                                                            <?php
-                                                        }                                            
-                                                    ?>
-                                                </td>
-                                                
-                                                <td>
-                                                    <?php
-                                                    
-                                                    $row7 = mysqli_fetch_array($VIresult_7);
-                                                        if($row7[6] == "Fail") {
-                                                            ?>
-                                                            <span class = "text-danger"><?php echo $row7[4] . " / " . $row7[5]; ?></span>
-                                                            <?php
-                                                        }else {
-                                                            ?>
-                                                            <span><?php echo $row7[4] . " / " . $row7[5]; ?></span>
-                                                            <?php
-                                                        }                                            
+                                                        if($row7 = mysqli_fetch_array($VIresult_7)){
+                                                            if($row7[6] == "Fail") {
+                                                                ?>
+                                                                <span class = "text-danger"><?php echo $row7[4] . " / " . $row7[5]; ?></span>
+                                                                <?php
+                                                            }else {
+                                                                ?>
+                                                                <span><?php echo $row7[4] . " / " . $row7[5]; ?></span>
+                                                                <?php
+                                                            }                                            
+                                                        }
                                                     ?>
                                                 </td>
                                             </tr>                                              

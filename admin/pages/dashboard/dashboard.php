@@ -1,3 +1,7 @@
+<?php
+include_once '../../../auth/connection.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -64,12 +68,25 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="row">
+
+                          <?php
+                          $query = "SELECT Count(*) FROM `users`";
+                          $result = mysqli_query($conn,$query);
+                          if(mysqli_num_rows($result)){
+                            while($row = mysqli_fetch_array($result)){
+                              ?>
                       <div class="col-9">
                         <div class="d-flex align-items-center align-self-start">
-                          <h3 class="mb-0">$12.34</h3>
+                        <h3 class="mb-0"><?php echo $row[0];?></h3>
                           <p class="text-success ml-2 mb-0 font-weight-medium">+3.5%</p>
                         </div>
                       </div>
+                              <?php
+                            }
+                          }
+
+                          ?>
+                          
                       <div class="col-3">
                         <div class="icon icon-box-success ">
                           <span class="mdi mdi-arrow-top-right icon-item"></span>

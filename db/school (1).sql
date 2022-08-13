@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 13, 2022 at 02:05 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 7.3.31
+-- Generation Time: Aug 13, 2022 at 01:30 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -93,7 +93,6 @@ CREATE TABLE `english` (
 --
 
 INSERT INTO `english` (`id`, `date`, `class_id`, `user_id`, `total`, `obt`, `status`) VALUES
-(1, '2022-08-13', 1, 1, 20, 8, 'Pass'),
 (2, '2022-08-13', 1, 3, 20, 10, 'Pass'),
 (3, '2022-08-13', 2, 2, 20, 7, 'Fail'),
 (4, '2022-08-13', 1, 1, 20, 12, 'Pass'),
@@ -195,7 +194,11 @@ CREATE TABLE `math` (
 INSERT INTO `math` (`id`, `date`, `class_id`, `user_id`, `total`, `obt`, `status`) VALUES
 (1, '2022-08-13', 1, 1, 20, 15, 'Pass'),
 (2, '2022-08-13', 1, 3, 20, 16, 'Pass'),
-(3, '2022-08-13', 2, 2, 20, 18, 'Pass');
+(3, '2022-08-13', 2, 2, 20, 18, 'Pass'),
+(4, '2022-08-14', 1, 1, 20, 6, 'Fail'),
+(5, '2022-08-14', 1, 3, 20, 9, 'Pass'),
+(6, '2022-08-14', 1, 1, 20, 6, 'Fail'),
+(7, '2022-08-14', 1, 3, 20, 9, 'Pass');
 
 -- --------------------------------------------------------
 
@@ -211,7 +214,8 @@ CREATE TABLE `parent` (
   `Contact` varchar(255) NOT NULL,
   `Password` varchar(255) NOT NULL,
   `Profile` varchar(255) NOT NULL,
-  `Roll` int(11) NOT NULL
+  `Roll` int(11) NOT NULL,
+  `student_ID` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -501,21 +505,22 @@ CREATE TABLE `users` (
   `Contact` varchar(255) NOT NULL,
   `Password` varchar(255) NOT NULL,
   `Profile` varchar(255) NOT NULL,
-  `Roll` int(11) NOT NULL,
+  `Roll` int(11) NOT NULL DEFAULT 0,
   `Age` int(11) NOT NULL,
   `Class_id` int(11) NOT NULL,
   `father_name` varchar(225) NOT NULL,
-  `time` datetime NOT NULL DEFAULT current_timestamp()
+  `time` datetime NOT NULL DEFAULT current_timestamp(),
+  `student_ID` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `F_name`, `L_name`, `Email`, `Contact`, `Password`, `Profile`, `Roll`, `Age`, `Class_id`, `father_name`, `time`) VALUES
-(1, 'john', 'john', 'john@gmail.com', '030036547', '202cb962ac59075b964b07152d234b70', '444', 0, 17, 1, '', '2022-08-12 16:10:54'),
-(2, 'Rayan', 'Rayan', 'Rayan@gmail.com', '033214568', '123', '333', 0, 18, 2, '', '2022-08-12 16:10:54'),
-(3, 'simon', 'simon', 'simon@gmail.com', '01234587', '123', '222', 0, 18, 1, '', '2022-08-12 16:10:54');
+INSERT INTO `users` (`id`, `F_name`, `L_name`, `Email`, `Contact`, `Password`, `Profile`, `Roll`, `Age`, `Class_id`, `father_name`, `time`, `student_ID`) VALUES
+(1, 'john', 'john', 'john@gmail.com', '030036547', '202cb962ac59075b964b07152d234b70', '444', 0, 17, 1, '', '2022-08-12 16:10:54', ''),
+(2, 'Rayan', 'Rayan', 'Rayan@gmail.com', '033214568', '123', '333', 0, 18, 2, '', '2022-08-12 16:10:54', ''),
+(3, 'simon', 'simon', 'simon@gmail.com', '01234587', '123', '222', 0, 18, 1, '', '2022-08-12 16:10:54', '');
 
 --
 -- Indexes for dumped tables
@@ -679,7 +684,7 @@ ALTER TABLE `islamiat_rel`
 -- AUTO_INCREMENT for table `math`
 --
 ALTER TABLE `math`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `parent`

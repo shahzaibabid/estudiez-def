@@ -132,15 +132,15 @@
             </div>
         </li>
         <li class="nav-item menu-items">
-        <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+        <a class="nav-link" data-toggle="collapse" href="#exam" aria-expanded="false" aria-controls="exam">
             <span class="menu-icon">
             <i class="mdi mdi-security"></i>
             </span>
             <span class="menu-title">Exams Result</span>
             <i class="menu-arrow"></i>
         </a>
-        <div class="collapse" id="auth">
-            <ul class="nav flex-column sub-menu">
+        <div class="collapse" id="exam">
+            <ul style="height: auto;">
             <li class="nav-item"> <a class="nav-link" href="../../pages/exams/add_marks.php"> Add Student Result </a></li>
             <li class="nav-item"> <a class="nav-link" href="../../pages/exams/all_exams.php"> All Results </a></li>
             </ul>
