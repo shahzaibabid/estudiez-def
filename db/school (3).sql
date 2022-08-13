@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 13, 2022 at 01:30 PM
+-- Generation Time: Aug 13, 2022 at 04:13 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -75,6 +75,21 @@ INSERT INTO `class` (`id`, `Year`, `Class_name`, `Teacher_id`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `id` int(11) NOT NULL,
+  `Name` int(11) NOT NULL,
+  `Email` int(11) NOT NULL,
+  `Subject` varchar(255) NOT NULL,
+  `message` longtext NOT NULL,
+  `phone` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `english`
 --
 
@@ -131,20 +146,6 @@ INSERT INTO `exam` (`id`, `class_id`, `user_id`, `eng`, `urdu`, `sindhi`, `p_stu
 (2, 1, 3, 95, 85, 84, 75, 76, 73, 82, 700, 570, 81.43, 'A+', 'Pass', 'Good Work'),
 (3, 2, 2, 35, 22, 10, 28, 32, 46, 51, 700, 224, 32, 'F', 'Fail', 'Try a little harder '),
 (4, 1, 1, 89, 79, 85, 65, 85, 65, 65, 700, 533, 76.14, 'A', 'Pass', 'Good Job');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `feedback`
---
-
-CREATE TABLE `feedback` (
-  `id` int(11) NOT NULL,
-  `Name` int(11) NOT NULL,
-  `Email` int(11) NOT NULL,
-  `Subject` varchar(255) NOT NULL,
-  `message` longtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -301,15 +302,49 @@ INSERT INTO `sindhi` (`id`, `date`, `class_id`, `user_id`, `total`, `obt`, `stat
 
 CREATE TABLE `teachers` (
   `id` int(11) NOT NULL,
-  `F_name` varchar(255) NOT NULL,
-  `L_name` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
   `Email` varchar(255) NOT NULL,
   `Contact` varchar(255) NOT NULL,
   `Password` varchar(255) NOT NULL,
   `Profile` varchar(255) NOT NULL,
   `Roll` int(11) NOT NULL,
-  `Subject_id` int(11) NOT NULL
+  `Subject` varchar(225) NOT NULL,
+  `address` longtext NOT NULL,
+  `gender` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `teachers`
+--
+
+INSERT INTO `teachers` (`id`, `name`, `Email`, `Contact`, `Password`, `Profile`, `Roll`, `Subject`, `address`, `gender`) VALUES
+(3, 'noman ishaq', 'noman@gmail.com', '03345785792', 'noman123', 'ahmed.jpg', 0, 'Computer', 'aptech', 'Male'),
+(5, 'Taba', 'taba@gmail.com', '035734786752', 'Taba123', 'images.jpg', 0, 'urdu', 'bahria', 'Female');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `teacher_attendence`
+--
+
+CREATE TABLE `teacher_attendence` (
+  `id` int(11) NOT NULL,
+  `Teacher_name` varchar(225) NOT NULL,
+  `Date_time` datetime NOT NULL DEFAULT current_timestamp(),
+  `attendence` varchar(225) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `teacher_attendence`
+--
+
+INSERT INTO `teacher_attendence` (`id`, `Teacher_name`, `Date_time`, `attendence`) VALUES
+(1, 'noman ishaq', '2022-08-13 14:47:54', 'A'),
+(2, 'noman ishaq', '2022-08-13 14:48:51', 'P'),
+(3, 'noman ishaq', '2022-08-13 14:50:52', 'L'),
+(4, 'noman ishaq', '2022-08-13 14:51:24', 'A'),
+(5, 'noman ishaq', '2022-08-13 14:53:54', 'P'),
+(6, 'jaison', '2022-08-13 14:53:54', 'P');
 
 -- --------------------------------------------------------
 
@@ -518,8 +553,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `F_name`, `L_name`, `Email`, `Contact`, `Password`, `Profile`, `Roll`, `Age`, `Class_id`, `father_name`, `time`, `student_ID`) VALUES
-(1, 'john', 'john', 'john@gmail.com', '030036547', '202cb962ac59075b964b07152d234b70', '444', 0, 17, 1, '', '2022-08-12 16:10:54', ''),
-(2, 'Rayan', 'Rayan', 'Rayan@gmail.com', '033214568', '123', '333', 0, 18, 2, '', '2022-08-12 16:10:54', ''),
+(2, 'Rayan', 'ahmed', 'Rayan@gmail.com', '033214568', 'Rayan123', '333', 0, 18, 2, '', '2022-08-12 16:10:54', ''),
 (3, 'simon', 'simon', 'simon@gmail.com', '01234587', '123', '222', 0, 18, 1, '', '2022-08-12 16:10:54', '');
 
 --
@@ -539,6 +573,12 @@ ALTER TABLE `class`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `english`
 --
 ALTER TABLE `english`
@@ -548,12 +588,6 @@ ALTER TABLE `english`
 -- Indexes for table `exam`
 --
 ALTER TABLE `exam`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `feedback`
---
-ALTER TABLE `feedback`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -596,6 +630,12 @@ ALTER TABLE `sindhi`
 -- Indexes for table `teachers`
 --
 ALTER TABLE `teachers`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `teacher_attendence`
+--
+ALTER TABLE `teacher_attendence`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -657,6 +697,12 @@ ALTER TABLE `class`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `english`
 --
 ALTER TABLE `english`
@@ -667,12 +713,6 @@ ALTER TABLE `english`
 --
 ALTER TABLE `exam`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `feedback`
---
-ALTER TABLE `feedback`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `islamiat_rel`
@@ -714,7 +754,13 @@ ALTER TABLE `sindhi`
 -- AUTO_INCREMENT for table `teachers`
 --
 ALTER TABLE `teachers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `teacher_attendence`
+--
+ALTER TABLE `teacher_attendence`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `timetable6`
