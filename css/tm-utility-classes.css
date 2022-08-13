@@ -655,7 +655,8 @@
   background-position: right bottom !important; }
 
 .tm-fullwidth, .img-fullwidth {
-  width: 100% !important; }
+  width: 100% !important;
+  float: right; }
 
 /* -------- Absolute Image Positioning ---------- */
 .overflow-visible {

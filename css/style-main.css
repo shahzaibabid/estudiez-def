@@ -3465,6 +3465,22 @@ body.switchable-logo header#header .header-nav-wrapper.navbar-scrolltofixed.scro
   }
 }
 
+
+
+.custom-1{
+  display: inline-block;
+}
+
+
+.custom-2{
+  display: inline-block;
+}
+
+table.alignment{
+  width: auto;
+  margin-right: auto;
+  margin-left: -150px;
+}
 /* -------- Megamenu-Row ---------- */
 .menuzord-menu > li > .megamenu {
   border-top: 3px solid #333;
@@ -22729,5 +22745,7 @@ $grid-breakpoints: (
     font-size: 2rem;
   }
 }
+
+
 
 /*# sourceMappingURL=style-main.css.map */
