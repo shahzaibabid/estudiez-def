@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estudiez-Header</title>
+    <title>Estudiez-Contact-Us</title>
+<!--Fav icon -->
+<link rel="icon" type="icon" href="images/logo.png">
 <!-- Stylesheet -->
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="css/animate.min.css" rel="stylesheet" type="text/css">
@@ -38,6 +40,21 @@
 <script src="js/revolution-slider/js/rs6.min.js"></script>
 <script src="js/revolution-slider/extra-rev-slider1.js"></script>
 </head>
+<style>
+    .active-nav-3{
+        background-color: #FF9800;
+        border-radius: 3px;
+        
+      
+    }
+    a{
+  color: #FF9800;}
+  a:hover, a:focus{
+    color: #FF9800;}
+
+ .post .entry-meta.meta-absolute {
+  background-color: rgba(255, 152, 0, 0.9) !important; }
+</style>
 <body>
 
 <!-- header -->
@@ -86,7 +103,7 @@
                     </div>
                     <div class="icon-text">
                     <h5 class="icon-box-title mt-0">Phone</h5>
-                    <div class="content"><a href="tel:+123.456.7890">+123.456.7890</a></div>
+                    <div class="content"><a href="tel:+123.456.7890">+92 33001415778</a></div>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -98,7 +115,7 @@
                     </div>
                     <div class="icon-text">
                     <h5 class="icon-box-title mt-0">Email</h5>
-                    <div class="content"><a href="mailto:needhelp@yourdomain.com">needhelp@yourdomain.com</a></div>
+                    <div class="content"><a href="mailto:needhelp@yourdomain.com">estudiez578@gmail.com</a></div>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -110,7 +127,7 @@
                     </div>
                     <div class="icon-text">
                     <h5 class="icon-box-title mt-0">Address</h5>
-                    <div class="content">66 Broklyn Street USA</div>
+                    <div class="content">Dha phase 5 street 178, Karachi</div>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -122,7 +139,7 @@
                     </div>
                     <div class="icon-text">
                     <h5 class="icon-box-title mt-0">UK Address</h5>
-                    <div class="content">66 Broklyn Street USA</div>
+                    <div class="content">66 Broklyn Street, USA</div>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -130,7 +147,7 @@
             </div>
             <div class="col-lg-8">
                 <h2 class="mt-0 mb-0">Interested in discussing?</h2>
-                <p class="font-size-20">Active & Ready to use Contact Form!</p>
+                <p class="font-size-20">Question not answered yet? We are here to help!</p>
   <!-- Contact Form -->
                 <form id="contact_form" name="contact_form" class="" action="https://kodesolution.com/html/2017/kidspro-html-b5/includes/sendmail.php" method="post">
                 <div class="row">

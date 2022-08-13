@@ -10,17 +10,17 @@
               <div class="row header-nav-col-row">
                 <div class="col-sm-auto align-self-center">
                   <a class="menuzord-brand site-brand" href="index-mp-layout1.html">
-                    <img class="logo-default logo-1x" src="images/logo-wide.png" alt="Logo">
-                    <img class="logo-default logo-2x retina" src="images/logo-wide%402x.png" alt="Logo">
+                    <img class="logo-default logo-1x" src="./images/logo.png" alt="Logo">
+                    <img class="logo-default logo-2x retina" src="./images/logo.png" alt="Logo"> 
                   </a>
                 </div>
                 <div class="col-sm-auto ms-auto pr-0 align-self-center">
                   <nav id="top-primary-nav" class="menuzord theme-color1" data-effect="fade" data-animation="none" data-align="right">
                     <ul id="main-nav" class="menuzord-menu onepage-nav">
-                      <li class="active"><a href="index.php">Home</a> </li>
-                      <li><a href="aboutus.php">About-Us</a></li>
-                      <li><a href="contactus.php">Contact-Us</a></li>
-                      <li><a href="feedback.php">Feedback</a></li>
+                      <li class="active-nav-1"><a href="index.php" >Home</a> </li>
+                      <li  class="active-nav-2"><a href="aboutus.php">About-Us</a></li>
+                      <li  class="active-nav-3"><a href="contactus.php">Contact-Us</a></li>
+                      <li  class="active-nav-4"><a href="feedback.php">Feedback</a></li>
                       <li><a href="register.php">Register</a></li>
                       <li><a href="login.php">Login</a></li>
                     </ul>
@@ -80,5 +80,4 @@
         </div>
       </div>
     </header>  
-  <!-- Start main-content -->
-  <div class="main-content-area">
+
