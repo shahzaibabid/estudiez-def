@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 12, 2022 at 05:59 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Aug 13, 2022 at 02:05 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.3.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -82,7 +82,7 @@ CREATE TABLE `english` (
   `id` int(11) NOT NULL,
   `date` varchar(255) NOT NULL,
   `class_id` int(11) NOT NULL,
-  `user id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `total` int(11) NOT NULL,
   `obt` int(11) NOT NULL,
   `status` varchar(255) NOT NULL
@@ -92,10 +92,12 @@ CREATE TABLE `english` (
 -- Dumping data for table `english`
 --
 
-INSERT INTO `english` (`id`, `date`, `class_id`, `user id`, `total`, `obt`, `status`) VALUES
-(1, '2022-08-12', 1, 1, 20, 10, 'Pass'),
-(2, '2022-08-12', 1, 3, 20, 7, 'Fail'),
-(3, '2022-08-12', 2, 2, 20, 8, 'Pass');
+INSERT INTO `english` (`id`, `date`, `class_id`, `user_id`, `total`, `obt`, `status`) VALUES
+(1, '2022-08-13', 1, 1, 20, 8, 'Pass'),
+(2, '2022-08-13', 1, 3, 20, 10, 'Pass'),
+(3, '2022-08-13', 2, 2, 20, 7, 'Fail'),
+(4, '2022-08-13', 1, 1, 20, 12, 'Pass'),
+(5, '2022-08-13', 1, 3, 20, 10, 'Pass');
 
 -- --------------------------------------------------------
 
@@ -127,9 +129,9 @@ CREATE TABLE `exam` (
 --
 
 INSERT INTO `exam` (`id`, `class_id`, `user_id`, `eng`, `urdu`, `sindhi`, `p_studies`, `sci`, `islamiat_rel`, `math`, `total`, `obt`, `percentage`, `grade`, `status`, `remarks`) VALUES
-(1, 1, 1, 82, 80, 79, 54, 82, 95, 76, 700, 548, 78.2857, 'A', 'Pass', 'Good work keep it up !'),
 (2, 1, 3, 95, 85, 84, 75, 76, 73, 82, 700, 570, 81.43, 'A+', 'Pass', 'Good Work'),
-(3, 2, 2, 35, 22, 10, 28, 32, 46, 51, 700, 224, 32, 'F', 'Fail', 'Try a little harder ');
+(3, 2, 2, 35, 22, 10, 28, 32, 46, 51, 700, 224, 32, 'F', 'Fail', 'Try a little harder '),
+(4, 1, 1, 89, 79, 85, 65, 85, 65, 65, 700, 533, 76.14, 'A', 'Pass', 'Good Job');
 
 -- --------------------------------------------------------
 
@@ -155,7 +157,7 @@ CREATE TABLE `islamiat_rel` (
   `id` int(11) NOT NULL,
   `date` varchar(255) NOT NULL,
   `class_id` int(11) NOT NULL,
-  `user id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `total` int(11) NOT NULL,
   `obt` int(11) NOT NULL,
   `status` varchar(255) NOT NULL
@@ -165,9 +167,10 @@ CREATE TABLE `islamiat_rel` (
 -- Dumping data for table `islamiat_rel`
 --
 
-INSERT INTO `islamiat_rel` (`id`, `date`, `class_id`, `user id`, `total`, `obt`, `status`) VALUES
-(1, '2022-08-12', 1, 1, 20, 15, 'Pass'),
-(2, '2022-08-12', 1, 3, 20, 11, 'Pass');
+INSERT INTO `islamiat_rel` (`id`, `date`, `class_id`, `user_id`, `total`, `obt`, `status`) VALUES
+(1, '2022-08-13', 1, 1, 20, 10, 'Pass'),
+(2, '2022-08-13', 1, 3, 20, 9, 'Pass'),
+(3, '2022-08-13', 2, 2, 20, 13, 'Pass');
 
 -- --------------------------------------------------------
 
@@ -179,11 +182,20 @@ CREATE TABLE `math` (
   `id` int(11) NOT NULL,
   `date` varchar(255) NOT NULL,
   `class_id` int(11) NOT NULL,
-  `user id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `total` int(11) NOT NULL,
   `obt` int(11) NOT NULL,
   `status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `math`
+--
+
+INSERT INTO `math` (`id`, `date`, `class_id`, `user_id`, `total`, `obt`, `status`) VALUES
+(1, '2022-08-13', 1, 1, 20, 15, 'Pass'),
+(2, '2022-08-13', 1, 3, 20, 16, 'Pass'),
+(3, '2022-08-13', 2, 2, 20, 18, 'Pass');
 
 -- --------------------------------------------------------
 
@@ -212,7 +224,7 @@ CREATE TABLE `p_studies` (
   `id` int(11) NOT NULL,
   `date` varchar(255) NOT NULL,
   `class_id` int(11) NOT NULL,
-  `user id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `total` int(11) NOT NULL,
   `obt` int(11) NOT NULL,
   `status` varchar(255) NOT NULL
@@ -222,9 +234,10 @@ CREATE TABLE `p_studies` (
 -- Dumping data for table `p_studies`
 --
 
-INSERT INTO `p_studies` (`id`, `date`, `class_id`, `user id`, `total`, `obt`, `status`) VALUES
-(1, '2022-08-12', 1, 1, 20, 8, 'Pass'),
-(2, '2022-08-12', 1, 3, 20, 7, 'Fail');
+INSERT INTO `p_studies` (`id`, `date`, `class_id`, `user_id`, `total`, `obt`, `status`) VALUES
+(1, '2022-08-13', 1, 1, 20, 6, 'Fail'),
+(2, '2022-08-13', 1, 3, 20, 8, 'Pass'),
+(3, '2022-08-13', 2, 2, 20, 3, 'Fail');
 
 -- --------------------------------------------------------
 
@@ -236,11 +249,20 @@ CREATE TABLE `science` (
   `id` int(11) NOT NULL,
   `date` varchar(255) NOT NULL,
   `class_id` int(11) NOT NULL,
-  `user id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `total` int(11) NOT NULL,
   `obt` int(11) NOT NULL,
   `status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `science`
+--
+
+INSERT INTO `science` (`id`, `date`, `class_id`, `user_id`, `total`, `obt`, `status`) VALUES
+(1, '2022-08-13', 1, 1, 20, 16, 'Pass'),
+(2, '2022-08-13', 1, 3, 20, 14, 'Pass'),
+(3, '2022-08-13', 2, 2, 20, 18, 'Pass');
 
 -- --------------------------------------------------------
 
@@ -252,11 +274,20 @@ CREATE TABLE `sindhi` (
   `id` int(11) NOT NULL,
   `date` varchar(255) NOT NULL,
   `class_id` int(11) NOT NULL,
-  `user id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `total` int(11) NOT NULL,
   `obt` int(11) NOT NULL,
   `status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `sindhi`
+--
+
+INSERT INTO `sindhi` (`id`, `date`, `class_id`, `user_id`, `total`, `obt`, `status`) VALUES
+(1, '2022-08-13', 1, 1, 20, 6, 'Fail'),
+(2, '2022-08-13', 1, 3, 20, 4, 'Fail'),
+(3, '2022-08-13', 2, 2, 20, 8, 'Pass');
 
 -- --------------------------------------------------------
 
@@ -441,7 +472,7 @@ CREATE TABLE `urdu` (
   `id` int(11) NOT NULL,
   `date` varchar(255) NOT NULL,
   `class_id` int(11) NOT NULL,
-  `user id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `total` int(11) NOT NULL,
   `obt` int(11) NOT NULL,
   `status` varchar(255) NOT NULL
@@ -451,9 +482,10 @@ CREATE TABLE `urdu` (
 -- Dumping data for table `urdu`
 --
 
-INSERT INTO `urdu` (`id`, `date`, `class_id`, `user id`, `total`, `obt`, `status`) VALUES
-(1, '2022-08-12', 1, 1, 20, 9, 'Pass'),
-(2, '2022-08-12', 1, 3, 20, 8, 'Pass');
+INSERT INTO `urdu` (`id`, `date`, `class_id`, `user_id`, `total`, `obt`, `status`) VALUES
+(1, '2022-08-13', 1, 1, 20, 8, 'Pass'),
+(2, '2022-08-13', 1, 3, 20, 9, 'Pass'),
+(3, '2022-08-13', 2, 2, 20, 8, 'Pass');
 
 -- --------------------------------------------------------
 
@@ -623,13 +655,13 @@ ALTER TABLE `class`
 -- AUTO_INCREMENT for table `english`
 --
 ALTER TABLE `english`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `exam`
 --
 ALTER TABLE `exam`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `feedback`
@@ -641,13 +673,13 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT for table `islamiat_rel`
 --
 ALTER TABLE `islamiat_rel`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `math`
 --
 ALTER TABLE `math`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `parent`
@@ -659,19 +691,19 @@ ALTER TABLE `parent`
 -- AUTO_INCREMENT for table `p_studies`
 --
 ALTER TABLE `p_studies`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `science`
 --
 ALTER TABLE `science`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `sindhi`
 --
 ALTER TABLE `sindhi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `teachers`
@@ -713,7 +745,7 @@ ALTER TABLE `timetable10`
 -- AUTO_INCREMENT for table `urdu`
 --
 ALTER TABLE `urdu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`

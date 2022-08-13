@@ -20,9 +20,9 @@ if(isset($_POST["submit"])) {
       else {
         $status = "Pass";
       }
-      $inp = "INSERT INTO `p_studies`(`date`, `class_id`, `user id`, `total`, `obt`, `status`) VALUES ('$date','$cid','$ud','$total','$obt','$status')";
+      $inp = "INSERT INTO `p_studies`(`date`, `class_id`, `user_id`, `total`, `obt`, `status`) VALUES ('$date','$cid','$ud','$total','$obt','$status')";
       $inpres = mysqli_query($conn,$inp);
-      header("Location: ../../dashboard.php");
+      header("Location: test_result.php");
   }
 }
 

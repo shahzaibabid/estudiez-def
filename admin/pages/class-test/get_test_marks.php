@@ -11,7 +11,7 @@ while($row = mysqli_fetch_array($result)) {
     $i++;
 ?>
     <tr>
-        <td><?php echo $row["Profile"]; ?></td>
+        <td><img src="<?php echo $row["Profile"]; ?>" style="width:3vw; height:3vw;" alt=""></td>
         <td><?php echo $row["F_name"] . " " . $row["L_name"]; ?></td>
         <td class="align-middle"><input type="number" name="ttl<?php echo $i; ?>" style="background-color: transparent; color: white; border:none;" value="20"></td>
         <td class="align-middle"><input type="number" name="obt<?php echo $i; ?>" style="background-color: transparent; color: white; border:none;" value="00"></td>
