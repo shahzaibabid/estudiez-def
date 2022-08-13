@@ -111,6 +111,7 @@
                 <li class="nav-item"> <a class="nav-link" href="../class-test/science.php"> Science </a></li>
                 <li class="nav-item"> <a class="nav-link" href="../class-test/sindhi.php"> Sindhi </a></li>
                 <li class="nav-item"> <a class="nav-link" href="../class-test/urdu.php"> Urdu </a></li>
+                <li class="nav-item"> <a class="nav-link" href="../class-test/test_result.php"> All Results </a></li>
                 </ul>
             </div>
         </li>
@@ -119,16 +120,13 @@
             <span class="menu-icon">
             <i class="mdi mdi-security"></i>
             </span>
-            <span class="menu-title">User Pages</span>
+            <span class="menu-title">Exams Result</span>
             <i class="menu-arrow"></i>
         </a>
         <div class="collapse" id="auth">
             <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="../../pages/samples/blank-page.html"> Blank Page </a></li>
-            <li class="nav-item"> <a class="nav-link" href="../../pages/samples/error-404.html"> 404 </a></li>
-            <li class="nav-item"> <a class="nav-link" href="../../pages/samples/error-500.html"> 500 </a></li>
-            <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login.html"> Login </a></li>
-            <li class="nav-item"> <a class="nav-link" href="../../pages/samples/register.html"> Register </a></li>
+            <li class="nav-item"> <a class="nav-link" href="../../pages/exams/add_marks.php"> Add Student Result </a></li>
+            <li class="nav-item"> <a class="nav-link" href="../../pages/exams/all_exams.php"> All Results </a></li>
             </ul>
         </div>
         </li>
