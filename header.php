@@ -33,7 +33,7 @@
                       <div class="top-nav-mini-cart-icon-container">
                         <div class="top-nav-mini-cart-icon-contents">
                           <a class="mini-cart-icon"  title="View your shopping cart">
-                            <img src="https://i.pinimg.com/474x/91/97/db/9197dbd033174b03af42d396f11dc49e.jpg" width="25" alt="profile"> <span class="cart-quick-info">1 item - <span class="amount"><span class="currencySymbol">&pound;</span>18.00</span></span>
+                            <img src="images/bg/prof.png" width="45" alt="profile"> <span class="cart-quick-info">1 item - <span class="amount"><span class="currencySymbol">&pound;</span>18.00</span></span>
                           </a>
                           <div class="dropdown-content">
                             <ul class="cart_list product_list_widget">
