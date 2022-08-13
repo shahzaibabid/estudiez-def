@@ -80,7 +80,7 @@
             <div class="row">
             <div class="col-lg-6 col-xl-5 m-lg-auto">
                 <div class="whychose-thumb">
-                <img class="img-fullwidth" src="images/student_profile_img.png" alt="ProfileImage">
+                <img class="img-fullwidth" src="images/student_trial2.avif" alt="ProfileImage">
                 </div>
             </div>
             <div class="col-xl-7 pl-50">
@@ -95,14 +95,14 @@
 </div><!--col-md-4 col-sm-4 col-xs-12 close-->
 
 
-<div class="col-md-5 col-sm-5 col-xs-12">
+<div class="col-md-10 col-sm-8 col-xs-12">
 <ul>
-<li><h3 class="custom-1">Grade:</h3><h5 class="custom-2">  5 years</h5></li>
-<li><h3 class="custom-1">Class:</h3><h5 class="custom-2"> U.S.A.</h5></li>
-<li><h3 class="custom-1">Address:</h3><h5 class="custom-2"> 555 street Address,toedo 43606 U.S.A.</h5></li>
-<li><h3 class="custom-1">Phone Number:</h3><h5 class="custom-2"> (+021) 956 789123</h5></li>
-<li><h3 class="custom-1">Email:</h3><h5 class="custom-2"> jenifer123@gmail.com</h5></li>
-<li><h3 class="custom-1">Parent/Guardian Name:</h3><h5 class="custom-2"> Smith Jones</h5></li>
+<li><h3 class="custom-1">Grade: 5 years</h3></li>
+<li><h3 class="custom-1">Class: U.S.A.</h3></li>
+<li><h3 class="custom-1">Address: 555 street Address,toedo 43606 U.S.A.</h3></li>
+<li><h3 class="custom-1">Phone Number: (+021) 956 789123</h3></li>
+<li><h3 class="custom-1">Email: jenifer123@gmail.com</h3></li>
+<li><h3 class="custom-1">Parent/Guardian Name: Smith Jones</h3></li>
 </ul>
 
 
@@ -111,40 +111,8 @@
 </div><!--container close-->
 
 
-</section><!--section close-->
-                <div class="row">
-                <div class="col-sm-4 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
-                    <div class="icon-box text-center">
-                    <a href="#" class="icon bg-theme-colored3 icon-circled icon-border-effect effect-circle icon-md">
-                        <i class="fas fa-bell text-white"></i>
-                    </a>
-                    <h5 class="icon-box-title mt-15 mb-0 letter-space-1 text-uppercase">Timetable</h5>
-                    </div>
-                </div>
-                <div class="col-sm-4 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
-                    <div class="icon-box text-center">
-                    <a href="#" class="icon bg-theme-colored2 icon-circled icon-border-effect effect-circle icon-md">
-                        <i class="fas fa-pencil-alt text-white"></i>
-                    </a>
-                    <h5 class="icon-box-title mt-15 mb-0 letter-space-1 text-uppercase">Marksheet</h5>
-                    </div>
-                </div>
-                <div class="col-sm-4 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-                    <div class="icon-box text-center">
-                    <a href="#" class="icon bg-theme-colored4 icon-circled icon-border-effect effect-circle icon-md">
-                        <i class="fas fa-certificate text-white"></i>
-                    </a>
-                    <h5 class="icon-box-title mt-15 mb-0 letter-space-1 text-uppercase">Attendance</h5>
-                    </div>
-                </div>
-                </div>
-            </div>
-            </div>
-        </div>
-        <div class="tm-floating-objects">
-            <span class="z-index-1 bg-img-cover" data-tm-bg-img="images/bg/f2.png" data-tm-width="100%" data-tm-height="143" data-tm-top="auto" data-tm-bottom="0" data-tm-left="0" data-tm-right="0" data-tm-opacity="-100px"></span>
-        </div>
-    </section> 
+</section><!--section close-->                
+</section>
 <!-- Student Profile ends -->
 
 <!-- Basic Divider -->
