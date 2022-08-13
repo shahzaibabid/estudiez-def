@@ -44,15 +44,16 @@ session_start();
         <div class="main-panel">
           <div class="content-wrapper">
             <div >
-              <h3 class="text-center mt-4">
                 <?php
                     $id = $_GET["id"];
-                    $sel = "SELECT u.F_name,u.L_name,u.Class_id FROM `users` u WHERE `id` = $id";
+                    $sel = "SELECT u.F_name,u.L_name,u.Profile,u.Class_id FROM `users` u WHERE `id` = $id";
                     $result = mysqli_query($conn, $sel);
                     $row = mysqli_fetch_array($result);
-                    echo $row["F_name"] . " " . $row["F_name"];
                 ?>
-              </h3>
+                    <center>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkEFYAPkZb-ab7uE0w90StIouVeRtAdIzRch2ol26QF1xLuv87j4i6WbHaiovMOSePWwI&usqp=CAU" style="width:11vw; height:11vw; border-radius: 50%" alt="">
+                    </center>
+                    <h1 class="text-center mt-4"><?php echo $row["F_name"] . " " . $row["F_name"]; ?></h1>
               <p class="text-center mb-5">
                 <?php
                     $cid = $row["Class_id"];
