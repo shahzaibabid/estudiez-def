@@ -153,7 +153,7 @@
                         <input name="lastname" class="form-control" type="text">
                         </div>
                         <div class="mb-3 col-md-6">
-                        <label>FatherName</label>
+                        <label>Parent/Guardian Name</label>
                         <input name="fathername" class="form-control" type="text">
                         </div>
                         <div class="mb-3 col-md-6">
