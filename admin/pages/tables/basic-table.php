@@ -1,8 +1,7 @@
 <?php
 include_once '../../../auth/connection.php';
 
-session_start();
-if($_SESSION["name"] != ""){
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -91,7 +90,7 @@ if($_SESSION["name"] != ""){
                             <td><?php echo $row[3]; ?></td>
                             <td><?php echo $row[9]; ?></td>
                             <td><?php echo $row[11]; ?> </td>
-                            <td> <a href="edit.php?id=<?php echo $row[0];?>"> <button type="button" class="btn btn-success">Edit</button></td>
+                            <td> <a href="edit_student.php?id=<?php echo $row[0];?>"> <button type="button" class="btn btn-success">Edit</button></td>
                             <td> <a href="basic-table.php?id=<?php echo $row[0];?>"> <button type="button" class="btn btn-danger">Delete</button></a></td>
                             <!-- <td><a href="insert.php"><button type="button" class="btn btn-warning">Insert</button></a></td> -->
                           </tr>
@@ -147,8 +146,3 @@ if(isset($_GET["id"])){
   </body>
 </html>
 <?php
-}
-else{
-	header("location:login.php");
-}
-?>

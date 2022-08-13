@@ -18,8 +18,10 @@ if($_SESSION["name"] != ""){
     <title>UPDATE TABLE</title>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="#" method="post">
     <?php
+
+
 $sql = mysqli_connect("localhost","root","","lab-automation");
 $query = "SELECT * FROM `users` WHERE `id` = $id";
 
