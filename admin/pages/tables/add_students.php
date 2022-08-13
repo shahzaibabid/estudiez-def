@@ -27,9 +27,6 @@ $father_name = mysqli_real_escape_string($conn, $_POST["father_name"]);
 header("location: basic-table.php");
 }
 ?>
-<?php
-if($_SESSION["name"] != ""){
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -497,9 +494,3 @@ if($_SESSION["name"] != ""){
     <!-- End custom js for this page -->
   </body>
 </html>
-<?php
-}
-else{
-	header("location:login.php");
-}
-?>

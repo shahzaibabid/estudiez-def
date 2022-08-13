@@ -117,8 +117,7 @@ include_once '../../../auth/connection.php';
                                                     <td><?php echo $atten_row[2]; ?></td>
                                                     <?php if($atten_row[3] == "P") { ?><td><i style="color: green;" class="mdi mdi-checkbox-marked-circle-outline"></i></td><?php }else { ?><td><?php echo " "; ?></td><?php } ?>
                                                     <?php if($atten_row[3] == "A") { ?><td><i style="color: red;" class="mdi mdi-checkbox-marked-circle-outline"></i></td><?php }else { ?><td><?php echo " "; ?></td><?php } ?>
-                                                    <?php if($atten_row[3] == "L") { ?><td><i style="color: yellow;" class="mdi mdi-checkbox-marked-circle-outline"></i></td><?php }else { ?><td><?php echo " "; ?></td><?php } ?>
-                                                </tr>
+                                                    <?php if($atten_row[3] == "L") { ?><td><i style="color: yellow;" class="mdi mdi-checkbox-marked-circle-outline"></i></td><?php }else { ?><td><?php echo " "; ?></td><?php } ?>                                                </tr>
                                             <?php
                                         }
                                     }

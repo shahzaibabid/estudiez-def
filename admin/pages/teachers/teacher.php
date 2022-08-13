@@ -88,7 +88,7 @@ include_once '../../../auth/connection.php';
                             <td><?php echo $row[2]; ?></td>
                             <td><?php echo $row[7]; ?></td>
                             <td><?php echo $row[3]; ?> </td>
-                            <td> <a href="edit.php?id=<?php echo $row[0];?>"> <button type="button" class="btn btn-success">Edit</button></td>
+                            <td> <a href="teacher_profile.php?id=<?php echo $row[0];?>"> <button type="button" class="btn btn-success">Edit</button></td>
                             <td> <a href="teacher.php?id=<?php echo $row[0];?>"> <button type="button" class="btn btn-danger">Delete</button></a></td>
                             <!-- <td><a href="insert.php"><button type="button" class="btn btn-warning">Insert</button></a></td> -->
                           </tr>

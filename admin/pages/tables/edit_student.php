@@ -3,31 +3,7 @@
 
 include_once '../../../auth/connection.php';
 session_start();
-if(isset($_POST["submit"])){
-  $name = mysqli_real_escape_string($conn, $_POST["name"]);
-$email = mysqli_real_escape_string($conn, $_POST["email"]);
-$password = mysqli_real_escape_string($conn, $_POST["pass"]);
-$contact = mysqli_real_escape_string($conn, $_POST["contact"]);
-$gender = mysqli_real_escape_string($conn, $_POST["gender"]);
-$Subject = mysqli_real_escape_string($conn, $_POST["subject"]);
-$Address = mysqli_real_escape_string($conn, $_POST["address"]);
 
-
-  $image_name = $_FILES["img"]["name"];
-  $image_type = $_FILES["img"]["type"];
-  $image_temp = $_FILES["img"]["tmp_name"];
-  $image_size = $_FILES["img"]["size"];
-  $path = "../../../img/" . $image_name;
-    
-    $query = "INSERT INTO `teachers`(`id`, `name`, `Email`, `Contact`, `Password`, `Profile`,  `Subject`, `address`, `gender`) VALUES 
-    (Null,'$name','$email','$contact','$password','$image_name','$Subject','$Address','$gender')";
-   
-    mysqli_query($conn, $query);
-    move_uploaded_file($image_temp,$path);
-
-
-header("location: teacher.php");
-}
 ?>
 
 <!DOCTYPE html>
@@ -77,61 +53,58 @@ header("location: teacher.php");
               </nav>
             </div>
             <div class="row">
-              
-              <div class="col-12 grid-margin stretch-card">
+              <?php
+              $id = $_GET["id"];
+              $query = "SELECT * FROM `users` WHERE `id` = $id";
+              $show = mysqli_query($conn,$query);
+              if(mysqli_num_rows($show)){
+                while($data = mysqli_fetch_array($show)){
+                  ?>
+                  <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Add Teachers</h4>
-                    <p class="card-description"> Teachers of estudies </p>
+                    <h4 class="card-title">Edit Students</h4>
+                    <p class="card-description"> Students of estudies </p>
                     <form class="forms-sample" method="Post" enctype="multipart/form-data" >
                       <div class="form-group">
-                        <label for="exampleInputName1">Name</label>
-                        <input type="text" name="name" class="form-control" id="exampleInputName1" placeholder="Name">
+                        <label for="exampleInputName1">First Name</label>
+                        <input type="text" name="f_name" class="form-control" id="exampleInputName1" value="<?php echo $data[1];?>" placeholder="Name">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputName1">Last Name</label>
+                        <input type="text" name="l_name" class="form-control"  value="<?php echo $data[2];?>" id="exampleInputName1" value="<?php echo $data[1];?>" placeholder="Name">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail3">Email address</label>
-                        <input type="email" name="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail3" value="<?php echo $data[3];?>" placeholder="Email">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputPassword4">Password</label>
-                        <input type="password" name="pass" class="form-control" id="exampleInputPassword4" placeholder="Password">
+                        <input type="password" name="pass" class="form-control" value="<?php echo $data[5];?>" id="exampleInputPassword4" placeholder="Password">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputName1">Contact</label>
-                        <input type="text" name="contact" class="form-control" id="exampleInputName1" placeholder="Name">
+                        <input type="text" name="contact" value="<?php echo $data[4];?>" class="form-control" id="exampleInputName1" placeholder="Name">
+                      </div>
+                   
+                      
+                      
+                      <div class="form-group">
+                        <label for="exampleInputCity1">Age</label>
+                        <input type="text" name="age" value="<?php echo $data[8];?>" class="form-control" id="exampleInputCity1" placeholder="subject">
                       </div>
                      
-                      <div class="form-group">
-                        <label for="exampleSelectGender">Gender</label>
-                        <select name="gender" class="form-control" id="exampleSelectGender">
-                          <option>Male</option>
-                          <option>Female</option>
-                        </select>
-                      </div>
-                      <div class="form-group">
-                        <label>File upload</label>
-                        <input type="file" name="img" class="file-upload-default">
-                        <div class="input-group col-xs-12">
-                          <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
-                          <span class="input-group-append">
-                            <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                          </span>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputCity1">Subject</label>
-                        <input type="text" name="subject" class="form-control" id="exampleInputCity1" placeholder="subject">
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleTextarea1">Address</label>
-                        <textarea class="form-control" name="address" id="exampleTextarea1" rows="4"></textarea>
-                      </div>
-                      <button type="submit" name="submit" class="btn btn-primary mr-2">Submit</button>
+                      <button type="submit" name="submit" class="btn btn-success mr-2">Update</button>
                       <button class="btn btn-dark">Cancel</button>
                     </form>
                   </div>
                 </div>
               </div>
+              
+                  <?php
+                }
+              }
+              ?>
               
               
             </div>
@@ -172,3 +145,24 @@ header("location: teacher.php");
     <!-- End custom js for this page -->
   </body>
 </html>
+<?php
+if(isset($_POST["submit"])){
+  $f_name = mysqli_real_escape_string($conn, $_POST["f_name"]);
+  $l_name = mysqli_real_escape_string($conn, $_POST["l_name"]);
+  
+  $email = mysqli_real_escape_string($conn, $_POST["email"]);
+  $password = mysqli_real_escape_string($conn, $_POST["pass"]);
+  $contact = mysqli_real_escape_string($conn, $_POST["contact"]);
+  $age = mysqli_real_escape_string($conn, $_POST["age"]);
+  
+  $query = "UPDATE `users` SET `F_name`='$f_name',`L_name`='$l_name',`Email`='$email',`Contact`='$contact',`Password`='$password',`Age`='$age' WHERE `id` = $id";
+  
+      mysqli_query($conn, $query);
+  
+  ?>
+<script>
+  window.location.assign("basic-table.php");
+</script>
+  <?php
+  }
+?>
