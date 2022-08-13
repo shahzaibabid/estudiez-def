@@ -123,7 +123,7 @@
                     <div class="col-lg-5 col-xl-5 offset-xl-1 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.1s">
                     <div class="video-popup">
                         <a>
-                        <img alt="" src="images/about/6.png" class="img-fullwidth">
+                        <img alt="" src="images/about/reg.gif" class="img-fullwidth">
                         </a>
                     </div>
                     </div>
