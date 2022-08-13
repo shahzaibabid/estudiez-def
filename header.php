@@ -21,8 +21,8 @@
                       <li  class="active-nav-2"><a href="aboutus.php">About-Us</a></li>
                       <li  class="active-nav-3"><a href="contactus.php">Contact-Us</a></li>
                       <li  class="active-nav-4"><a href="feedback.php">Feedback</a></li>
-                      <li><a href="register.php">Register</a></li>
-                      <li><a href="login.php">Login</a></li>
+                      <li  class="active-nav-5"><a href="register.php">Login/Register</a></li>
+                   
                     </ul>
                   </nav>
                 </div>

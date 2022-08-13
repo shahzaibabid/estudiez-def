@@ -1,12 +1,12 @@
 <!-- footer  -->
-    <footer id="footer" class="footer divider layer-overlay overlay-dark-8" data-tm-bg-img="images/bg/bg8.jpg">
+    <footer id="footer" class="footer divider layer-overlay overlay-dark-8" data-tm-bg-img="images/bg/bg8.png">
         <div class="footer-widget-area">
         <div class="container pt-90 pb-40">
             <div class="row">
             <div class="col-md-6 col-lg-6 col-xl-4">
                 <div class="widget tm-widget-contact-info contact-info-style1 contact-icon-theme-colored1">
                 <div class="thumb">
-                    <img alt="Logo" src="images/logo-wide-white.png">
+                    <img alt="Logo" src="images/logo.png">
                 </div>
                 <div class="description">Address:- Dha phase 5 street 178, Karachi</div>
                 <ul class="mb-30">
@@ -37,7 +37,7 @@
             <div class="col-md-6 col-lg-6 col-xl-3">
                 <div class="widget">
                 <h4 class="widget-title">Twitter Feed</h4>
-                <div class="twitter-feed list-border clearfix" data-username="Envato" data-count="2">Coming Soon!</div>
+                <div>Coming Soon!</div>
                 </div>
             </div>
             <div class="col-md-6 col-lg-6 col-xl-3">
@@ -46,16 +46,16 @@
                 <div class="opening-hours border-dark">
                     <ul>
                     <li class="clearfix"> <span> Mon - Tues :  </span>
-                        <div class="value"> 6.00 am - 10.00 pm </div>
+                        <div class="value"> 8.00 am - 12.30 pm </div>
                     </li>
                     <li class="clearfix"> <span> Wednes - Thurs :</span>
-                        <div class="value"> 8.00 am - 6.00 pm </div>
+                        <div class="value"> 8.00 am - 12.00 pm </div>
                     </li>
                     <li class="clearfix"> <span> Fri :</span>
-                        <div class="value"> 3.00 pm - 8.00 pm </div>
+                        <div class="value"> 8.00 pm - 12.00 pm </div>
                     </li>
-                    <li class="clearfix"> <span> Sun : </span>
-                        <div class="value"> Closed </div>
+                    <li class="clearfix"> <span> Sat : </span>
+                        <div class="value"> Extra classes </div>
                     </li>
                     </ul>
                 </div>
