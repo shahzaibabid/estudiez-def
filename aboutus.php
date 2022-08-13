@@ -43,16 +43,9 @@
 <style>
     .active-nav-2{
         background-color: #FF9800;
-        border-radius: 3px;
-        
-      
+        /* border-radius: 3px;
+        color:pink;         */
     }
-    a{
-  color: #FF9800;}
-  a:hover, a:focus{
-    color: #FF9800;}
-
-
 </style>
 <body>
 
@@ -300,7 +293,7 @@
     </section>
 <!-- divider 02 -->
 
-<!-- teachers -->
+<!-- our team -->
     <section id="team" class="bg-img-cover bg-img-center" data-tm-bg-img="images/bg/p2.jpg">
             <div class="container pb-90">
                 <div class="section-title">
@@ -308,8 +301,8 @@
                     <div class="col-lg-8 col-xl-6">
                     <div class="tm-sc-section-title section-title text-center">
                         <div class="title-wrapper">
-                        <h2 class="title">Our <span class="text-theme-colored3">Teachers</span></h2>
-                        <p>Best teachers teaches from heart not from book.</p>
+                        <h2 class="title">Our <span class="text-theme-colored3">Team</span></h2>
+                        <p>Best team works from heart and with unity.</p>
                         </div>
                     </div>
                     </div>
@@ -320,12 +313,12 @@
                     <div class="col-sm-6 col-xl-3 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.1s">
                     <div class="team-member">
                         <div class="team-thumb">
-                        <img class="img-fullwidth" src="images/team/team1.jpg" alt="team1.jpg">
+                        <img class="img-fullwidth" src="images/team/team1.jpeg"  style="height:380px" alt="team1.jpg">
                         </div>
                         <div class="team-details text-center bg-theme-colored2">
                         <div class="member-biography">
-                            <h3 class="mt-0 text-white mb-0">Steve Smith</h3>
-                            <p class="mb-0 text-white">English Teacher</p>
+                            <h3 class="mt-0 text-white mb-0">Shahzaib Abid</h3>
+                            <p class="mb-0 text-white">Team Member</p>
                         </div>
                         <ul class="styled-icons icon-dark icon-md icon-theme-colored4 icon-circled pt-3">
                             <li><a href="#"><i class="fab fa-facebook text-white"></i></a></li>
@@ -339,12 +332,12 @@
                     <div class="col-sm-6 col-xl-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
                     <div class="team-member">
                         <div class="team-thumb">
-                        <img class="img-fullwidth" src="images/team/team2.jpg" alt="team2.jpg">
+                        <img class="img-fullwidth" src="images/team/team2.jpeg"  style="height:380px" alt="team2.jpg">
                         </div>
                         <div class="team-details text-center bg-theme-colored1">
                         <div class="member-biography">
-                            <h3 class="mt-0 text-white mb-0">Steve Smith</h3>
-                            <p class="mb-0 text-white">English Teacher</p>
+                            <h3 class="mt-0 text-white mb-0">Charles Stephen</h3>
+                            <p class="mb-0 text-white">Team Member</p>
                         </div>
                         <ul class="styled-icons icon-dark icon-md icon-theme-colored3 icon-circled pt-3">
                             <li><a href="#"><i class="fab fa-facebook text-white"></i></a></li>
@@ -358,12 +351,12 @@
                     <div class="col-sm-6 col-xl-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
                     <div class="team-member">
                         <div class="team-thumb">
-                        <img class="img-fullwidth" src="images/team/team3.jpg" alt="team3.jpg">
+                        <img class="img-fullwidth" src="images/team/team3.jpeg"  style="height:380px" alt="team3.jpg">
                         </div>
                         <div class="team-details text-center bg-theme-colored3">
                         <div class="member-biography">
-                            <h3 class="mt-0 text-white mb-0">Steve Smith</h3>
-                            <p class="mb-0 text-white">English Teacher</p>
+                            <h3 class="mt-0 text-white mb-0">Asadullah Sheikh</h3>
+                            <p class="mb-0 text-white">Team Member</p>
                         </div>
                         <ul class="styled-icons icon-dark icon-md icon-theme-colored1 icon-circled pt-3">
                             <li><a href="#"><i class="fab fa-facebook text-white"></i></a></li>
@@ -377,12 +370,12 @@
                     <div class="col-sm-6 col-xl-3 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s">
                     <div class="team-member">
                         <div class="team-thumb">
-                        <img class="img-fullwidth" src="images/team/team4.jpg" alt="team4.jpg">
+                        <img class="img-fullwidth" src="images/team/team4.jpg" style="height:380px" alt="team4.jpg">
                         </div>
                         <div class="team-details text-center bg-theme-colored1">
                         <div class="member-biography">
-                            <h3 class="mt-0 text-white mb-0">Steve Smith</h3>
-                            <p class="mb-0 text-white">English Teacher</p>
+                            <h3 class="mt-0 text-white mb-0">Zohair Jafar</h3>
+                            <p class="mb-0 text-white">Team Member</p>
                         </div>
                         <ul class="styled-icons icon-dark icon-md icon-theme-colored2 icon-circled pt-3">
                             <li><a href="#"><i class="fab fa-facebook text-white"></i></a></li>
@@ -397,7 +390,7 @@
                 </div>
             </div>
     </section>
-<!-- teachers -->
+<!-- our team -->
 <!-- main content -->
 
 <!-- footer -->

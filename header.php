@@ -3,6 +3,7 @@
   <!-- Header -->
     <header id="header" class="header header-layout-type-header-2rows">
 
+
       <div class="header-nav tm-enable-navbar-hide-on-scroll">
         <div class="header-nav-wrapper navbar-scrolltofixed">
           <div class="menuzord-container header-nav-container">
@@ -17,11 +18,11 @@
                 <div class="col-sm-auto ms-auto pr-0 align-self-center">
                   <nav id="top-primary-nav" class="menuzord theme-color1" data-effect="fade" data-animation="none" data-align="right">
                     <ul id="main-nav" class="menuzord-menu onepage-nav">
-                      <li class="active-nav-1"><a href="index.php" >Home</a> </li>
-                      <li  class="active-nav-2"><a href="aboutus.php">About-Us</a></li>
-                      <li  class="active-nav-3"><a href="contactus.php">Contact-Us</a></li>
-                      <li  class="active-nav-4"><a href="feedback.php">Feedback</a></li>
-                      <li  class="active-nav-5"><a href="register.php">Login/Register</a></li>
+                      <li><a class="active-nav-1" href="index.php" >Home</a> </li>
+                      <li><a class="active-nav-2" href="aboutus.php">About-Us</a></li>
+                      <li><a class="active-nav-3" href="contactus.php">Contact-Us</a></li>
+                      <li><a class="active-nav-4" href="feedback.php">Feedback</a></li>
+                      <li><a class="active-nav-5" href="register.php">Login/Register</a></li>
                    
                     </ul>
                   </nav>

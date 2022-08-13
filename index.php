@@ -42,17 +42,9 @@
 <style>
     .active-nav-1{
         background-color: #FF9800;
-        border-radius: 3px;
-        
-      
+        /* border-radius: 3px;
+        color:pink;         */
     }
-    a{
-  color: #FF9800;}
-  a:hover, a:focus{
-    color: #FF9800;}
-
- .post .entry-meta.meta-absolute {
-  background-color: rgba(255, 152, 0, 0.9) !important; }
 </style>
 </head>
 <body>

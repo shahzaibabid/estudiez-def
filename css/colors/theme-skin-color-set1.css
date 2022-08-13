@@ -26,8 +26,7 @@ a {
   a:hover, a:focus {
     color: #FF9800; }
 
-.post .entry-meta.meta-absolute {
-  background-color: rgba(255, 152, 0, 0.9) !important; }
+
 
 .tab-slider .nav.nav-pills a:hover,
 .tab-slider .nav.nav-pills a.active,
@@ -1435,12 +1434,12 @@ header#header.header-layout-type-header-3rows-modern-header-style3 .header-nav-w
 .menuzord.menuzord-color-default.menuzord-top-bottom-boxed-border .menuzord-menu > li.active > a,
 .menuzord.menuzord-color-default.menuzord-top-bottom-boxed-border .menuzord-menu > li:hover > a,
 .menuzord.menuzord-color-default.menuzord-top-bottom-boxed-border .menuzord-menu ul.dropdown li:hover > a {
-  border-color: #FF9800; }
+  border-color: red; }
 
 .menuzord.menuzord-color-default.menuzord-border-left .menuzord-menu > li.active > a,
 .menuzord.menuzord-color-default.menuzord-border-left .menuzord-menu > li:hover > a,
 .menuzord.menuzord-color-default.menuzord-border-left .menuzord-menu ul.dropdown li:hover > a {
-  border-color: #FF9800;
+  border-color: ;
   color: #FF9800; }
 
 .menuzord.menuzord-color-default.menuzord-border-top .menuzord-menu > li.active > a,

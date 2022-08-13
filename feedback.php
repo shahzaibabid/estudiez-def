@@ -43,16 +43,9 @@
 <style>
     .active-nav-4{
         background-color: #FF9800;
-        border-radius: 3px;
-        
-      
+        /* border-radius: 3px;
+        color:pink;         */
     }
-    a{
-  color: #FF9800;}
-  a:hover, a:focus{
-    color: #FF9800;}
-
-
 </style>
 <body>
 <!-- header -->

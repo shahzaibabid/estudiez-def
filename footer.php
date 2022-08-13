@@ -28,9 +28,8 @@
                 <ul>
                     <li><a href="aboutus.php">About Us</a></li>
                     <li><a href="contactus.php">Contact Us</a></li>
-                    <li><a href="feedback.php">Feedback</a></li>
-                    <li><a href="login.php">Login</a></li>
-                    <li><a href="register.php">Register</a></li>
+                    <li><a href="feedback.php">Feedback</a></li>              
+                    <li><a href="register.php">Login</a></li>
                 </ul>
                 </div>
             </div>
