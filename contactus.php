@@ -141,7 +141,7 @@
                 <h2 class="mt-0 mb-0">Interested in discussing?</h2>
                 <p class="font-size-20">Question not answered yet? We are here to help!</p>
   <!-- Contact Form -->
-                <form id="contact_form" name="contact_form" class="" action="https://kodesolution.com/html/2017/kidspro-html-b5/includes/sendmail.php" method="post">
+                <form id="contact_form" name="contact_form" class="" action="./index.php" method="post">
                 <div class="row">
                     <div class="col-sm-6">
                     <div class="mb-3">
@@ -177,37 +177,13 @@
                 </div>
                 <div class="mb-3">
                     <input name="form_botcheck" class="form-control" type="hidden" value="" />
-                    <button type="submit" class="btn btn-flat btn-theme-colored1 text-uppercase mt-10 mb-sm-30 border-left-theme-color-2-4px" data-loading-text="Please wait...">Send your message</button>
+                    <button name="contact" type="submit" class="btn btn-flat btn-theme-colored1 text-uppercase mt-10 mb-sm-30 border-left-theme-color-2-4px" data-loading-text="Please wait...">Send your message</button>
                     
                 </div>
                 </form>
 
   <!-- Contact Form -->
-                <script>
-                (function($) {
-                    $("#contact_form").validate({
-                    submitHandler: function(form) {
-                        var form_btn = $(form).find('button[type="submit"]');
-                        var form_result_div = '#form-result';
-                        $(form_result_div).remove();
-                        form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
-                        var form_btn_old_msg = form_btn.html();
-                        form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
-                        $(form).ajaxSubmit({
-                        dataType:  'json',
-                        success: function(data) {
-                            if( data.status == 'true' ) {
-                            $(form).find('.form-control').val('');
-                            }
-                            form_btn.prop('disabled', false).html(form_btn_old_msg);
-                            $(form_result_div).html(data.message).fadeIn('slow');
-                            setTimeout(function(){ $(form_result_div).fadeOut('slow') }, 6000);
-                        }
-                        });
-                    }
-                    });
-                })(jQuery);
-                </script>
+                
             </div>
             </div>
         </div>
