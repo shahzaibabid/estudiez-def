@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 14, 2022 at 11:06 AM
+-- Generation Time: Aug 14, 2022 at 01:45 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -84,7 +84,7 @@ CREATE TABLE `contact` (
   `Email` varchar(255) NOT NULL,
   `Subject` varchar(255) NOT NULL,
   `message` longtext NOT NULL,
-  `phone` int(11) NOT NULL
+  `phone` varchar(14) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -92,7 +92,8 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`id`, `Name`, `Email`, `Subject`, `message`, `phone`) VALUES
-(2, 'jack', 'jack@gmail.com', 'demo', 'demo message', 33333333);
+(3, 'Talha', 'talha@gmail.com', 'This is subject', 'This is my message', '2147483647'),
+(4, 'Abbas', 'abbas@gmail.com', 'subject', 'This is message', '0332323568');
 
 -- --------------------------------------------------------
 
@@ -152,7 +153,7 @@ CREATE TABLE `exam` (
 INSERT INTO `exam` (`id`, `class_id`, `user_id`, `eng`, `urdu`, `sindhi`, `p_studies`, `sci`, `islamiat_rel`, `math`, `total`, `obt`, `percentage`, `grade`, `status`, `remarks`) VALUES
 (2, 1, 3, 95, 85, 84, 75, 76, 73, 82, 700, 570, 81.43, 'A+', 'Pass', 'Good Work'),
 (3, 2, 2, 35, 22, 10, 28, 32, 46, 51, 700, 224, 32, 'F', 'Fail', 'Try a little harder '),
-(4, 1, 1, 89, 79, 85, 65, 85, 65, 65, 700, 533, 76.14, 'A', 'Pass', 'Good Job');
+(4, 1, 4, 89, 79, 85, 65, 85, 65, 65, 700, 533, 76.14, 'A', 'Pass', 'Good Job');
 
 -- --------------------------------------------------------
 
@@ -336,7 +337,7 @@ CREATE TABLE `teachers` (
   `Contact` varchar(255) NOT NULL,
   `Password` varchar(255) NOT NULL,
   `Profile` varchar(255) NOT NULL,
-  `Roll` int(11) NOT NULL,
+  `Roll` int(11) NOT NULL DEFAULT 1,
   `Subject` varchar(225) NOT NULL,
   `address` longtext NOT NULL,
   `gender` varchar(225) NOT NULL
@@ -347,8 +348,10 @@ CREATE TABLE `teachers` (
 --
 
 INSERT INTO `teachers` (`id`, `name`, `Email`, `Contact`, `Password`, `Profile`, `Roll`, `Subject`, `address`, `gender`) VALUES
-(3, 'noman ishaq', 'noman@gmail.com', '03345785792', 'noman123', 'ahmed.jpg', 0, 'Computer', 'aptech', 'Male'),
-(5, 'Taba', 'taba@gmail.com', '035734786752', 'Taba123', 'images.jpg', 0, 'urdu', 'bahria', 'Female');
+(3, 'noman ishaq', 'noman@gmail.com', '03345785792', '202cb962ac59075b964b07152d234b70', '5.jpg', 1, 'Computer', 'aptech', 'Male'),
+(5, 'Toba', 'toba@gmail.com', '035734786752', '202cb962ac59075b964b07152d234b70', '3.jpg', 1, 'urdu', 'bahria', 'Female'),
+(6, 'Ali', 'ali@gmail.com', '03343427289', '202cb962ac59075b964b07152d234b70', '2.jpg', 1, 'Science', 'DHA', 'Male'),
+(7, 'Hina', 'hina@gmail.com', '03343427289', '202cb962ac59075b964b07152d234b70', '1.jpg', 1, 'Sindhi', 'Gulberg', 'Female');
 
 -- --------------------------------------------------------
 
@@ -583,7 +586,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `F_name`, `L_name`, `Email`, `Contact`, `Password`, `Profile`, `Roll`, `Age`, `Class_id`, `father_name`, `time`, `student_ID`) VALUES
 (2, 'Rayan', 'ahmed', 'Rayan@gmail.com', '033214568', 'Rayan123', '333', 0, 18, 2, '', '2022-08-12 16:10:54', ''),
-(3, 'simon', 'simon', 'simon@gmail.com', '01234587', '123', '222', 0, 18, 1, '', '2022-08-12 16:10:54', '');
+(3, 'simon', 'simon', 'simon@gmail.com', '01234587', '123', '222', 0, 18, 1, '', '2022-08-12 16:10:54', ''),
+(4, 'ahmad', 'khan', 'ahmed@gmail.com', '0333303', '123', '1111', 0, 18, 1, 'khan', '2022-08-14 02:22:18', '');
 
 --
 -- Indexes for dumped tables
@@ -735,7 +739,7 @@ ALTER TABLE `class`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `english`
@@ -795,7 +799,7 @@ ALTER TABLE `sindhi`
 -- AUTO_INCREMENT for table `teachers`
 --
 ALTER TABLE `teachers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `teacher_attendence`
@@ -843,7 +847,7 @@ ALTER TABLE `urdu`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

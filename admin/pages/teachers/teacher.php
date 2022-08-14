@@ -40,7 +40,7 @@ include_once '../../../auth/connection.php';
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="#">Tables</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Basic tables</li>
+                  <li class="breadcrumb-item active" aria-current="page">Teacher tables</li>
                 </ol>
               </nav>
             </div>
@@ -49,8 +49,7 @@ include_once '../../../auth/connection.php';
               <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Users Table</h4>
-                    <p class="card-description"> Add class <code>.table-striped</code>
+                    <h4 class="card-title">All Teachers</h4>
                     </p>
                     <div class="table-responsive">
                       <table class="table table-striped">
@@ -83,12 +82,12 @@ include_once '../../../auth/connection.php';
                             <td><?php echo $row[0]; ?></td>
 
                             
-                            <td class="py-1"><img src="../../../img/<?php echo $row[5]; ?>"  /></td>
+                            <td class="py-1"><img src="../../../teacher/<?php echo $row[5]; ?>"  /></td>
                             <td> <?php echo $row[1]; ?></td>
                             <td><?php echo $row[2]; ?></td>
                             <td><?php echo $row[7]; ?></td>
                             <td><?php echo $row[3]; ?> </td>
-                            <td> <a href="teacher_profile.php?id=<?php echo $row[0];?>"> <button type="button" class="btn btn-success">Edit</button></td>
+                            <td> <a href="teacher_profile.php?id=<?php echo $row[0];?>"> <button type="button" class="btn btn-success">Detail</button></td>
                             <td> <a href="teacher.php?id=<?php echo $row[0];?>"> <button type="button" class="btn btn-danger">Delete</button></a></td>
                             <!-- <td><a href="insert.php"><button type="button" class="btn btn-warning">Insert</button></a></td> -->
                           </tr>
@@ -103,12 +102,9 @@ include_once '../../../auth/connection.php';
               </div>
           <!-- content-wrapper ends -->
           <!-- partial:../../partials/_footer.html -->
-          <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a> from Bootstrapdash.com</span>
-            </div>
-          </footer>
+          <?php
+              include("../../my_include/footer.php");
+            ?>
           <!-- partial -->
         </div>
         <!-- main-panel ends -->

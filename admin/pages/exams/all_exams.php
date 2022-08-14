@@ -81,7 +81,8 @@ session_start();
                                         <tr>
                                             <td>
                                                 <?php
-                                                $sel_student = "SELECT u.F_name,u.L_name FROM `users` u WHERE `id` = '$row[2]'";
+                                                $myname = $row[2];
+                                                $sel_student = "SELECT u.F_name,u.L_name FROM `users` u WHERE `id` = '$myname'";
                                                 $res_student = mysqli_query($conn, $sel_student);
                                                 $r_student = mysqli_fetch_array($res_student);
                                                 echo $r_student["F_name"] . " " . $r_student["L_name"];

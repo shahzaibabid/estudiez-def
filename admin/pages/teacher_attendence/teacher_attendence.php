@@ -62,7 +62,7 @@ if(isset($_POST["submit"])) {
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="#">Attendance</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Student Attendance</li>
+                  <li class="breadcrumb-item active" aria-current="page">Teacher Attendance</li>
                 </ol>
               </nav>
             </div>
@@ -99,9 +99,9 @@ if(isset($_POST["submit"])) {
                               $i++;
                           ?>
                               <tr>
-                                  <td><img src="../../../img/<?php echo $row["Profile"]; ?>" alt="" srcset=""></td>
+                                  <td><img src="../../../teacher/<?php echo $row["Profile"]; ?>" alt="" srcset=""></td>
                                   <td> <?php echo $row[1]; ?></td>
-                                  <td><?php echo $row[7];?><
+                                  <td><?php echo $row[7];?></td>
                                   <td class="align-middle"><label><input type="radio" class="form-check-input" name="optionsRadios<?php echo $i; ?>" id="optionsRadios1<?php echo $i; ?>" value="A">Absent</label></td>
                                   <td class="align-middle"bel><input type="radio" class="form-check-input" name="optionsRadios<?php echo $i; ?>" id="optionsRadios2<?php echo $i; ?>" value="P">Present</label></td>
                                   <td class="align-middle"><label><input type="radio" class="form-check-input" name="optionsRadios<?php echo $i; ?>" id="optionsRadios3<?php echo $i; ?>" value="L">Leave</label></td>
@@ -126,12 +126,9 @@ if(isset($_POST["submit"])) {
           </div>
               <!-- content-wrapper ends -->
           <!-- partial:../../partials/_footer.html -->
-          <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a> from Bootstrapdash.com</span>
-            </div>
-          </footer>
+          <?php
+              include("../../my_include/footer.php");
+            ?>
           <!-- partial -->
         </div>
         <!-- main-panel ends -->

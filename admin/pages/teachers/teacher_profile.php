@@ -38,15 +38,15 @@ include_once '../../../auth/connection.php';
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
-                <center>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/800px-Image_created_with_a_mobile_phone.png" style="width: 11vw; height:11vw; border-radius: 50%;" alt="">
-                </center>
                 <?php
                     $id = $_GET["id"];
                     $teacher = "SELECT * FROM `teachers` WHERE `id` = '$id'";
                     $teacher_result = mysqli_query($conn, $teacher);
                     $row = mysqli_fetch_array($teacher_result);
                 ?>
+                <center>
+                    <img src="../../../teacher/<?php echo $row[5]; ?>" style="width: 11vw; height:11vw; border-radius: 50%;" alt="">
+                </center>                
                 <h1 class="text-center mt-4"> <?php echo $row[1]; ?> </h1>
                 <p class="text-center mb-4">Teacher</p>
             
@@ -132,12 +132,9 @@ include_once '../../../auth/connection.php';
           </div>
           <!-- content-wrapper ends -->
           <!-- partial:../../partials/_footer.html -->
-          <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a> from Bootstrapdash.com</span>
-            </div>
-          </footer>
+            <?php
+              include("../../my_include/footer.php");
+            ?>
           <!-- partial -->
         </div>
         <!-- main-panel ends -->

@@ -11,13 +11,14 @@ $contact = mysqli_real_escape_string($conn, $_POST["contact"]);
 $gender = mysqli_real_escape_string($conn, $_POST["gender"]);
 $Subject = mysqli_real_escape_string($conn, $_POST["subject"]);
 $Address = mysqli_real_escape_string($conn, $_POST["address"]);
+$password = md5($password);
 
 
   $image_name = $_FILES["img"]["name"];
   $image_type = $_FILES["img"]["type"];
   $image_temp = $_FILES["img"]["tmp_name"];
   $image_size = $_FILES["img"]["size"];
-  $path = "../../../img/" . $image_name;
+  $path = "../../../teacher/" . $image_name;
     
     $query = "INSERT INTO `teachers`(`id`, `name`, `Email`, `Contact`, `Password`, `Profile`,  `Subject`, `address`, `gender`) VALUES 
     (Null,'$name','$email','$contact','$password','$image_name','$Subject','$Address','$gender')";
@@ -67,15 +68,7 @@ header("location: teacher.php");
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
-            <div class="page-header">
-              <h3 class="page-title"> Form elements </h3>
-              <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#">Forms</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Form elements</li>
-                </ol>
-              </nav>
-            </div>
+
             <div class="row">
               
               <div class="col-12 grid-margin stretch-card">
@@ -138,12 +131,9 @@ header("location: teacher.php");
           </div>
           <!-- content-wrapper ends -->
           <!-- partial:../../partials/_footer.html -->
-          <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a> from Bootstrapdash.com</span>
-            </div>
-          </footer>
+          <?php
+              include("../../my_include/footer.php");
+            ?>
           <!-- partial -->
         </div>
         <!-- main-panel ends -->

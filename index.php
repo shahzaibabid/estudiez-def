@@ -1,3 +1,6 @@
+<?php
+    include("auth/connection.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -427,7 +430,24 @@
                 <div class="icon"><span class="fas fa-user-friends"></span></div>
                 <div>
                     <h2 class="counter">
-                    <span data-animation-duration="2000" data-value="864" class="animate-number">0</span>
+                        <?php
+                        $teach = "SELECT COUNT(id) FROM `teachers`";
+                        $teachres = mysqli_query($conn, $teach);
+                        $trow = mysqli_fetch_array($teachres);
+                        
+                        $stu = "SELECT COUNT(id) FROM `users` WHERE `Roll` = 0";
+                        $student = mysqli_query($conn, $stu);
+                        $srow = mysqli_fetch_array($student);
+
+                        $feed = "SELECT COUNT(id) FROM `feedback`";
+                        $feedback = mysqli_query($conn, $feed);
+                        $frow = mysqli_fetch_array($feedback);
+
+                        $exam = "SELECT COUNT(id) FROM `exam`";
+                        $examres = mysqli_query($conn, $exam);
+                        $erow = mysqli_fetch_array($examres);
+                        ?>
+                    <span data-animation-duration="2000" data-value="<?php echo $trow[0]; ?>" class="animate-number">0</span>
                     </h2>
                     <h5 class="title">Qualified Teachers</h5>
                 </div>
@@ -438,7 +458,7 @@
                 <div class="icon"><span class="fas fa-graduation-cap"></span></div>
                 <div>
                     <h2 class="counter">
-                    <span data-animation-duration="2000" data-value="486" class="animate-number">0</span>
+                    <span data-animation-duration="2000" data-value="<?php echo $srow[0]; ?>" class="animate-number">0</span>
                     </h2>
                     <h5 class="title">Number of Students</h5>
                 </div>
@@ -449,7 +469,7 @@
                 <div class="icon"><span class="far fa-smile"></span></div>
                 <div>
                     <h2 class="counter">
-                    <span data-animation-duration="2000" data-value="1468" class="animate-number">0</span>
+                    <span data-animation-duration="2000" data-value="<?php echo $frow[0]; ?>" class="animate-number">0</span>
                     </h2>
                     <h5 class="title">Satisfied Feedback</h5>
                 </div>
@@ -460,7 +480,7 @@
                 <div class="icon"><span class="fas fa-medal"></span></div>
                 <div>
                     <h2 class="counter">
-                    <span data-animation-duration="2000" data-value="32" class="animate-number">0</span>
+                    <span data-animation-duration="2000" data-value="<?php echo $erow[0]; ?>" class="animate-number">0</span>
                     </h2>
                     <h5 class="title">Student Acheivements</h5>
                 </div>
@@ -489,19 +509,19 @@
             <div class="section-conent">
             <div class="row">
                 <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
-                <div class="gallery-block">
-                    <div class="gallery-thumb">
-                    <img alt="gallery" src="images/gallery/1.jpg" class="img-fullwidth">
-                    </div>
-                    <div class="overlay-shade"></div>
-                    <div class="icons-holder">
-                    <div class="icons-holder-inner">
-                        <div class="gallery-icon">
-                        <a href="images/gallery/1.jpg"  data-lightbox-gallery="gallery"><i class="pe-7s-science"></i></a>
+                    <div class="gallery-block">
+                        <div class="gallery-thumb">
+                        <img alt="gallery" src="images/gallery/1.jpg" class="img-fullwidth">
+                        </div>
+                        <div class="overlay-shade"></div>
+                        <div class="icons-holder">
+                        <div class="icons-holder-inner">
+                            <div class="gallery-icon">
+                            <a href="images/gallery/1.jpg"  data-lightbox-gallery="gallery"><i class="pe-7s-science"></i></a>
+                            </div>
+                        </div>
                         </div>
                     </div>
-                    </div>
-                </div>
                 </div>
                 <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
                 <div class="gallery-block">
@@ -602,15 +622,20 @@
             </div>
             <div class="section-content">
             <div class="row">
+                <?php
+                    $myteach = "SELECT * FROM `teachers` LIMIT 4";
+                    $myteach_res = mysqli_query($conn,$myteach);
+                    while($teacher_row = mysqli_fetch_array($myteach_res)) {                        
+                ?>
                 <div class="col-sm-6 col-xl-3 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.1s">
                 <div class="team-member">
                     <div class="team-thumb">
-                    <img class="img-fullwidth" src="images/team/team1.jpg" alt="team1.jpg">
+                    <img class="img-fullwidth" src="./teacher/<?php echo $teacher_row[5]; ?>" alt="team1.jpg">
                     </div>
                     <div class="team-details text-center bg-theme-colored2">
                     <div class="member-biography">
-                        <h3 class="mt-0 text-white mb-0">Steve Smith</h3>
-                        <p class="mb-0 text-white">English Teacher</p>
+                        <h3 class="mt-0 text-white mb-0"><?php echo $teacher_row[1]; ?></h3>
+                        <p class="mb-0 text-white"><?php echo $teacher_row[7]; ?></p>
                     </div>
                     <ul class="styled-icons icon-dark icon-md icon-theme-colored4 icon-circled pt-3">
                         <li><a href="#"><i class="fab fa-facebook text-white"></i></a></li>
@@ -621,7 +646,10 @@
                     </div>
                 </div>
                 </div>
-                <div class="col-sm-6 col-xl-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+                <?php
+                    }
+                ?>
+                <!-- <div class="col-sm-6 col-xl-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
                 <div class="team-member">
                     <div class="team-thumb">
                     <img class="img-fullwidth" src="images/team/team2.jpg" alt="team2.jpg">
@@ -677,7 +705,7 @@
                     </ul>
                     </div>
                 </div>
-                </div>
+                </div> -->
             </div>
             </div>
         </div>
@@ -748,18 +776,35 @@
                     <h2 class="mt-0 mb-0">Interested in discussing?</h2>
                     <p class="font-size-20">Question not answered yet? We are here to help!</p>
             <!-- Contact Form -->
-                            <form id="contact_form" name="contact_form" class="" action="https://kodesolution.com/html/2017/kidspro-html-b5/includes/sendmail.php" method="post">
+                            <?php
+                                if(isset($_POST["contact"])) {
+                                    $con_name = $_POST["form_name"];
+                                    $con_email = $_POST["form_email"];
+                                    $con_sub = $_POST["form_subject"];
+                                    $con_phone = $_POST["form_phone"];
+                                    $con_msg = $_POST["form_message"];
+                                    $con_msg = mysqli_real_escape_string($conn, $con_msg);
+                                    $inp = "INSERT INTO `contact`(`Name`, `Email`, `Subject`, `message`, `phone`) VALUES ('$con_name','$con_email','$con_sub','$con_msg','$con_phone')";
+                                    $inp_res = mysqli_query($conn, $inp);
+                                    ?>
+                                    <script>
+                                        windows.location.assign("index.php");
+                                    </script>
+                                    <?php                                    
+                                }
+                            ?>
+                            <form id="contact_form" name="contact_form" class="" action="#" method="post">
                             <div class="row">
                                 <div class="col-sm-6">
                                 <div class="mb-3">
                                     <label>Name <small>*</small></label>
-                                    <input name="form_name" class="form-control" type="text" placeholder="Enter Name">
+                                    <input name="form_name" class="form-control shadow" type="text" placeholder="Enter Name">
                                 </div>
                                 </div>
                                 <div class="col-sm-6">
                                 <div class="mb-3">
                                     <label>Email <small>*</small></label>
-                                    <input name="form_email" class="form-control required email" type="email" placeholder="Enter Email">
+                                    <input name="form_email" class="form-control required email shadow" type="email" placeholder="Enter Email">
                                 </div>
                                 </div>
                             </div>
@@ -767,54 +812,29 @@
                                 <div class="col-sm-6">
                                 <div class="mb-3">
                                     <label>Subject <small>*</small></label>
-                                    <input name="form_subject" class="form-control required" type="text" placeholder="Enter Subject">
+                                    <input name="form_subject" class="form-control required shadow" type="text" placeholder="Enter Subject">
                                 </div>
                                 </div>
                                 <div class="col-sm-6">
                                 <div class="mb-3">
                                     <label>Phone</label>
-                                    <input name="form_phone" class="form-control" type="text" placeholder="Enter Phone">
+                                    <input name="form_phone" class="form-control shadow" type="text" placeholder="Enter Phone">
                                 </div>
                                 </div>
                             </div>
 
                             <div class="mb-3">
                                 <label>Message</label>
-                                <textarea name="form_message" class="form-control required" rows="5" placeholder="Enter Message"></textarea>
+                                <textarea name="form_message" class="form-control required shadow" rows="5" placeholder="Enter Message"></textarea>
                             </div>
                             <div class="mb-3">
                                 <input name="form_botcheck" class="form-control" type="hidden" value="" />
-                                <button type="submit" class="btn btn-flat btn-theme-colored1 text-uppercase mt-10 mb-sm-30 border-left-theme-color-2-4px" data-loading-text="Please wait...">Send your message</button>
+                                <button name="contact" type="submit" class="btn btn-flat btn-theme-colored1 text-uppercase mt-10 mb-sm-30 border-left-theme-color-2-4px" data-loading-text="Please wait...">Send your message</button>
                                 
                             </div>
                             </form>
 
             <!-- Contact Form -->
-                    <script>
-                    (function($) {
-                        $("#contact_form").validate({
-                        submitHandler: function(form) {
-                            var form_btn = $(form).find('button[type="submit"]');
-                            var form_result_div = '#form-result';
-                            $(form_result_div).remove();
-                            form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
-                            var form_btn_old_msg = form_btn.html();
-                            form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
-                            $(form).ajaxSubmit({
-                            dataType:  'json',
-                            success: function(data) {
-                                if( data.status == 'true' ) {
-                                $(form).find('.form-control').val('');
-                                }
-                                form_btn.prop('disabled', false).html(form_btn_old_msg);
-                                $(form_result_div).html(data.message).fadeIn('slow');
-                                setTimeout(function(){ $(form_result_div).fadeOut('slow') }, 6000);
-                            }
-                            });
-                        }
-                        });
-                    })(jQuery);
-                    </script>
                 </div>
                 </div>
             </div>
