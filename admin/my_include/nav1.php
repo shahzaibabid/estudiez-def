@@ -111,6 +111,22 @@
             </a>
         </li>
         <li class="nav-item menu-items">
+            <a class="nav-link" href="../contact/feedback.php">
+                <span class="menu-icon">
+                    <i class="mdi mdi-file-document-box"></i>
+                </span>
+                <span class="menu-title">All Feedback</span>
+            </a>
+        </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link" href="../contact/contact.php">
+                <span class="menu-icon">
+                    <i class="mdi mdi-file-document-box"></i>
+                </span>
+                <span class="menu-title">All Contact</span>
+            </a>
+        </li>
+        <li class="nav-item menu-items">
             <a class="nav-link" data-toggle="collapse" href="#c_test" aria-expanded="false" aria-controls="c_test">
                 <span class="menu-icon">
                 <i class="mdi mdi-security"></i>
