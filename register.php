@@ -323,7 +323,7 @@ if(isset($_POST["signin"])){
                         </div>
                         <div class="mb-3 col-md-6">
                         <label for="form_choose_password">Password</label>
-                        <input id="form_choose_password" name="pass" class="form-control" type="text">
+                        <input id="form_choose_password" name="pass" class="form-control" type="text" placeholder="Enter first letter capital">
                         </div>
                         <div class="mb-3 col-md-12">
                         <label for="form_choose_password">Choose Profile</label>
@@ -391,7 +391,7 @@ if(isset($_POST["signin"])){
                     
                         <div class="mb-3 col-md-6">
                         <label for="form_choose_password">Choose Password</label>
-                        <input id="form_choose_password" name="p_pass" class="form-control" type="text">
+                        <input id="form_choose_password" name="p_pass" class="form-control" type="text" placeholder="Enter first letter capital">
                         </div>
                         <div class="mb-3 col-md-12">
                         <label for="form_choose_password">Choose Profile</label>
