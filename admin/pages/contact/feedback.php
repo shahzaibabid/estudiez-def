@@ -75,6 +75,7 @@ session_start();
                                                 $i++;
                                             ?>
                                             <tr>
+                                                <td><?php echo $i; ?></td>
                                                 <td><?php echo $row[1]; ?></td>
                                                 <td><?php echo $row[2]; ?></td>
                                                 <td><?php echo $row[3]; ?></td>
