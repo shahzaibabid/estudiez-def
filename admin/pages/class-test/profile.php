@@ -10,7 +10,7 @@ session_start();
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Corona Admin</title>
+    <title>Admin Panel</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
@@ -24,7 +24,7 @@ session_start();
     <!-- Layout styles -->
     <link rel="stylesheet" href="../../assets/css/style.css">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+    <link rel="shortcut icon" href="../../bg_img_small.png" />
   </head>
   <body>
     <div class="container-scroller">
@@ -51,7 +51,7 @@ session_start();
                     $row = mysqli_fetch_array($result);
                 ?>
                     <center>
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkEFYAPkZb-ab7uE0w90StIouVeRtAdIzRch2ol26QF1xLuv87j4i6WbHaiovMOSePWwI&usqp=CAU" style="width:11vw; height:11vw; border-radius: 50%" alt="">
+                        <img src="../../../profile/<?php echo $row["Profile"]; ?>" style="width:11vw; height:11vw; border-radius: 50%" alt="">
                     </center>
                     <h1 class="text-center mt-4"><?php echo $row["F_name"] . " " . $row["F_name"]; ?></h1>
               <p class="text-center mb-5">
@@ -349,12 +349,10 @@ session_start();
             </div>
           <!-- content-wrapper ends -->
           <!-- partial:../../partials/_footer.html -->
-          <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a> from Bootstrapdash.com</span>
-            </div>
-          </footer>
+          <?php
+          include("../../my_include/footer.php");
+          ?>
+
           <!-- partial -->
         </div>
         <!-- main-panel ends -->

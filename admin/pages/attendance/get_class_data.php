@@ -11,7 +11,7 @@ while($row = mysqli_fetch_array($result)) {
     $i++;
 ?>
     <tr>
-        <td><?php echo $row["Profile"]; ?></td>
+        <td><img src="../../../profile/<?php echo $row["Profile"]; ?>" style="width:3.5vw; height:3.5vw; border-radius: 50%;" alt=""></td>
         <td><?php echo $row["F_name"] . " " . $row["L_name"]; ?></td>
         <td class="align-middle"><label><input type="radio" class="form-check-input" name="optionsRadios<?php echo $i; ?>" id="optionsRadios1<?php echo $i; ?>" value="A">Absent</label></td>
         <td class="align-middle"><label><input type="radio" class="form-check-input" name="optionsRadios<?php echo $i; ?>" id="optionsRadios2<?php echo $i; ?>" value="P">Present</label></td>
