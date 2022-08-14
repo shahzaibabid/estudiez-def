@@ -1,3 +1,50 @@
+<?php
+include_once 'auth/connection.php';
+
+session_start();
+
+if(isset($_POST["signin"])){
+
+    $email = mysqli_real_escape_string($conn, $_POST["email"]);
+    $password =mysqli_real_escape_string($conn, $_POST["pass"]);
+  $password = md5($password);
+  
+    $query = "SELECT * FROM `users` WHERE  `email`= '$email' AND `password` = '$password' ";
+    $result = mysqli_query($conn,$query);
+  
+     if(mysqli_num_rows($result)){
+      while($row = mysqli_fetch_array($result)){
+        $_SESSION["loggedIn"] = true;
+        $_SESSION["id"] = $row['0'];
+        $_SESSION["f_name"] = $row["1"];
+        $_SESSION["l_name"] = $row["2"];
+        $_SESSION["father_name"] = $row["10"];
+        $_SESSION["contact"] = $row["4"];
+        $_SESSION["age"] = $row["8"];
+        $_SESSION["class_id"] = $row["9"];
+        $_SESSION["email"] = $row["3"];
+        $_SESSION["pass"] = $row["5"];
+        $_SESSION["Roll"] = $row["7"];
+        $row["Roll"] = $_SESSION["Roll"];
+        $_SESSION["path"] = $row["6"];
+
+
+        header("location: index.php")
+
+?>
+<?php
+
+
+      }}}  
+
+
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,6 +128,7 @@
 <!-- banner image -->
 
 <!-- login &  register form -->
+
     <section>
         <div class="container">
             <div class="row">
@@ -101,17 +149,17 @@
                     <h4 class="text-gray mt-0 pt-10">Login</h4>
                     <hr>
                     <p>Login Here!</p>
-                    <form name="login-form" class="clearfix">
+                    <form name="login-form" method="Post" action="#" class="clearfix">
                     <div class="row">
                         <div class="mb-3 col-md-12">
                         <label for="form_username_email">Email Address</label>
-                        <input id="form_username_email" name="form_username_email" class="form-control" type="email" autocomplete="off" required>
+                        <input id="form_username_email" name="email" class="form-control" type="email" autocomplete="off" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="mb-3 col-md-12">
                         <label for="form_password">Password</label>
-                        <input id="form_password" name="form_password" class="form-control" type="password" >
+                        <input id="form_password" name="pass" class="form-control" type="password" >
                         </div>
                     </div>
                     <div class="checkbox mt-15">
@@ -120,7 +168,7 @@
                         Remember me </label>
                     </div>
                     <div class="mb-3 tm-sc-button mt-10">
-                        <button type="submit" class="btn btn-dark">Login</button>
+                        <button type="signin" class="btn btn-dark">Login</button>
                     </div>
                     <div class="clearfix pt-15">
                         <a class="text-theme-colored1 font-weight-600 font-size-14" href="#">Forgot Your Password?</a>
@@ -129,7 +177,7 @@
                     </form>
                     </div>
                 <div class="tab-pane fade p-10" id="student-register-tab" role="tabpanel" aria-labelledby="register-tab-area">
-                    <form name="reg-form" class="register-form" method="post">
+                    <form enctype="multipart/form-data" action="student.php" name="reg-form" class="register-form" method="post">
                     <div class="icon-box mb-0 p-0">
                        
                         <h4 class="text-gray pt-10 mt-0 mb-30">Don't have an Student Account? Register Here.</h4>
@@ -139,11 +187,11 @@
                     <div class="row">
                         <div class="mb-3 col-md-6">
                         <label>FirstName</label>
-                        <input name="firstname" class="form-control" type="text">
+                        <input name="f_name" class="form-control" type="text">
                         </div>
                         <div class="mb-3 col-md-6">
                         <label>LastName</label>
-                        <input name="lastname" class="form-control" type="text">
+                        <input name="l_name" class="form-control" type="text">
                         </div>
                         <div class="mb-3 col-md-6">
                         <label>Parent/Guardian Name</label>
@@ -151,7 +199,7 @@
                         </div>
                         <div class="mb-3 col-md-6">
                         <label>Email Address</label>
-                        <input name="form_email" class="form-control" type="email">
+                        <input name="email" class="form-control" type="email">
                         </div>
                     </div>
    
@@ -159,7 +207,7 @@
                        
                         <div class="mb-3 col-md-6">
                         <label>Contact number</label>
-                        <input id="form_re_enter_password" name="phone"  class="form-control" type="phone">
+                        <input id="form_re_enter_password" name="contact"  class="form-control" type="phone">
                         </div>
                         <div class="mb-3 col-md-6">
                         <label for="form_choose_password">Age</label>
@@ -168,33 +216,44 @@
                         <div class="mb-3 col-md-6">
                         <label for="form_choose_password">Class </label>
                         <div class="mb-3">
-                            <select name="form_sex" class="form-control required">
-                                <option >Select class</option>
-                                <option value="excellent">vi</option>
-                                <option value="good">vii</option>
-                                <option value="average">viii</option>
-                                <option value="poor">ix</option>
-                                <option value="poor">x</option>
-                            </select>
+                        <select name="class" class="form-control required">
+                                     <option >Select class</option>
+                                <?php
+                                $class = "SELECT * FROM `class` WHERE 1";
+                                $let = mysqli_query($conn,$class);
+                                if(mysqli_num_rows($let)){
+                                    while($see = mysqli_fetch_array($let)){
+                                        ?>
+                                     
+                                <option value="excellent"><?php echo $see[2];?></option>
+                            
+                                        <?php
+                                    }
+                                }
+                                
+                                ?>
+                               </select>
                         </div>
                         </div>
                         <div class="mb-3 col-md-6">
-                        <label for="form_choose_password">Choose Password</label>
-                        <input id="form_choose_password" name="form_choose_password" class="form-control" type="text">
+                        <label for="form_choose_password">Password</label>
+                        <input id="form_choose_password" name="pass" class="form-control" type="text">
                         </div>
                         <div class="mb-3 col-md-12">
                         <label for="form_choose_password">Choose Profile</label>
-                        <input id="form_choose_password" name="profile" class="form-control" type="file">
+                        <input id="form_choose_password" name="img" class="form-control" type="file">
                         </div>
                     </div>
                     <div class="mb-3 tm-sc-button">
-                        <button class="btn btn-dark btn-theme-colored1 mt-15" type="submit">Register Now</button>
+                        <button name="submit" class="btn btn-dark btn-theme-colored1 mt-15" type="submit">Register Now</button>
                     </div>
                     </form>
                 </div>
+<!-- parent -->
+
 
                 <div class="tab-pane fade p-10" id="parent-register-tab" role="tabpanel" aria-labelledby="register-tab-area">
-                    <form name="reg-form" class="register-form" method="post">
+                    <form enctype="multipart/form-data" action="parent.php" name="reg-form" class="register-form" method="post">
                     <div class="icon-box mb-0 p-0">
                        
                         <h4 class="text-gray pt-10 mt-0 mb-30">Don't have an Parent Student Account? Register Here.</h4>
@@ -204,39 +263,57 @@
                     <div class="row">
                         <div class="mb-3 col-md-6">
                         <label>FirstName</label>
-                        <input name="firstname" class="form-control" type="text">
+                        <input name="p_f_name" class="form-control" type="text">
                         </div>
                         <div class="mb-3 col-md-6">
                         <label>LastName</label>
-                        <input name="lastname" class="form-control" type="text">
+                        <input name="P_l_name" class="form-control" type="text">
                         </div>
                     
                         <div class="mb-3 col-md-6">
                         <label>Email Address</label>
-                        <input name="form_email" class="form-control" type="email">
+                        <input name="p_email" class="form-control" type="email">
                         </div>
 
                         <div class="mb-3 col-md-6">
                         <label>Contact number</label>
-                        <input id="form_re_enter_password" name="phone"  class="form-control" type="phone">
+                        <input id="form_re_enter_password" name="P_contact"  class="form-control" type="phone">
                         </div>
                     
                         <div class="mb-3 col-md-6">
-                        <label for="form_choose_password">Student ID</label>
-                        <input id="form_choose_password" name="studentid" class="form-control" type="text">
+                        <label for="form_choose_password">Student Id </label>
+                        <div class="mb-3">
+                        <select name="class" class="form-control required">
+                                     <option >Select class</option>
+                                <?php
+                                $class = "SELECT * FROM `users` WHERE 1";
+                                $let = mysqli_query($conn,$class);
+                                if(mysqli_num_rows($let)){
+                                    while($see = mysqli_fetch_array($let)){
+                                        ?>
+                                     
+                                <option value="excellent"><?php echo $see[9];?></option>
+                            
+                                        <?php
+                                    }
+                                }
+                                
+                                ?>
+                               </select>
+                        </div>
                         </div>
                     
                         <div class="mb-3 col-md-6">
                         <label for="form_choose_password">Choose Password</label>
-                        <input id="form_choose_password" name="form_choose_password" class="form-control" type="text">
+                        <input id="form_choose_password" name="p_pass" class="form-control" type="text">
                         </div>
                         <div class="mb-3 col-md-12">
                         <label for="form_choose_password">Choose Profile</label>
-                        <input id="form_choose_password" name="profile" class="form-control" type="file">
+                        <input id="form_choose_password" name="img" class="form-control" type="file">
                         </div>
                     </div>
                     <div class="mb-3 tm-sc-button">
-                        <button class="btn btn-dark btn-theme-colored1 mt-15" type="submit">Register Now</button>
+                        <button class="btn btn-dark btn-theme-colored1 mt-15" name="register" type="submit">Register Now</button>
                     </div>
                     </form>
                 </div>
