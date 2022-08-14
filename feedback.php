@@ -1,3 +1,6 @@
+<?php
+    include("auth/connection.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -83,6 +86,23 @@
     <section class="divider">
         <div class="container">
             <div class="row">
+            <?php
+                if(isset($_POST["feed"])) {
+                    $con_name = $_POST["form_name"];
+                    $con_email = $_POST["form_email"];
+                    $con_opn = $_POST["form_sex"];
+                    $con_exp = $_POST["form_exp"];
+                    $con_msg = $_POST["form_message"];
+                    $con_msg = mysqli_real_escape_string($conn, $con_msg);
+                    $inp = "INSERT INTO `feedback`(`Name`, `Email`, `opinion`, `exp`, `suggestion`) VALUES ('$con_name','$con_email','$con_opn','$con_exp','$con_msg')";
+                    $inp_res = mysqli_query($conn, $inp);
+                    ?>
+                    <script>
+                        windows.location.assign("index.php");
+                    </script>
+                    <?php                                    
+                }
+            ?>
             <div class="col-md-6 offset-md-3">
                 <div class="border-1px p-30 mb-0">
                 <h3 class="text-theme-colored1 mt-0 pt-10">Feedback</h3>
@@ -117,7 +137,7 @@
                     <div class="col-sm-12">
                         <div class="mb-3">
                         <label>How was your experience while using estudiez?  <small>*</small></label>
-                        <select name="form_sex" class="form-control required">
+                        <select name="form_exp" class="form-control required">
                         <option >Select</option>
                             <option value="excellent">Excellent</option>
                             <option value="good">Good</option>
@@ -135,35 +155,10 @@
 
                     <div class="mb-3 tm-sc-button mb-0 mt-20">
                     <input name="form_botcheck" class="form-control" type="hidden" value="">
-                    <button type="submit" class="btn btn-theme-colored1 btn-block btn-sm mt-20" data-loading-text="Please wait..."> Submit feedback </button>
+                    <button name="feed" type="submit" class="btn btn-theme-colored1 btn-block btn-sm mt-20" data-loading-text="Please wait..."> Submit feedback </button>
                     </div>
                 </form>
                 <!-- Job Form Validation-->
-                <script>
-                    (function($) {
-                    $("#job_apply_form").validate({
-                        submitHandler: function(form) {
-                        var form_btn = $(form).find('button[type="submit"]');
-                        var form_result_div = '#form-result';
-                        $(form_result_div).remove();
-                        form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
-                        var form_btn_old_msg = form_btn.html();
-                        form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
-                        $(form).ajaxSubmit({
-                            dataType:  'json',
-                            success: function(data) {
-                            if( data.status === 'true' ) {
-                                $(form).find('.form-control').val('');
-                            }
-                            form_btn.prop('disabled', false).html(form_btn_old_msg);
-                            $(form_result_div).html(data.message).fadeIn('slow');
-                            setTimeout(function(){ $(form_result_div).fadeOut('slow') }, 6000);
-                            }
-                        });
-                        }
-                    });
-                    })(jQuery);
-                </script>
                 </div>
             </div>
             </div>
