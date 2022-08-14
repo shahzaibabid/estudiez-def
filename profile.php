@@ -238,6 +238,25 @@
             </div>
     </section>
 <!-- Attendance Record -->
+
+<!-- Basic Divider -->
+<section class="divider bg-img-cover bg-img-center layer-overlay overlay-theme-colored4-7" data-tm-bg-img="images/bg/p2.jpg">
+            <div class="container pt-90 pb-90">
+                <!-- no text needed here-->
+            </div>
+    </section>
+<!-- Basic Divider -->
+
+<!-- Resource Links  -->
+<section id="team" class="bg-img-cover bg-img-center" data-tm-bg-img="images/bg/p2.jpg">
+    <div class="section-content">
+        <?php
+            include_once('links.php')
+        ?>
+    </div>
+</section>
+<!-- Resource Links -->
+
 <!-- main content -->
 
 <!-- footer -->
