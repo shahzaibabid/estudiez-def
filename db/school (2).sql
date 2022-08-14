@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 13, 2022 at 04:13 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Aug 14, 2022 at 11:06 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.3.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -80,12 +80,19 @@ INSERT INTO `class` (`id`, `Year`, `Class_name`, `Teacher_id`) VALUES
 
 CREATE TABLE `contact` (
   `id` int(11) NOT NULL,
-  `Name` int(11) NOT NULL,
-  `Email` int(11) NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  `Email` varchar(255) NOT NULL,
   `Subject` varchar(255) NOT NULL,
   `message` longtext NOT NULL,
   `phone` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id`, `Name`, `Email`, `Subject`, `message`, `phone`) VALUES
+(2, 'jack', 'jack@gmail.com', 'demo', 'demo message', 33333333);
 
 -- --------------------------------------------------------
 
@@ -146,6 +153,28 @@ INSERT INTO `exam` (`id`, `class_id`, `user_id`, `eng`, `urdu`, `sindhi`, `p_stu
 (2, 1, 3, 95, 85, 84, 75, 76, 73, 82, 700, 570, 81.43, 'A+', 'Pass', 'Good Work'),
 (3, 2, 2, 35, 22, 10, 28, 32, 46, 51, 700, 224, 32, 'F', 'Fail', 'Try a little harder '),
 (4, 1, 1, 89, 79, 85, 65, 85, 65, 65, 700, 533, 76.14, 'A', 'Pass', 'Good Job');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `id` int(11) NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  `Email` varchar(255) NOT NULL,
+  `opinion` varchar(255) NOT NULL,
+  `exp` varchar(255) NOT NULL,
+  `suggestion` longtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`id`, `Name`, `Email`, `opinion`, `exp`, `suggestion`) VALUES
+(1, 'khan', 'khan@gmail.com', 'good', 'good', 'dummy text');
 
 -- --------------------------------------------------------
 
@@ -591,6 +620,12 @@ ALTER TABLE `exam`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `islamiat_rel`
 --
 ALTER TABLE `islamiat_rel`
@@ -700,7 +735,7 @@ ALTER TABLE `class`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `english`
@@ -713,6 +748,12 @@ ALTER TABLE `english`
 --
 ALTER TABLE `exam`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `islamiat_rel`
