@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 14, 2022 at 01:45 PM
+-- Generation Time: Aug 14, 2022 at 06:18 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -93,7 +93,8 @@ CREATE TABLE `contact` (
 
 INSERT INTO `contact` (`id`, `Name`, `Email`, `Subject`, `message`, `phone`) VALUES
 (3, 'Talha', 'talha@gmail.com', 'This is subject', 'This is my message', '2147483647'),
-(4, 'Abbas', 'abbas@gmail.com', 'subject', 'This is message', '0332323568');
+(4, 'Abbas', 'abbas@gmail.com', 'subject', 'This is message', '0332323568'),
+(5, 'Tahir', 'tahir@gmail.com', 'This is subject', 'This is my dummy message', '03343427289');
 
 -- --------------------------------------------------------
 
@@ -739,7 +740,7 @@ ALTER TABLE `class`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `english`
@@ -847,7 +848,7 @@ ALTER TABLE `urdu`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
