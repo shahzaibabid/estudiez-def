@@ -40,13 +40,13 @@ if(isset($_POST["signin"])){
         $x = $_POST["gndr"];
         switch ($x) {
             case 'Student':
-                $_SESSION["roll"] = $row[8];
-                $_SESSION["profile"] = $row[7];   
+                $_SESSION["roll"] = $row[7];
+                $_SESSION["profile"] = $row[6];   
             break;
             
             case 'Parent': 
-                $_SESSION["roll"] = $row[8];
-                $_SESSION["profile"] = $row[7];   
+                $_SESSION["roll"] = $row[7];
+                $_SESSION["profile"] = $row[6];   
             break;
                 
             case 'Teacher':
@@ -55,12 +55,15 @@ if(isset($_POST["signin"])){
             break;
 
             default:
-            $_SESSION["roll"] = $row[8];
-            $_SESSION["profile"] = $row[7];   
+            $_SESSION["roll"] = $row[7];
+            $_SESSION["profile"] = $row[6];   
         break;
         }                     
       }
-
+// 0 - users
+// 1 - teacher
+// 2 - parent
+// 3 - admin
       if ($_SESSION["roll"] == 0)
       {
           ?>
