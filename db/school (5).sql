@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 14, 2022 at 10:00 PM
+-- Generation Time: Aug 14, 2022 at 10:42 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -596,10 +596,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `F_name`, `L_name`, `Email`, `Contact`, `Password`, `Profile`, `Roll`, `Age`, `Class_id`, `father_name`, `time`, `student_ID`) VALUES
-(2, 'Rayan', 'ahmed', 'Rayan@gmail.com', '033214568', '202cb962ac59075b964b07152d234b70', '333', 0, 18, 2, '', '2022-08-12 16:10:54', ''),
-(3, 'simon', 'simon', 'simon@gmail.com', '01234587', '123', '222', 0, 18, 1, '', '2022-08-12 16:10:54', ''),
-(4, 'ahmad', 'khan', 'ahmed@gmail.com', '0333303', '123', '1111', 0, 18, 1, 'khan', '2022-08-14 02:22:18', ''),
-(8, '', '', 'admin@gmail.com', '', '202cb962ac59075b964b07152d234b70', '', 2, 0, 0, '', '2022-08-14 12:35:50', '');
+(2, 'Rayan', 'ahmed', 'Rayan@gmail.com', '033214568', '202cb962ac59075b964b07152d234b70', '333', 0, 18, 0, '', '2022-08-12 16:10:54', ''),
+(3, 'simon', 'simon', 'simon@gmail.com', '01234587', '123', '222', 0, 18, 0, '', '2022-08-12 16:10:54', ''),
+(4, 'ahmad', 'khan', 'ahmed@gmail.com', '0333303', '123', '1111', 0, 18, 0, 'khan', '2022-08-14 02:22:18', ''),
+(8, '', '', 'admin@gmail.com', '', '202cb962ac59075b964b07152d234b70', '', 3, 0, 0, '', '2022-08-14 12:35:50', '');
 
 --
 -- Indexes for dumped tables
