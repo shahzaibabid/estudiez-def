@@ -9,7 +9,7 @@ include_once '../../../auth/connection.php';
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Corona Admin</title>
+    <title>Admin Panel</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
@@ -21,7 +21,7 @@ include_once '../../../auth/connection.php';
     <!-- Layout styles -->
     <link rel="stylesheet" href="../../assets/css/style.css">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+    <link rel="shortcut icon" href="../../bg_img_small.png" />	
   </head>
   <body>
     <div class="container-scroller">
@@ -52,7 +52,6 @@ include_once '../../../auth/connection.php';
                 <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">Users Table</h4>
-                    <p class="card-description"> Add class <code>.table-striped</code>
                     </p>
                     <div class="table-responsive">
                       <table class="table table-striped">
@@ -105,12 +104,10 @@ include_once '../../../auth/connection.php';
               </div>
           <!-- content-wrapper ends -->
           <!-- partial:../../partials/_footer.html -->
-          <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a> from Bootstrapdash.com</span>
-            </div>
-          </footer>
+          <?php
+          include("../../my_include/footer.php");
+          ?>
+
           <!-- partial -->
         </div>
         <!-- main-panel ends -->

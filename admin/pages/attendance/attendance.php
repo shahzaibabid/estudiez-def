@@ -26,7 +26,7 @@ if(isset($_POST["submit"])) {
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Corona Admin</title>
+    <title>Admin Panel</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
@@ -38,7 +38,7 @@ if(isset($_POST["submit"])) {
     <!-- Layout styles -->
     <link rel="stylesheet" href="../../assets/css/style.css">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+    <link rel="shortcut icon" href="../../bg_img_small.png" />
   </head>
   <body>
     <div class="container-scroller">
@@ -113,7 +113,7 @@ if(isset($_POST["submit"])) {
                                 $i++;
                             ?>
                                 <tr>
-                                    <td><img src="https://media-exp1.licdn.com/dms/image/C560BAQHMnA03XDdf3w/company-logo_200_200/0/1519855918965?e=2147483647&v=beta&t=J3kUMZwIphc90TFKH5oOO9Sa9K59fimgJf-s_okU3zs" style="width:3.5vw; height:3.5vw; border-radius: 50%;" alt=""></td>
+                                    <td><img src="../../../profile/<?php echo $row["Profile"]; ?>" style="width:3.5vw; height:3.5vw; border-radius: 50%;" alt=""></td>
                                     <td><?php echo $row["F_name"] . " " . $row["L_name"]; ?></td>
                                     <td class="align-middle"><label><input type="radio" class="form-check-input" name="optionsRadios<?php echo $i; ?>" id="optionsRadios1<?php echo $i; ?>" value="A">Absent</label></td>
                                     <td class="align-middle"><label><input type="radio" class="form-check-input" name="optionsRadios<?php echo $i; ?>" id="optionsRadios2<?php echo $i; ?>" value="P">Present</label></td>
@@ -137,12 +137,9 @@ if(isset($_POST["submit"])) {
           </div>
               <!-- content-wrapper ends -->
           <!-- partial:../../partials/_footer.html -->
-          <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a> from Bootstrapdash.com</span>
-            </div>
-          </footer>
+          <?php
+          include("../../my_include/footer.php");
+          ?>
           <!-- partial -->
         </div>
         <!-- main-panel ends -->

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 14, 2022 at 01:45 PM
+-- Generation Time: Aug 14, 2022 at 10:00 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -46,7 +46,10 @@ INSERT INTO `attendance` (`id`, `Date`, `Class_id`, `User_id`, `attendance`) VAL
 (4, '08/11/2022 03:53:56 pm', 1, 1, 'P'),
 (5, '08/11/2022 03:53:56 pm', 1, 3, 'L'),
 (6, '08/11/2022 04:32:22 pm', 1, 1, 'A'),
-(7, '08/11/2022 04:32:22 pm', 1, 3, 'P');
+(7, '08/11/2022 04:32:22 pm', 1, 3, 'P'),
+(8, '08/14/2022 07:59:45 pm', 2, 2, 'L'),
+(9, '08/14/2022 08:01:11 pm', 1, 3, 'L'),
+(10, '08/14/2022 08:01:11 pm', 1, 4, 'L');
 
 -- --------------------------------------------------------
 
@@ -93,7 +96,8 @@ CREATE TABLE `contact` (
 
 INSERT INTO `contact` (`id`, `Name`, `Email`, `Subject`, `message`, `phone`) VALUES
 (3, 'Talha', 'talha@gmail.com', 'This is subject', 'This is my message', '2147483647'),
-(4, 'Abbas', 'abbas@gmail.com', 'subject', 'This is message', '0332323568');
+(4, 'Abbas', 'abbas@gmail.com', 'subject', 'This is message', '0332323568'),
+(5, 'Tahir', 'tahir@gmail.com', 'This is subject', 'This is my dummy message', '03343427289');
 
 -- --------------------------------------------------------
 
@@ -245,9 +249,16 @@ CREATE TABLE `parent` (
   `Contact` varchar(255) NOT NULL,
   `Password` varchar(255) NOT NULL,
   `Profile` varchar(255) NOT NULL,
-  `Roll` int(11) NOT NULL,
+  `Roll` int(11) NOT NULL DEFAULT 2,
   `student_ID` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `parent`
+--
+
+INSERT INTO `parent` (`id`, `F_name`, `L_name`, `Email`, `Contact`, `Password`, `Profile`, `Roll`, `student_ID`) VALUES
+(1, '', '', 'parent@gmail.com', '', '202cb962ac59075b964b07152d234b70', '', 2, '');
 
 -- --------------------------------------------------------
 
@@ -585,9 +596,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `F_name`, `L_name`, `Email`, `Contact`, `Password`, `Profile`, `Roll`, `Age`, `Class_id`, `father_name`, `time`, `student_ID`) VALUES
-(2, 'Rayan', 'ahmed', 'Rayan@gmail.com', '033214568', 'Rayan123', '333', 0, 18, 2, '', '2022-08-12 16:10:54', ''),
+(2, 'Rayan', 'ahmed', 'Rayan@gmail.com', '033214568', '202cb962ac59075b964b07152d234b70', '333', 0, 18, 2, '', '2022-08-12 16:10:54', ''),
 (3, 'simon', 'simon', 'simon@gmail.com', '01234587', '123', '222', 0, 18, 1, '', '2022-08-12 16:10:54', ''),
-(4, 'ahmad', 'khan', 'ahmed@gmail.com', '0333303', '123', '1111', 0, 18, 1, 'khan', '2022-08-14 02:22:18', '');
+(4, 'ahmad', 'khan', 'ahmed@gmail.com', '0333303', '123', '1111', 0, 18, 1, 'khan', '2022-08-14 02:22:18', ''),
+(8, '', '', 'admin@gmail.com', '', '202cb962ac59075b964b07152d234b70', '', 2, 0, 0, '', '2022-08-14 12:35:50', '');
 
 --
 -- Indexes for dumped tables
@@ -727,7 +739,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `attendance`
 --
 ALTER TABLE `attendance`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `class`
@@ -739,7 +751,7 @@ ALTER TABLE `class`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `english`
@@ -775,7 +787,7 @@ ALTER TABLE `math`
 -- AUTO_INCREMENT for table `parent`
 --
 ALTER TABLE `parent`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `p_studies`
@@ -847,7 +859,7 @@ ALTER TABLE `urdu`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
