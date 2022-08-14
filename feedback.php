@@ -113,13 +113,13 @@
                     <div class="col-sm-6">
                         <div class="mb-3">
                         <label>FullName <small>*</small></label>
-                        <input name="form_name" type="text" placeholder="Enter Your FullName" class="form-control">
+                        <input name="form_name" type="text" placeholder="Enter Your FullName" class="form-control shadow" autocomplete="off" required>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="mb-3">
                         <label>Email <small>*</small></label>
-                        <input name="form_email" class="form-control required email" type="email" placeholder="Enter Email">
+                        <input name="form_email" class="form-control required email shadow" type="email" placeholder="Enter Email" autocomplete="off" required>
                         </div>
                     </div>
                     </div>
@@ -127,7 +127,7 @@
                     <div class="col-sm-12">
                         <div class="mb-3">
                         <label>Do you like the UI of our web application <small>*</small></label>
-                        <select name="form_sex" class="form-control required">
+                        <select name="form_sex" class="form-control required shadow">
                         <option >Select</option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
@@ -137,7 +137,7 @@
                     <div class="col-sm-12">
                         <div class="mb-3">
                         <label>How was your experience while using estudiez?  <small>*</small></label>
-                        <select name="form_exp" class="form-control required">
+                        <select name="form_exp" class="form-control required shadow" >
                         <option >Select</option>
                             <option value="excellent">Excellent</option>
                             <option value="good">Good</option>
@@ -150,7 +150,7 @@
                     </div>
                     <div class="mb-3">
                     <label>Would you like to give suggestion for improvement of web application <small>*</small></label>
-                    <textarea name="form_message" class="form-control required" rows="5" placeholder="write your suggestion"></textarea>
+                    <textarea name="form_message" class="form-control required shadow" rows="5" placeholder="write your suggestion" autocomplete="off" required></textarea>
                     </div>
 
                     <div class="mb-3 tm-sc-button mb-0 mt-20">

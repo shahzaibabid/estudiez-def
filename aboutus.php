@@ -243,75 +243,75 @@
     </section>
 <!-- our feature -->
 
-    <!-- divider 02 -->
+<!-- divider 02 -->
     <section class="divider bg-img-cover bg-img-center layer-overlay overlay-theme-colored4-7" data-tm-bg-img="images/bg/p2.jpg">
-        <div class="container pt-90 pb-90">
-            <div class="row">
-            <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
-                <div class="funfact-item text-center mb-md-30">
-                <div class="icon"><span class="fas fa-user-friends"></span></div>
-                <div>
-                    <h2 class="counter">
-                        <?php
-                        $teach = "SELECT COUNT(id) FROM `teachers`";
-                        $teachres = mysqli_query($conn, $teach);
-                        $trow = mysqli_fetch_array($teachres);
-                        
-                        $stu = "SELECT COUNT(id) FROM `users` WHERE `Roll` = 0";
-                        $student = mysqli_query($conn, $stu);
-                        $srow = mysqli_fetch_array($student);
+    <div class="container pt-90 pb-90">
+        <div class="row">
+        <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
+            <div class="funfact-item text-center mb-md-30">
+            <div class="icon"><span class="fas fa-user-friends"></span></div>
+            <div>
+                <h2 class="counter">
+                    <?php
+                    $teach = "SELECT COUNT(id) FROM `teachers`";
+                    $teachres = mysqli_query($conn, $teach);
+                    $trow = mysqli_fetch_array($teachres);
+                    
+                    $stu = "SELECT COUNT(id) FROM `users` WHERE `Roll` = 0";
+                    $student = mysqli_query($conn, $stu);
+                    $srow = mysqli_fetch_array($student);
 
-                        $feed = "SELECT COUNT(id) FROM `feedback`";
-                        $feedback = mysqli_query($conn, $feed);
-                        $frow = mysqli_fetch_array($feedback);
+                    $feed = "SELECT COUNT(id) FROM `feedback`";
+                    $feedback = mysqli_query($conn, $feed);
+                    $frow = mysqli_fetch_array($feedback);
 
-                        $exam = "SELECT COUNT(id) FROM `exam`";
-                        $examres = mysqli_query($conn, $exam);
-                        $erow = mysqli_fetch_array($examres);
-                        ?>
-                    <span data-animation-duration="2000" data-value="<?php echo $trow[0]; ?>" class="animate-number">0</span>
-                    </h2>
-                    <h5 class="title">Qualified Teachers</h5>
-                </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
-                <div class="funfact-item text-center mb-md-30">
-                <div class="icon"><span class="fas fa-graduation-cap"></span></div>
-                <div>
-                    <h2 class="counter">
-                    <span data-animation-duration="2000" data-value="<?php echo $srow[0]; ?>" class="animate-number">0</span>
-                    </h2>
-                    <h5 class="title">Number of Students</h5>
-                </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-                <div class="funfact-item text-center mb-sm-30">
-                <div class="icon"><span class="far fa-smile"></span></div>
-                <div>
-                    <h2 class="counter">
-                    <span data-animation-duration="2000" data-value="<?php echo $frow[0]; ?>" class="animate-number">0</span>
-                    </h2>
-                    <h5 class="title">Satisfied Feedback</h5>
-                </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.7s">
-                <div class="funfact-item text-center">
-                <div class="icon"><span class="fas fa-medal"></span></div>
-                <div>
-                    <h2 class="counter">
-                    <span data-animation-duration="2000" data-value="<?php echo $erow[0]; ?>" class="animate-number">0</span>
-                    </h2>
-                    <h5 class="title">Student Acheivements</h5>
-                </div>
-                </div>
+                    $exam = "SELECT COUNT(id) FROM `exam`";
+                    $examres = mysqli_query($conn, $exam);
+                    $erow = mysqli_fetch_array($examres);
+                    ?>
+                <span data-animation-duration="2000" data-value="<?php echo $trow[0]; ?>" class="animate-number">0</span>
+                </h2>
+                <h5 class="title">Qualified Teachers</h5>
             </div>
             </div>
         </div>
-        </section>
-    <!-- divider 02 -->
+        <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+            <div class="funfact-item text-center mb-md-30">
+            <div class="icon"><span class="fas fa-graduation-cap"></span></div>
+            <div>
+                <h2 class="counter">
+                <span data-animation-duration="2000" data-value="<?php echo $srow[0]; ?>" class="animate-number">0</span>
+                </h2>
+                <h5 class="title">Number of Students</h5>
+            </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+            <div class="funfact-item text-center mb-sm-30">
+            <div class="icon"><span class="far fa-smile"></span></div>
+            <div>
+                <h2 class="counter">
+                <span data-animation-duration="2000" data-value="<?php echo $frow[0]; ?>" class="animate-number">0</span>
+                </h2>
+                <h5 class="title">Satisfied Feedback</h5>
+            </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.7s">
+            <div class="funfact-item text-center">
+            <div class="icon"><span class="fas fa-medal"></span></div>
+            <div>
+                <h2 class="counter">
+                <span data-animation-duration="2000" data-value="<?php echo $erow[0]; ?>" class="animate-number">0</span>
+                </h2>
+                <h5 class="title">Student Acheivements</h5>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+<!-- divider 02 -->
 
 <!-- our team -->
     <section id="team" class="bg-img-cover bg-img-center" data-tm-bg-img="images/bg/p2.jpg">

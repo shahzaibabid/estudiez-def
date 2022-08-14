@@ -798,13 +798,13 @@
                                 <div class="col-sm-6">
                                 <div class="mb-3">
                                     <label>Name <small>*</small></label>
-                                    <input name="form_name" class="form-control shadow" type="text" placeholder="Enter Name">
+                                    <input name="form_name" class="form-control shadow" type="text" placeholder="Enter Name" autocomplete="off" required>
                                 </div>
                                 </div>
                                 <div class="col-sm-6">
                                 <div class="mb-3">
                                     <label>Email <small>*</small></label>
-                                    <input name="form_email" class="form-control required email shadow" type="email" placeholder="Enter Email">
+                                    <input name="form_email" class="form-control required email shadow" type="email" placeholder="Enter Email" autocomplete="off" required>
                                 </div>
                                 </div>
                             </div>
@@ -812,20 +812,20 @@
                                 <div class="col-sm-6">
                                 <div class="mb-3">
                                     <label>Subject <small>*</small></label>
-                                    <input name="form_subject" class="form-control required shadow" type="text" placeholder="Enter Subject">
+                                    <input name="form_subject" class="form-control required shadow" type="text" placeholder="Enter Subject" autocomplete="off" required>
                                 </div>
                                 </div>
                                 <div class="col-sm-6">
                                 <div class="mb-3">
                                     <label>Phone</label>
-                                    <input name="form_phone" class="form-control shadow" type="text" placeholder="Enter Phone">
+                                    <input name="form_phone" class="form-control shadow" type="text" placeholder="Enter Phone" autocomplete="off" required>
                                 </div>
                                 </div>
                             </div>
 
                             <div class="mb-3">
                                 <label>Message</label>
-                                <textarea name="form_message" class="form-control required shadow" rows="5" placeholder="Enter Message"></textarea>
+                                <textarea name="form_message" class="form-control required shadow" rows="5" placeholder="Enter Message" autocomplete="off" required></textarea>
                             </div>
                             <div class="mb-3">
                                 <input name="form_botcheck" class="form-control" type="hidden" value="" />
