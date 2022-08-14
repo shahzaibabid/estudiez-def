@@ -3,43 +3,101 @@ include_once 'auth/connection.php';
 
 session_start();
 
-if(isset($_POST["signin"])){
-
-    $email = mysqli_real_escape_string($conn, $_POST["email"]);
-    $password =mysqli_real_escape_string($conn, $_POST["pass"]);
-  $password = md5($password);
-  
-    $query = "SELECT * FROM `users` WHERE  `email`= '$email' AND `password` = '$password' ";
-    $result = mysqli_query($conn,$query);
-  
-     if(mysqli_num_rows($result)){
-      while($row = mysqli_fetch_array($result)){
-        $_SESSION["loggedIn"] = true;
-        $_SESSION["id"] = $row['0'];
-        $_SESSION["f_name"] = $row["1"];
-        $_SESSION["l_name"] = $row["2"];
-        $_SESSION["father_name"] = $row["10"];
-        $_SESSION["contact"] = $row["4"];
-        $_SESSION["age"] = $row["8"];
-        $_SESSION["class_id"] = $row["9"];
-        $_SESSION["email"] = $row["3"];
-        $_SESSION["pass"] = $row["5"];
-        $_SESSION["Roll"] = $row["7"];
-        $row["Roll"] = $_SESSION["Roll"];
-        $_SESSION["path"] = $row["6"];
+if(isset($_POST["signin"])){                    
+    $email = $_POST["email"];
+    // $remember_me = $_POST["remember_me"];
+    $pass = $_POST["pass"];
+    $pass = md5($pass);    
 
 
-        header("location: index.php")
+      $x = $_POST["gndr"];
+        switch ($x) {
+            case 'Student':
+                $sel = "SELECT * FROM `users` WHERE `Email` = '$email' && `Password` = '$pass'";
+                $result = mysqli_query($conn, $sel);
+            break;
+            
+            case 'Parent': 
+                $sel = "SELECT * FROM `parent` WHERE `Email` = '$email' && `Password` = '$pass'";
+                $result = mysqli_query($conn, $sel);
+            break;
+                
+            case 'Teacher':
+                $sel = "SELECT * FROM `teachers` WHERE `Email` = '$email' && `Password` = '$pass'";
+                $result = mysqli_query($conn, $sel);
+            break;
 
-?>
-<?php
+            default:
+                $sel = "SELECT * FROM `users` WHERE `Email` = '$email' && `Password` = '$pass'";
+                $result = mysqli_query($conn, $sel);
+            break;
+        }
+        
+    if(mysqli_num_rows($result)) {
+      while($row = mysqli_fetch_array($result)) {
+        $_SESSION["myuserid"] = $row[0];
+        $_SESSION["name"] = $row[1] . " " . $row[2];
+        $x = $_POST["gndr"];
+        switch ($x) {
+            case 'Student':
+                $_SESSION["roll"] = $row[8];
+                $_SESSION["profile"] = $row[7];   
+            break;
+            
+            case 'Parent': 
+                $_SESSION["roll"] = $row[8];
+                $_SESSION["profile"] = $row[7];   
+            break;
+                
+            case 'Teacher':
+                $_SESSION["roll"] = $row[6];
+                $_SESSION["profile"] = $row[5];   
+            break;
 
+            default:
+            $_SESSION["roll"] = $row[8];
+            $_SESSION["profile"] = $row[7];   
+        break;
+        }                     
+      }
 
-      }}}  
-
-
-
-
+      if ($_SESSION["roll"] == 0)
+      {
+          ?>
+          <Script>
+              window.location.assign("./index.php");
+          </Script>            
+          <?php
+      }
+      else if ($_SESSION["roll"] == 3)
+      {
+          ?>
+          <Script>
+              window.location.assign("./admin/pages/dashboard/dashboard.php");
+          </Script>
+          <?php
+      }  
+      else if ($_SESSION["roll"] == 2)
+      {
+          ?>
+          <Script>
+              window.location.assign("./index.php");
+          </Script>            
+          <?php
+      }
+      else if ($_SESSION["roll"] == 1)
+      {
+          ?>
+          <Script>
+              window.location.assign("./admin/pages/dashboard/dashboard.php");
+          </Script>
+          <?php
+      } 
+    }
+    else {
+      $error = "Invalid Email or Password";
+    }
+  }
 
 ?>
 
@@ -131,6 +189,7 @@ if(isset($_POST["signin"])){
 
     <section>
         <div class="container">
+            <?php if(isset($error)) { ?><marquee class="mb-5 text-danger" behavior="smooth" direction="left"><?php echo $error; ?></marquee><?php } ?>
             <div class="row">
             <div class="col-md-8 offset-md-2">
                 <ul class="nav nav-tabs">
@@ -150,16 +209,40 @@ if(isset($_POST["signin"])){
                     <hr>
                     <p>Login Here!</p>
                     <form name="login-form" method="Post" action="#" class="clearfix">
+                    <div class="mt-5 form-floating mb-3">                            
+                            <div class="d-flex w-100 justify-content-evenly">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gndr" value="Student" id="flexRadioDefault1" checked>
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                        Student
+                                    </label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gndr" value="Parent" id="flexRadioDefault2">
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                    Parent
+                                    </label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gndr" value="Teacher" id="flexRadioDefault3">
+                                    <label class="form-check-label" for="flexRadioDefault3">
+                                        Teacher
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                     <div class="row">
                         <div class="mb-3 col-md-12">
                         <label for="form_username_email">Email Address</label>
-                        <input id="form_username_email" name="email" class="form-control" type="email" autocomplete="off" required>
+                        <input id="form_username_email" name="email" class="form-control shadow" type="email" autocomplete="off" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="mb-3 col-md-12">
                         <label for="form_password">Password</label>
-                        <input id="form_password" name="pass" class="form-control" type="password" >
+                        <input id="form_password" name="pass" class="form-control shadow" type="password" >
                         </div>
                     </div>
                     <div class="checkbox mt-15">
@@ -168,7 +251,7 @@ if(isset($_POST["signin"])){
                         Remember me </label>
                     </div>
                     <div class="mb-3 tm-sc-button mt-10">
-                        <button type="signin" class="btn btn-dark">Login</button>
+                        <button type="submit" name="signin" class="btn btn-dark">Login</button>
                     </div>
                     <div class="clearfix pt-15">
                         <a class="text-theme-colored1 font-weight-600 font-size-14" href="#">Forgot Your Password?</a>
@@ -225,7 +308,7 @@ if(isset($_POST["signin"])){
                                     while($see = mysqli_fetch_array($let)){
                                         ?>
                                      
-                                <option value="excellent"><?php echo $see[2];?></option>
+                                <option value="<?php echo $see[0];?>"><?php echo $see[2];?></option>
                             
                                         <?php
                                     }
@@ -292,7 +375,7 @@ if(isset($_POST["signin"])){
                                     while($see = mysqli_fetch_array($let)){
                                         ?>
                                      
-                                <option value="excellent"><?php echo $see[9];?></option>
+                                <option value="<?php echo $see[12];?>"><?php echo $see[9];?></option>
                             
                                         <?php
                                     }

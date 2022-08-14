@@ -14,14 +14,14 @@ $student_id = mysqli_real_escape_string($conn, $_POST["student_id"]);
   $image_type = $_FILES["img"]["type"];
   $image_temp = $_FILES["img"]["tmp_name"];
   $image_size = $_FILES["img"]["size"];
-  $path = "./img/" . $image_name;
+  $path = "./profile/" . $image_name;
  
   
   if(filter_var($p_email,FILTER_VALIDATE_EMAIL)){
       if(preg_match('/[A-Z]{1}.[A-Za-z0-9 ]{1,}/',$p_password)){
           $p_password = md5($p_password);
           
-          $query = "INSERT INTO `parent`(`id`, `F_name`, `L_name`, `Email`, `Contact`, `Password`, `Profile`) VALUES (Null,'$p_first_name','$p_last_name','$p_email','$p_contact','$p_password','$image_name')";
+          $query = "INSERT INTO `parent`(`id`, `F_name`, `L_name`, `Email`, `Contact`, `Password`, `Profile`, `student_ID`) VALUES (Null,'$p_first_name','$p_last_name','$p_email','$p_contact','$p_password','$image_name','$student_id')";
           mysqli_query($conn, $query);
           move_uploaded_file($image_temp,$path);
       
