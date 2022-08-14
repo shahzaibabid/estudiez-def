@@ -1,10 +1,18 @@
+<?php
+session_start();
+include("./auth/connection.php");
+$myid=$_SESSION["myuserid"];
+$myquery="SELECT * FROM `users` WHERE `id` = $myid";
+$query=mysqli_query($conn, $myquery);
+$fetch=mysqli_fetch_array($query);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estudiez-Header</title>
+    <title>Estudiez-Profile</title>
 <!-- Stylesheet -->
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="css/animate.min.css" rel="stylesheet" type="text/css">
@@ -80,7 +88,7 @@
             <div class="row">
             <div class="col-lg-6 col-xl-5 m-lg-auto">
                 <div class="whychose-thumb">
-                <img class="img-fullwidth" src="images/student_trial2.avif" alt="ProfileImage">
+                <img class="img-fullwidth" src="profile/<?php echo $fetch[6];?>"  alt="ProfileImage">
                 </div>
             </div>
             <div class="col-xl-7 pl-50">
@@ -91,18 +99,18 @@
 <div class="container" style="margin-top: 10px;">
 <div class="profile-head">
 <div class="col-md- col-sm-4 col-xs-12">
-<h3 class="text-theme-colored2 line-bottom">Jennifer <span class="text-theme-colored3">Smith</span></h3>
+<h3 class="text-theme-colored2 line-bottom"> <?php echo $fetch[1]." ".$fetch[2];?></h3>
 </div><!--col-md-4 col-sm-4 col-xs-12 close-->
 
 
 <div class="col-md-10 col-sm-8 col-xs-12">
 <ul>
-<li><h3 class="custom-1">Grade: 5 years</h3></li>
-<li><h3 class="custom-1">Class: U.S.A.</h3></li>
-<li><h3 class="custom-1">Address: 555 street Address,toedo 43606 U.S.A.</h3></li>
-<li><h3 class="custom-1">Phone Number: (+021) 956 789123</h3></li>
-<li><h3 class="custom-1">Email: jenifer123@gmail.com</h3></li>
-<li><h3 class="custom-1">Parent/Guardian Name: Smith Jones</h3></li>
+<li><h3 class="custom-1">class: <?php  $c=$fetch[9]; $class="SELECT * FROM `class` WHERE `id` = $c"; $query1=mysqli_query($conn, $class);
+$fetch1=mysqli_fetch_array($query1); echo $fetch1[2]; ?></h3></li>
+<li><h3 class="custom-1">Email: <?php echo $fetch[3];?></h3></li>
+<li><h3 class="custom-1">Contact: <?php echo $fetch[4];?></h3></li>
+<li><h3 class="custom-1">Age:<?php echo $fetch[8];?></h3></li>
+<li><h3 class="custom-1">Parent/Guardian Name: <?php echo $fetch[10];?></h3></li>
 </ul>
 
 
@@ -247,15 +255,7 @@
     </section>
 <!-- Basic Divider -->
 
-<!-- Resource Links  -->
-<section id="team" class="bg-img-cover bg-img-center" data-tm-bg-img="images/bg/p2.jpg">
-    <div class="section-content">
-        <?php
-            include_once('links.php')
-        ?>
-    </div>
-</section>
-<!-- Resource Links -->
+
 
 <!-- main content -->
 

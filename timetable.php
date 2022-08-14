@@ -1,115 +1,57 @@
 
-	<table border="5" cellspacing="0" align="center">
-		<!--<caption>Timetable</caption>-->
-		<tr>
-			<td align="center" height="50"
-				width="100"><br>
-				<b>Day/Period</b></br>
-			</td>
-			<td align="center" height="50"
-				width="100">
-				<b>I<br>9:30-10:20</b>
-			</td>
-			<td align="center" height="50"
-				width="100">
-				<b>II<br>10:20-11:10</b>
-			</td>
-			<td align="center" height="50"
-				width="100">
-				<b>III<br>11:10-12:00</b>
-			</td>
-			<td align="center" height="50"
-				width="100">
-				<b>12:00-12:40</b>
-			</td>
-			<td align="center" height="50"
-				width="100">
-				<b>IV<br>12:40-1:30</b>
-			</td>
-			<td align="center" height="50"
-				width="100">
-				<b>V<br>1:30-2:20</b>
-			</td>
-			<td align="center" height="50"
-				width="100">
-				<b>VI<br>2:20-3:10</b>
-			</td>
-			<td align="center" height="50"
-				width="100">
-				<b>VII<br>3:10-4:00</b>
-			</td>
-		</tr>
-		<tr>
-			<td align="center" height="50">
-				<b>Monday</b></td>
-			<td align="center" height="50">Eng</td>
-			<td align="center" height="50">Mat</td>
-			<td align="center" height="50">Che</td>
-			<td rowspan="6" align="center" height="50">
-				<h2>L<br>U<br>N<br>C<br>H</h2>
-			</td>
-			<td colspan="3" align="center"
-				height="50">LAB</td>
-			<td align="center" height="50">Phy</td>
-		</tr>
-		<tr>
-			<td align="center" height="50">
-				<b>Tuesday</b>
-			</td>
-			<td colspan="3" align="center"
-				height="50">LAB
-			</td>
-			<td align="center" height="50">Eng</td>
-			<td align="center" height="50">Che</td>
-			<td align="center" height="50">Mat</td>
-			<td align="center" height="50">SPORTS</td>
-		</tr>
-		<tr>
-			<td align="center" height="50">
-				<b>Wednesday</b>
-			</td>
-			<td align="center" height="50">Mat</td>
-			<td align="center" height="50">phy</td>
-			<td align="center" height="50">Eng</td>
-			<td align="center" height="50">Che</td>
-			<td colspan="3" align="center"
-				height="50">LIBRARY
-			</td>
-		</tr>
-		<tr>
-			<td align="center" height="50">
-				<b>Thursday</b>
-			</td>
-			<td align="center" height="50">Phy</td>
-			<td align="center" height="50">Eng</td>
-			<td align="center" height="50">Che</td>
-			<td colspan="3" align="center"
-				height="50">LAB
-			</td>
-			<td align="center" height="50">Mat</td>
-		</tr>
-		<tr>
-			<td align="center" height="50">
-				<b>Friday</b>
-			</td>
-			<td colspan="3" align="center"
-				height="50">LAB
-			</td>
-			<td align="center" height="50">Mat</td>
-			<td align="center" height="50">Che</td>
-			<td align="center" height="50">Eng</td>
-			<td align="center" height="50">Phy</td>
-		</tr>
-		<tr>
-			<td align="center" height="50">
-				<b>Saturday</b>
-			</td>
-			<td align="center" height="50">Eng</td>
-			<td align="center" height="50">Che</td>
-			<td align="center" height="50">Mat</td>
-			<td colspan="3" align="center"
-				height="50">SEMINAR
-			</td>
-			<td align="center" height="50">SPORTS</td>
-		</tr>
-	</table>
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th> Time </th>
+                              <th> Monday </th>
+                              <th> Tuesday </th>
+                              <th> Wednesday </th>
+                              <th> Thursday </th>
+                              <th> Friday </th>
+                              <th> (Extra class) <br> Saturday</th>
+                            </tr>
+                          </thead>
+                          <tbody>      
+                            <?php
+							 $x = $fetch1[2];
+							 switch ($x) {
+								case 'VI':
+									$sel_r = "SELECT * FROM `timetable6`";
+									break;
+								
+								case 'VII':
+									$sel_r = "SELECT * FROM `timetable7`";
+									break;
+							
+								case 'VIII':
+									$sel_r = "SELECT * FROM `timetable8`";
+									break;
+							
+								case 'IX':
+									$sel_r = "SELECT * FROM `timetable9`";
+									break;
+							
+								case 'X':
+									$sel_r = "SELECT * FROM `timetable10`";
+									break;
+							}
+                          
+                              $res_r = mysqli_query($conn, $sel_r);
+                              while($row_r = mysqli_fetch_array($res_r)) {
+
+                            ?>
+                        <tr >
+                            <td ><input type="text" style="background-color: transparent; color: black; border:none;" value="<?php echo $row_r[1]; ?>" readonly></td>
+                            <td><input type="text" name="mon<?php echo $i; ?>" style="background-color: transparent; color: black; border:none;" value="<?php echo $row_r[2]; ?>"></td>
+                            <td><input type="text" name="tues<?php echo $i; ?>" style="background-color: transparent; color: black; border:none;" value="<?php echo $row_r[3]; ?>"></td>
+                            <td><input type="text" name="wed<?php echo $i; ?>" style="background-color: transparent; color: black; border:none;" value="<?php echo $row_r[4]; ?>"></td>
+                            <td><input type="text" name="thurs<?php echo $i; ?>" style="background-color: transparent; color: black; border:none;" value="<?php echo $row_r[5]; ?>"></td>
+                            <td><input type="text" name="fri<?php echo $i; ?>" style="background-color: transparent; color: black; border:none;" value="<?php echo $row_r[6]; ?>"></td>
+                            <td><input type="text" name="sat<?php echo $i; ?>" style="background-color: transparent; color: black; border:none;" value="<?php echo $row_r[7]; ?>"></td>
+                        </tr>
+                        <?php
+                              }
+                        ?>
+                          </tbody>
+                        </table>                        
+               
